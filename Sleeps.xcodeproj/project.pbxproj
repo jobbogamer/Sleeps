@@ -9,12 +9,13 @@
 /* Begin PBXBuildFile section */
 		0336EFDD1AC9B588001D3138 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0336EFDC1AC9B588001D3138 /* AppDelegate.swift */; };
 		0336EFE01AC9B588001D3138 /* Sleeps.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0336EFDE1AC9B588001D3138 /* Sleeps.xcdatamodeld */; };
-		0336EFE21AC9B588001D3138 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0336EFE11AC9B588001D3138 /* ViewController.swift */; };
+		0336EFE21AC9B588001D3138 /* CountdownViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0336EFE11AC9B588001D3138 /* CountdownViewController.swift */; };
 		0336EFE51AC9B588001D3138 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0336EFE31AC9B588001D3138 /* Main.storyboard */; };
 		0336EFE71AC9B588001D3138 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0336EFE61AC9B588001D3138 /* Images.xcassets */; };
 		0336EFEA1AC9B588001D3138 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0336EFE81AC9B588001D3138 /* LaunchScreen.xib */; };
 		0336EFF61AC9B588001D3138 /* SleepsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0336EFF51AC9B588001D3138 /* SleepsTests.swift */; };
 		0336F0001AC9D950001D3138 /* SLCountdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0336EFFF1AC9D950001D3138 /* SLCountdown.swift */; };
+		0336F0051AC9FFA0001D3138 /* CountdownTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0336F0041AC9FFA0001D3138 /* CountdownTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,7 +33,7 @@
 		0336EFDB1AC9B588001D3138 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0336EFDC1AC9B588001D3138 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0336EFDF1AC9B588001D3138 /* Sleeps.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Sleeps.xcdatamodel; sourceTree = "<group>"; };
-		0336EFE11AC9B588001D3138 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0336EFE11AC9B588001D3138 /* CountdownViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownViewController.swift; sourceTree = "<group>"; };
 		0336EFE41AC9B588001D3138 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0336EFE61AC9B588001D3138 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0336EFE91AC9B588001D3138 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -40,6 +41,7 @@
 		0336EFF41AC9B588001D3138 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0336EFF51AC9B588001D3138 /* SleepsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepsTests.swift; sourceTree = "<group>"; };
 		0336EFFF1AC9D950001D3138 /* SLCountdown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLCountdown.swift; sourceTree = "<group>"; };
+		0336F0041AC9FFA0001D3138 /* CountdownTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountdownTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,7 +139,8 @@
 			isa = PBXGroup;
 			children = (
 				0336EFDC1AC9B588001D3138 /* AppDelegate.swift */,
-				0336EFE11AC9B588001D3138 /* ViewController.swift */,
+				0336EFE11AC9B588001D3138 /* CountdownViewController.swift */,
+				0336F0041AC9FFA0001D3138 /* CountdownTableViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -243,7 +246,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0336F0001AC9D950001D3138 /* SLCountdown.swift in Sources */,
-				0336EFE21AC9B588001D3138 /* ViewController.swift in Sources */,
+				0336F0051AC9FFA0001D3138 /* CountdownTableViewController.swift in Sources */,
+				0336EFE21AC9B588001D3138 /* CountdownViewController.swift in Sources */,
 				0336EFDD1AC9B588001D3138 /* AppDelegate.swift in Sources */,
 				0336EFE01AC9B588001D3138 /* Sleeps.xcdatamodeld in Sources */,
 			);
