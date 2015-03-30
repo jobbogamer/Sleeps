@@ -14,6 +14,7 @@
 		0336EFE71AC9B588001D3138 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0336EFE61AC9B588001D3138 /* Images.xcassets */; };
 		0336EFEA1AC9B588001D3138 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0336EFE81AC9B588001D3138 /* LaunchScreen.xib */; };
 		0336EFF61AC9B588001D3138 /* SleepsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0336EFF51AC9B588001D3138 /* SleepsTests.swift */; };
+		0336F0001AC9D950001D3138 /* SLCountdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0336EFFF1AC9D950001D3138 /* SLCountdown.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		0336EFEF1AC9B588001D3138 /* SleepsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SleepsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0336EFF41AC9B588001D3138 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0336EFF51AC9B588001D3138 /* SleepsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepsTests.swift; sourceTree = "<group>"; };
+		0336EFFF1AC9D950001D3138 /* SLCountdown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLCountdown.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,12 +81,9 @@
 		0336EFD91AC9B587001D3138 /* Sleeps */ = {
 			isa = PBXGroup;
 			children = (
-				0336EFDC1AC9B588001D3138 /* AppDelegate.swift */,
-				0336EFE11AC9B588001D3138 /* ViewController.swift */,
-				0336EFE31AC9B588001D3138 /* Main.storyboard */,
-				0336EFE61AC9B588001D3138 /* Images.xcassets */,
-				0336EFE81AC9B588001D3138 /* LaunchScreen.xib */,
-				0336EFDE1AC9B588001D3138 /* Sleeps.xcdatamodeld */,
+				0336F0011AC9D95A001D3138 /* Model */,
+				0336F0021AC9D965001D3138 /* View */,
+				0336F0031AC9D96B001D3138 /* Controller */,
 				0336EFDA1AC9B588001D3138 /* Supporting Files */,
 			);
 			path = Sleeps;
@@ -113,6 +112,34 @@
 				0336EFF41AC9B588001D3138 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0336F0011AC9D95A001D3138 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0336EFDE1AC9B588001D3138 /* Sleeps.xcdatamodeld */,
+				0336EFFF1AC9D950001D3138 /* SLCountdown.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		0336F0021AC9D965001D3138 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0336EFE31AC9B588001D3138 /* Main.storyboard */,
+				0336EFE81AC9B588001D3138 /* LaunchScreen.xib */,
+				0336EFE61AC9B588001D3138 /* Images.xcassets */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		0336F0031AC9D96B001D3138 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0336EFDC1AC9B588001D3138 /* AppDelegate.swift */,
+				0336EFE11AC9B588001D3138 /* ViewController.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,6 +242,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0336F0001AC9D950001D3138 /* SLCountdown.swift in Sources */,
 				0336EFE21AC9B588001D3138 /* ViewController.swift in Sources */,
 				0336EFDD1AC9B588001D3138 /* AppDelegate.swift in Sources */,
 				0336EFE01AC9B588001D3138 /* Sleeps.xcdatamodeld in Sources */,
