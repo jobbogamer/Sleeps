@@ -1,82 +1,136 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7519.1" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="0fA-RD-TGj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7519.1" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="RQw-kI-jmH">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7513.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Countdown View Controller-->
-        <scene sceneID="dVk-eF-nRo">
+        <!--Countdown Collection View Controller-->
+        <scene sceneID="b8Z-fG-w7Z">
             <objects>
-                <viewController id="wdR-MX-Ukq" customClass="CountdownViewController" customModule="Sleeps" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController id="RQw-kI-jmH" customClass="CountdownCollectionViewController" customModule="Sleeps" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="x2s-QX-2Sr">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.12156862745098039" green="0.12941176470588237" blue="0.14117647058823529" alpha="1" colorSpace="calibratedRGB"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="eNC-4W-7c7">
+                            <size key="itemSize" width="253" height="258"/>
+                            <size key="headerReferenceSize" width="50" height="50"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CountdownCollectionCell" id="8ax-KS-KLj">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="253" height="258"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Countdown Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QiD-HA-neb">
+                                            <rect key="frame" x="8" y="229" width="237" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="QiD-HA-neb" firstAttribute="leading" secondItem="8ax-KS-KLj" secondAttribute="leadingMargin" id="7h2-Id-5Zq"/>
+                                    <constraint firstItem="QiD-HA-neb" firstAttribute="trailing" secondItem="8ax-KS-KLj" secondAttribute="trailingMargin" id="AVS-CV-azl"/>
+                                    <constraint firstAttribute="centerX" secondItem="QiD-HA-neb" secondAttribute="centerX" id="RiP-Wv-89S"/>
+                                    <constraint firstItem="QiD-HA-neb" firstAttribute="bottom" secondItem="8ax-KS-KLj" secondAttribute="bottomMargin" id="ty8-NG-s65"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="H3A-fh-1qB" kind="show" identifier="EditCountdown" id="pj7-rC-aaR"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CountdownCollectionUtilities" id="NPZ-5Z-wSQ">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8W9-ll-HXD">
+                                    <rect key="frame" x="8" y="8" width="288" height="34"/>
+                                    <state key="normal" title="Add New">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <segue destination="H3A-fh-1qB" kind="show" identifier="NewCountdown" id="HX7-cI-Moj"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Er-8E-mAW">
+                                    <rect key="frame" x="304" y="10" width="288" height="30"/>
+                                    <state key="normal" title="Settings">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <segue destination="E7a-Yz-tuD" kind="presentation" id="2v2-CI-Hm5"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="8W9-ll-HXD" firstAttribute="bottom" secondItem="NPZ-5Z-wSQ" secondAttribute="bottomMargin" id="3c1-1J-Cvm"/>
+                                <constraint firstItem="6Er-8E-mAW" firstAttribute="top" secondItem="NPZ-5Z-wSQ" secondAttribute="topMargin" constant="2" id="CpR-l9-m9d"/>
+                                <constraint firstItem="6Er-8E-mAW" firstAttribute="width" secondItem="8W9-ll-HXD" secondAttribute="width" id="HxF-hz-txq"/>
+                                <constraint firstAttribute="centerY" secondItem="8W9-ll-HXD" secondAttribute="centerY" id="K8I-Jl-NSe"/>
+                                <constraint firstAttribute="centerY" secondItem="6Er-8E-mAW" secondAttribute="centerY" id="NjT-sG-Yf3"/>
+                                <constraint firstItem="8W9-ll-HXD" firstAttribute="top" secondItem="NPZ-5Z-wSQ" secondAttribute="topMargin" id="Ty1-sa-8qB"/>
+                                <constraint firstItem="6Er-8E-mAW" firstAttribute="leading" secondItem="8W9-ll-HXD" secondAttribute="trailing" constant="8" id="WMQ-RI-2JO"/>
+                                <constraint firstItem="8W9-ll-HXD" firstAttribute="leading" secondItem="NPZ-5Z-wSQ" secondAttribute="leadingMargin" id="Wo3-ll-bVb"/>
+                                <constraint firstItem="6Er-8E-mAW" firstAttribute="trailing" secondItem="NPZ-5Z-wSQ" secondAttribute="trailingMargin" id="YTQ-rr-8Pj"/>
+                                <constraint firstAttribute="bottomMargin" secondItem="6Er-8E-mAW" secondAttribute="bottom" constant="2" id="aXl-a9-Yq3"/>
+                            </constraints>
+                        </collectionReusableView>
+                        <connections>
+                            <outlet property="dataSource" destination="RQw-kI-jmH" id="cPD-k4-pdn"/>
+                            <outlet property="delegate" destination="RQw-kI-jmH" id="PoT-df-xQy"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Zr-5l-WGk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-269" y="419"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="6he-0S-Ewv">
+            <objects>
+                <viewController id="H3A-fh-1qB" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="CKZ-jf-Tud"/>
-                        <viewControllerLayoutGuide type="bottom" id="Ow8-x8-S60"/>
+                        <viewControllerLayoutGuide type="top" id="fUi-Eo-WrW"/>
+                        <viewControllerLayoutGuide type="bottom" id="UCV-J1-cDw"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8TG-kz-qxl">
+                    <view key="view" contentMode="scaleToFill" id="Afw-UP-P8q">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xYU-Cz-HuZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="me4-ZS-PcZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1312" y="769"/>
+            <point key="canvasLocation" x="592" y="419"/>
         </scene>
-        <!--Sleeps-->
-        <scene sceneID="dwx-ki-9hP">
+        <!--View Controller-->
+        <scene sceneID="mhq-Rh-yk6">
             <objects>
-                <tableViewController clearsSelectionOnViewWillAppear="NO" id="EGf-vy-CBQ" customClass="CountdownTableViewController" customModule="Sleeps" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="aes-Ds-3wo">
+                <viewController id="E7a-Yz-tuD" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="M3Z-6r-hpT"/>
+                        <viewControllerLayoutGuide type="bottom" id="38b-L7-Ypy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7pu-fB-ZN3">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CountdownCell" id="VvZ-eR-IuL">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VvZ-eR-IuL" id="TWP-lW-3cO">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="EGf-vy-CBQ" id="HBu-sI-6D3"/>
-                            <outlet property="delegate" destination="EGf-vy-CBQ" id="lxy-A6-oAO"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Sleeps" id="n7q-Pm-f7W"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1yj-Wk-qrc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eXs-ga-umu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1312" y="65"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="mNG-NX-mkQ">
-            <objects>
-                <navigationController id="oX4-WU-kj5" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="YKq-Sa-KXS">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="EGf-vy-CBQ" kind="relationship" relationship="rootViewController" id="R5J-s6-0da"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="S4B-CA-t0l" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="492" y="65"/>
-        </scene>
-        <!--Split View Controller-->
-        <scene sceneID="Y9B-70-4e2">
-            <objects>
-                <splitViewController id="0fA-RD-TGj" sceneMemberID="viewController">
-                    <connections>
-                        <segue destination="oX4-WU-kj5" kind="relationship" relationship="masterViewController" id="XwZ-My-iym"/>
-                        <segue destination="wdR-MX-Ukq" kind="relationship" relationship="detailViewController" id="Jve-AH-wxC"/>
-                    </connections>
-                </splitViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7mI-j6-Eg0" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-328" y="396"/>
+            <point key="canvasLocation" x="592" y="1264"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="pj7-rC-aaR"/>
+    </inferredMetricsTieBreakers>
 </document>

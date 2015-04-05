@@ -8,6 +8,6 @@
 
 import UIKit
 
-class CountdownTableViewController: UITableViewController {
+class CountdownCollectionViewController: UICollectionViewController {
 
 }
