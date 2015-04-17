@@ -17,6 +17,7 @@
 		0336EFF61AC9B588001D3138 /* SleepsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0336EFF51AC9B588001D3138 /* SleepsTests.swift */; };
 		0336F0001AC9D950001D3138 /* SLCountdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0336EFFF1AC9D950001D3138 /* SLCountdown.swift */; };
 		0336F0051AC9FFA0001D3138 /* CountdownCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0336F0041AC9FFA0001D3138 /* CountdownCollectionViewController.swift */; };
+		033FDD0B1AE19B990002E16E /* SLPersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033FDD0A1AE19B990002E16E /* SLPersistenceController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		0336EFF51AC9B588001D3138 /* SleepsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepsTests.swift; sourceTree = "<group>"; };
 		0336EFFF1AC9D950001D3138 /* SLCountdown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLCountdown.swift; sourceTree = "<group>"; };
 		0336F0041AC9FFA0001D3138 /* CountdownCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountdownCollectionViewController.swift; sourceTree = "<group>"; };
+		033FDD0A1AE19B990002E16E /* SLPersistenceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLPersistenceController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 			children = (
 				0336EFDE1AC9B588001D3138 /* Sleeps.xcdatamodeld */,
 				0336EFFF1AC9D950001D3138 /* SLCountdown.swift */,
+				033FDD0A1AE19B990002E16E /* SLPersistenceController.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0336F0001AC9D950001D3138 /* SLCountdown.swift in Sources */,
+				033FDD0B1AE19B990002E16E /* SLPersistenceController.swift in Sources */,
 				0336F0051AC9FFA0001D3138 /* CountdownCollectionViewController.swift in Sources */,
 				0336EFE21AC9B588001D3138 /* EditViewController.swift in Sources */,
 				0336EFDD1AC9B588001D3138 /* AppDelegate.swift in Sources */,
