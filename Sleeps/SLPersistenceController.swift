@@ -33,7 +33,43 @@ public class SLPersistenceController {
     /// changes to disk.
     public func save()
     {
-        
+        // Check that we actuall have object contexts to save to.
+        if let privateContext = privateObjectContext, let publicContext = managedObjectContext
+        {
+            // If neither object context has changes, do nothing to avoid wasting time.
+            if !privateContext.hasChanges && !publicContext.hasChanges
+            {
+                return
+            }
+            
+            // We cannot guarantee that we are on the main thread, so use performBlockAndWait() to
+            // do the save.
+            publicContext.performBlockAndWait
+            {
+                var error: NSErrorPointer = nil
+                publicContext.save(error)
+                
+                if let err = error.memory
+                {
+                    println("Failed to save to main context: \(err.localizedDescription)")
+                    println("\(err.userInfo)")
+                }
+                else
+                {
+                    // The call to the private context is fine to be asynchronous.
+                    privateContext.performBlock
+                    {
+                        privateContext.save(error)
+                        
+                        if let err = error.memory
+                        {
+                            println("Failed to save to private context: \(err.localizedDescription)")
+                            println("\(err.userInfo)")
+                        }
+                    }
+                }
+            }
+        }
     }
     
     /// Perform initialisation of the two object contexts. If this function has already been called,
