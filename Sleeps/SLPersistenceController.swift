@@ -48,26 +48,24 @@ public class SLPersistenceController {
             publicContext.performBlockAndWait
             {
                 var error: NSErrorPointer = nil
-                publicContext.save(error)
-                
-                if let err = error.memory
-                {
-                    println("Failed to save to main context: \(err.localizedDescription)")
-                    println("\(err.userInfo)")
-                }
-                else
+                if publicContext.save(error)
                 {
                     // The call to the private context is fine to be asynchronous.
                     privateContext.performBlock
                     {
-                        privateContext.save(error)
-                        
-                        if let err = error.memory
+                        if !privateContext.save(error)
                         {
+                            let err = error.memory!
                             println("Failed to save to private context: \(err.localizedDescription)")
                             println("\(err.userInfo)")
                         }
                     }
+                }
+                else
+                {
+                    let err = error.memory!
+                    println("Failed to save to main context: \(err.localizedDescription)")
+                    println("\(err.userInfo)")
                 }
             }
         }
