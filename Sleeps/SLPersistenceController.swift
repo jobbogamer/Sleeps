@@ -10,6 +10,7 @@ import Foundation
 import CoreData
 
 public class SLPersistenceController {
+    
     /// This is the public object context, and is the "source of truth".
     public var managedObjectContext: NSManagedObjectContext?
     
