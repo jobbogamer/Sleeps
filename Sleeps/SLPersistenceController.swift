@@ -34,7 +34,7 @@ public class SLPersistenceController {
     /// changes to disk.
     public func save()
     {
-        // Check that we actuall have object contexts to save to.
+        // Check that we actually have object contexts to save to.
         if let privateContext = privateObjectContext, let publicContext = managedObjectContext
         {
             // If neither object context has changes, do nothing to avoid wasting time.
