@@ -124,8 +124,9 @@ public class SLPersistenceController {
                 let store = storeCoordinator?.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: storeURL, options: options, error: error)
                 
                 // If something went wrong, log it to the console.
-                if let err = error.memory
+                if store == nil
                 {
+                    let err = error.memory!
                     println("Error initialising persistent store coordinator: \(err.localizedDescription)")
                     println("\(err.userInfo)")
                 }

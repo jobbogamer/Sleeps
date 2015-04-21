@@ -77,7 +77,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     /// stack.
     func persistenceControllerDidInitialise(success: Bool)
     {
-        
+        println("Core data finished, success = \(success)")
     }
 }
 
