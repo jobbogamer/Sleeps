@@ -16,28 +16,33 @@ public class SLPersistenceController {
     /// This private context has a single job, which is writing to disk.
     private var privateObjectContext: NSManagedObjectContext?
     
-    /// This callback will be called when the Core Data store is successfully initialised.
-    private var callback: () -> Void
+    /// This callback will be called when the Core Data store is initialised.
+    private var callback: (Bool) -> Void
     
-    /// Initialise the controller and call the given @param callback when complete. This initialiser
-    /// will return immediately (hence the callback parameter).
-    init(callback: () -> Void) {
+    /// Initialise the controller and call the given callback when complete. This initialiser
+    /// will return immediately (hence the callback parameter). The parameter to the callback
+    /// function is a `Bool` which represents whether the Core Data store was successfully created.
+    init(callback: (Bool) -> Void)
+    {
         self.callback = callback
-        self.initialiseCoreData()
+        initialiseCoreData()
     }
     
     /// If there are any changes to save, do so. The main context will be saved first, since it's
     /// the "source of truth", and then the private context will be saved in order to write the
     /// changes to disk.
-    public func save() {
+    public func save()
+    {
         
     }
     
     /// Perform initialisation of the two object contexts. If this function has already been called,
     /// it will return without doing anything, rather than overwriting the existing contexts.
-    private func initialiseCoreData() {
+    private func initialiseCoreData()
+    {
         // If we already have a managed object context, stop before we overwrite the old instance.
-        if let context = self.managedObjectContext {
+        if let context = self.managedObjectContext
+        {
             return
         }
         
@@ -46,25 +51,66 @@ public class SLPersistenceController {
         let objectModel = NSManagedObjectModel(contentsOfURL: modelURL!)
         
         // If we successfully created the object model, create the managed object contexts.
-        if let objectModel = objectModel {
+        if let objectModel = objectModel
+        {
             // Create a persistent store coordinator to use for the private object context.
             let coordinator = NSPersistentStoreCoordinator(managedObjectModel: objectModel)
             
             // Create the main object context.
-            self.managedObjectContext = NSManagedObjectContext(concurrencyType: .MainQueueConcurrencyType)
+            managedObjectContext = NSManagedObjectContext(concurrencyType: .MainQueueConcurrencyType)
             
             // Create the private context and set its store coordinator to be the one we just
             // created.
-            self.privateObjectContext = NSManagedObjectContext(concurrencyType: .PrivateQueueConcurrencyType)
-            self.privateObjectContext?.persistentStoreCoordinator = coordinator
+            privateObjectContext = NSManagedObjectContext(concurrencyType: .PrivateQueueConcurrencyType)
+            privateObjectContext?.persistentStoreCoordinator = coordinator
             
             // Set the main object context to be a child context of the private one.
-            self.managedObjectContext?.parentContext = privateObjectContext
+            managedObjectContext?.parentContext = privateObjectContext
             
-            // TODO: Asynchronously create a reference to the datastore on disk.
+            // Asynchronously create a reference to the datastore on disk.
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0))
+            {
+                let storeCoordinator = self.privateObjectContext?.persistentStoreCoordinator
+                
+                // Set the options for the store.
+                var options = [String: AnyObject]()
+                options[NSMigratePersistentStoresAutomaticallyOption] = true
+                options[NSInferMappingModelAutomaticallyOption] = true
+                options[NSSQLitePragmasOption] = ["journal_mode": "DELETE"]
+                
+                // Get the URL to the store on disk. We use the Documents directory, and a filename
+                // of "DataModel.sqlite".
+                let fileManager = NSFileManager.defaultManager()
+                let documentsURL: NSURL? = fileManager.URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).last as? NSURL
+                let storeURL = documentsURL?.URLByAppendingPathComponent("DataModel.sqlite")
+                
+                // Actually create the store.
+                var error: NSErrorPointer = nil
+                let store = storeCoordinator?.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: storeURL, options: options, error: error)
+                
+                // If something went wrong, log it to the console.
+                if let err = error.memory
+                {
+                    println("Error initialising persistent store coordinator: \(err.localizedDescription)")
+                    println("\(err.userInfo)")
+                }
+                
+                // Call the callback which we were provided with, passing in a Bool to show whether
+                // the operation was successful.
+                dispatch_sync(dispatch_get_main_queue()) {
+                    self.callback(error == nil)
+                }
+            }
         }
-        else {
-            println("No data model!")
+        else
+        {
+            println("Could not initialise Core Data; no data model was found")
+            
+            // Call the callback which we were provided with, passing in false to show that an
+            // error occurred.
+            dispatch_sync(dispatch_get_main_queue()) {
+                self.callback(false)
+            }
         }
     }
 }
