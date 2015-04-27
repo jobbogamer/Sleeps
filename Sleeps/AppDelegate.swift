@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     /// Persistence Controller for managing the Core Data stack.
-    var persistenceController: SLPersistenceController?
+    var persistenceController: PersistenceController?
     
     
     
@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool
     {
         // Create a persistence controller, giving it our callback function.
-        self.persistenceController = SLPersistenceController(callback: persistenceControllerDidInitialise)
+        self.persistenceController = PersistenceController(callback: persistenceControllerDidInitialise)
         return true
     }
     
