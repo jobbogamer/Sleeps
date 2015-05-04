@@ -120,21 +120,35 @@ public class PersistenceController {
                 let storeURL = documentsURL?.URLByAppendingPathComponent("DataModel.sqlite")
                 
                 // Actually create the store.
-                var error: NSErrorPointer = nil
-                let store = storeCoordinator?.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: storeURL, options: options, error: error)
-                
-                // If something went wrong, log it to the console.
-                if store == nil
+                var error: NSError? = nil
+                var failed = false
+                if let storeCoordinator = storeCoordinator
                 {
-                    let err = error.memory!
-                    println("Error initialising persistent store coordinator: \(err.localizedDescription)")
-                    println("\(err.userInfo)")
+                    let store = storeCoordinator.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: storeURL, options: options, error: &error)
+                    
+                    // If something went wrong, log it to the console.
+                    if store == nil
+                    {
+                        if let error = error
+                        {
+                            println("Error initialising persistent store coordinator: \(error.localizedDescription)")
+                            println("\(error.userInfo)")
+                        }
+                        else
+                        {
+                            println("Unknown error when initialising persistent store coordinator")
+                        }
+                    }
+                }
+                else
+                {
+                    failed = true
                 }
                 
                 // Call the callback which we were provided with, passing in a Bool to show whether
                 // the operation was successful.
                 dispatch_sync(dispatch_get_main_queue()) {
-                    self.callback(error == nil)
+                    self.callback(!failed && error == nil)
                 }
             }
         }

@@ -18,6 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     /// Persistence Controller for managing the Core Data stack.
     var persistenceController: PersistenceController?
     
+    /// The root view controller.
+    var collectionViewController: CountdownCollectionViewController?
     
     
     // MARK: - Activation
@@ -27,6 +29,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     {
         // Create a persistence controller, giving it our callback function.
         self.persistenceController = PersistenceController(callback: persistenceControllerDidInitialise)
+        
+        // Pass the persistence controller into the root view controller.
+        let navigationController = window?.rootViewController as! UINavigationController
+        collectionViewController = navigationController.viewControllers[0] as? CountdownCollectionViewController
+        collectionViewController?.persistenceController = self.persistenceController
+        
         return true
     }
     
@@ -77,7 +85,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     /// stack.
     func persistenceControllerDidInitialise(success: Bool)
     {
-        println("Core data finished, success = \(success)")
+        // Our Core Data stack has loaded, so tell the root view controller to reload its data.
+        collectionViewController?.reloadData()
     }
 }
 
