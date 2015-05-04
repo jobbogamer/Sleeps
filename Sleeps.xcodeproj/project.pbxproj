@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0301BAF11AF806040037AA72 /* Countdown+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0301BAF01AF806040037AA72 /* Countdown+CoreData.swift */; };
 		032F20F11AD154A200D7BA6C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032F20F01AD154A200D7BA6C /* SettingsViewController.swift */; };
 		0336EFDD1AC9B588001D3138 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0336EFDC1AC9B588001D3138 /* AppDelegate.swift */; };
 		0336EFE01AC9B588001D3138 /* Sleeps.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0336EFDE1AC9B588001D3138 /* Sleeps.xcdatamodeld */; };
@@ -31,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0301BAF01AF806040037AA72 /* Countdown+CoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Countdown+CoreData.swift"; sourceTree = "<group>"; };
 		032F20F01AD154A200D7BA6C /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		0336EFD71AC9B587001D3138 /* Sleeps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sleeps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0336EFDB1AC9B588001D3138 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				03D3EA3A1AEEA7C9007E9FB3 /* Countdown.swift */,
+				0301BAF01AF806040037AA72 /* Countdown+CoreData.swift */,
 				033FDD0A1AE19B990002E16E /* PersistenceController.swift */,
 				0336EFDE1AC9B588001D3138 /* Sleeps.xcdatamodeld */,
 			);
@@ -253,6 +256,7 @@
 			files = (
 				033FDD0B1AE19B990002E16E /* PersistenceController.swift in Sources */,
 				0336F0051AC9FFA0001D3138 /* CountdownCollectionViewController.swift in Sources */,
+				0301BAF11AF806040037AA72 /* Countdown+CoreData.swift in Sources */,
 				0336EFE21AC9B588001D3138 /* EditViewController.swift in Sources */,
 				0336EFDD1AC9B588001D3138 /* AppDelegate.swift in Sources */,
 				0336EFE01AC9B588001D3138 /* Sleeps.xcdatamodeld in Sources */,
