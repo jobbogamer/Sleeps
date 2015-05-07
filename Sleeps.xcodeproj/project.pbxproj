@@ -19,6 +19,7 @@
 		0336F0051AC9FFA0001D3138 /* CountdownCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0336F0041AC9FFA0001D3138 /* CountdownCollectionViewController.swift */; };
 		033FDD0B1AE19B990002E16E /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033FDD0A1AE19B990002E16E /* PersistenceController.swift */; };
 		03D3EA3B1AEEA7C9007E9FB3 /* Countdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D3EA3A1AEEA7C9007E9FB3 /* Countdown.swift */; };
+		03D64BB41AFC0755001A771C /* Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D64BB31AFC0755001A771C /* Icons.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		0336F0041AC9FFA0001D3138 /* CountdownCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountdownCollectionViewController.swift; sourceTree = "<group>"; };
 		033FDD0A1AE19B990002E16E /* PersistenceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		03D3EA3A1AEEA7C9007E9FB3 /* Countdown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Countdown.swift; sourceTree = "<group>"; };
+		03D64BB31AFC0755001A771C /* Icons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Icons.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +138,7 @@
 		0336F0021AC9D965001D3138 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				03D64BB31AFC0755001A771C /* Icons.swift */,
 				0336EFE31AC9B588001D3138 /* Main.storyboard */,
 				0336EFE81AC9B588001D3138 /* LaunchScreen.xib */,
 				0336EFE61AC9B588001D3138 /* Images.xcassets */,
@@ -259,6 +262,7 @@
 				0301BAF11AF806040037AA72 /* Countdown+CoreData.swift in Sources */,
 				0336EFE21AC9B588001D3138 /* EditViewController.swift in Sources */,
 				0336EFDD1AC9B588001D3138 /* AppDelegate.swift in Sources */,
+				03D64BB41AFC0755001A771C /* Icons.swift in Sources */,
 				0336EFE01AC9B588001D3138 /* Sleeps.xcdatamodeld in Sources */,
 				032F20F11AD154A200D7BA6C /* SettingsViewController.swift in Sources */,
 				03D3EA3B1AEEA7C9007E9FB3 /* Countdown.swift in Sources */,
