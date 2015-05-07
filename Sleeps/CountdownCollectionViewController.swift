@@ -62,12 +62,25 @@ class CountdownCollectionViewController: UICollectionViewController, UICollectio
     }
     
     
+    /// Get the number of days between the given date and now.
+    func daysFromNow(date: NSDate) -> Int
+    {
+        let calendar = NSCalendar.currentCalendar()
+        let dateComponents = calendar.components(NSCalendarUnit.CalendarUnitDay, fromDate: NSDate(), toDate: date, options: nil)
+        return dateComponents.day
+    }
+    
+    
     
     // MARK: - UIViewController
     
     override func viewDidLoad()
     {
-        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        // Whenever the view is about to appear on screen, reload the countdowns into the view.
+        reloadData()
     }
     
     
@@ -76,8 +89,9 @@ class CountdownCollectionViewController: UICollectionViewController, UICollectio
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
-        // TODO: Return the number of items fetched from the database.
-        return 0
+        // Return the number of items fetched from the database, plus one for use as the "Add New"
+        // button at the end of the list.
+        return countdowns.count + 1
     }
     
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
@@ -87,8 +101,49 @@ class CountdownCollectionViewController: UICollectionViewController, UICollectio
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell
     {
-        // TODO: Dequeue a cell, fill it with goodness.
-        return UICollectionViewCell()
+        let cell: UICollectionViewCell
+        
+        if indexPath.row == countdowns.count
+        {
+            // We're being asked to provide the "Add New" button item.
+            cell = collectionView.dequeueReusableCellWithReuseIdentifier("NewButtonCell", forIndexPath: indexPath) as! UICollectionViewCell
+            
+            cell.backgroundColor = UIColor.yellowColor()
+
+            let imageView = cell.viewWithTag(1)
+            imageView?.backgroundColor = UIColor.blueColor()
+            imageView?.layer.cornerRadius = 0.5
+            imageView?.layer.masksToBounds = true
+        }
+        else
+        {
+            // We're being asked to provide a regular cell.
+            cell = collectionView.dequeueReusableCellWithReuseIdentifier("CountdownCell", forIndexPath: indexPath) as! UICollectionViewCell
+            
+            let countdown = countdowns[indexPath.row]
+            
+            let imageView = cell.viewWithTag(1)
+            // TODO: Display the correct image in the image view.
+            
+            // Put the countdown's name in the view.
+            let nameLabel = cell.viewWithTag(2) as! UILabel
+            nameLabel.text = countdown.name
+            
+            // Put the number of days in the view.
+            let daysLabel = cell.viewWithTag(3) as! UILabel
+            let days = daysFromNow(countdown.date)
+            daysLabel.text = "\(days)"
+        }
+        
+        let screenSize = UIScreen.mainScreen().bounds
+        cell.frame = CGRectMake(0, 0, screenSize.width / 2, screenSize.width / 2)
+        
+        let imageView = cell.viewWithTag(1)!
+        imageView.backgroundColor = Countdown.colourFromIndex(-1)
+        imageView.layer.cornerRadius = imageView.bounds.width / 2
+        imageView.layer.masksToBounds = true
+        
+        return cell
     }
     
     
