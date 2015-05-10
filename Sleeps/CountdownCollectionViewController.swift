@@ -48,11 +48,25 @@ class CountdownCollectionViewController: UICollectionViewController, UICollectio
     
     override func viewDidLoad()
     {
+        // Hide the navigation bar, because there's no need to waste space just for a title.
+        navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
     override func viewWillAppear(animated: Bool) {
         // Whenever the view is about to appear on screen, reload the countdowns into the view.
-        reloadData()
+        reloadData()        
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // Choose what to do based on the segue being performed.
+        if segue.identifier! == "NewCountdown"
+        {
+            // The New button was tapped.
+        }
+        else
+        {
+            // A countdown cell was tapped.
+        }
     }
     
     
