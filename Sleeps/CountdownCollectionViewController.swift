@@ -30,6 +30,8 @@ class CountdownCollectionViewController: UICollectionViewController, UICollectio
     /// array. This function only does anything if the persistence controller exists.
     func reloadData()
     {
+        // TODO: Should this be moved somewhere else?
+        
         if let context = persistenceController?.managedObjectContext
         {
             // Create a fetch request asking for all the countdowns.
@@ -59,15 +61,6 @@ class CountdownCollectionViewController: UICollectionViewController, UICollectio
             }
 
         }
-    }
-    
-    
-    /// Get the number of days between the given date and now.
-    func daysFromNow(date: NSDate) -> Int
-    {
-        let calendar = NSCalendar.currentCalendar()
-        let dateComponents = calendar.components(NSCalendarUnit.CalendarUnitDay, fromDate: NSDate(), toDate: date, options: nil)
-        return dateComponents.day
     }
     
     
@@ -102,18 +95,17 @@ class CountdownCollectionViewController: UICollectionViewController, UICollectio
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell
     {
         let cell: UICollectionViewCell
+        let backgroundColour: UIColor
+        
+        // TODO: Create an icon object to put into the circle.
         
         if indexPath.row == countdowns.count
         {
             // We're being asked to provide the "Add New" button item.
             cell = collectionView.dequeueReusableCellWithReuseIdentifier("NewButtonCell", forIndexPath: indexPath) as! UICollectionViewCell
-            
-            cell.backgroundColor = UIColor.yellowColor()
 
-            let imageView = cell.viewWithTag(1)
-            imageView?.backgroundColor = UIColor.blueColor()
-            imageView?.layer.cornerRadius = 0.5
-            imageView?.layer.masksToBounds = true
+            // TODO: Change this to a sensible colour, not a random one.
+            backgroundColour = Countdown.colourFromIndex(-1)
         }
         else
         {
@@ -122,8 +114,10 @@ class CountdownCollectionViewController: UICollectionViewController, UICollectio
             
             let countdown = countdowns[indexPath.row]
             
-            let imageView = cell.viewWithTag(1)
-            // TODO: Display the correct image in the image view.
+            // TODO: Get the correct image for the circle.
+            
+            // Convert the countdown's colour property to an actual colour.
+            backgroundColour = countdown.getColour()
             
             // Put the countdown's name in the view.
             let nameLabel = cell.viewWithTag(2) as! UILabel
@@ -131,15 +125,23 @@ class CountdownCollectionViewController: UICollectionViewController, UICollectio
             
             // Put the number of days in the view.
             let daysLabel = cell.viewWithTag(3) as! UILabel
-            let days = daysFromNow(countdown.date)
+            let days = countdown.daysFromNow()
             daysLabel.text = "\(days)"
         }
         
+        // Set the cell size to be a square with each side as half the width of the screen, so that
+        // the collection view becomes a 2-by-N grid.
         let screenSize = UIScreen.mainScreen().bounds
         cell.frame = CGRectMake(0, 0, screenSize.width / 2, screenSize.width / 2)
         
+        // Set up the circular icon view with the correct background colour and the correct icon,
+        // as retrieved earlier.
         let imageView = cell.viewWithTag(1)!
-        imageView.backgroundColor = Countdown.colourFromIndex(-1)
+        imageView.backgroundColor = backgroundColour
+        
+        // Make the circular view actually be circular, by setting its corner radius to half its
+        // width. The `cornerRadius` property is specified in points rather than a percentage, hence
+        // this calculation.
         imageView.layer.cornerRadius = imageView.bounds.width / 2
         imageView.layer.masksToBounds = true
         
