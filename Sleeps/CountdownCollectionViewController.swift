@@ -30,36 +30,15 @@ class CountdownCollectionViewController: UICollectionViewController, UICollectio
     /// array. This function only does anything if the persistence controller exists.
     func reloadData()
     {
-        // TODO: Should this be moved somewhere else?
-        
-        if let context = persistenceController?.managedObjectContext
+        // Use FetchRequestController to get all the countdowns from the database. If no error
+        // occurs, set `self.countdowns` to the returned results, which will trigger the collection
+        // view to refresh itself.
+        if let persistenceController = persistenceController
         {
-            // Create a fetch request asking for all the countdowns.
-            let fetchRequest = NSFetchRequest(entityName: Countdown.entityName())
-            
-            // Execute the fetch request.
-            var error: NSError? = nil
-            if let results = context.executeFetchRequest(fetchRequest, error: &error) as? [Countdown]
+            if let fetchedCountdowns = FetchRequestController.getAllObjectsOfType(Countdown.self, fromPersistenceController: persistenceController)
             {
-                // The request was successful, copy the results into our array.
-                countdowns = results
-                
-                println("Found \(countdowns.count) countdowns")
+                self.countdowns = fetchedCountdowns
             }
-            else
-            {
-                // Something went wrong.
-                if let error = error
-                {
-                    println("Error fetching countdowns: - \(error.localizedDescription)")
-                    println("\(error.userInfo)")
-                }
-                else
-                {
-                    println("Unknown error when fetching countdowns")
-                }
-            }
-
         }
     }
     

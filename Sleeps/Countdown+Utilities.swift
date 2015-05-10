@@ -9,14 +9,13 @@
 import UIKit
 import CoreData
 
-extension Countdown {
+extension Countdown: Entity {
     
     // MARK: - Class functions
     
-    /// Get the entity name as used in the Core Data model.
-    class func entityName() -> String
-    {
-        return "Countdown"
+    /// Get the entity name as used in the Core Data model. Required for the `Entity` protocol.
+    static var entityName: String {
+        get { return "Countdown" }
     }
     
     
@@ -24,7 +23,7 @@ extension Countdown {
     /// Create a new `Countdown` object in the given `NSManagedObjectContext`.
     class func createObjectInContext(context: NSManagedObjectContext) -> AnyObject
     {
-        return NSEntityDescription.insertNewObjectForEntityForName(self.entityName(), inManagedObjectContext: context)
+        return NSEntityDescription.insertNewObjectForEntityForName(self.entityName, inManagedObjectContext: context)
     }
     
     
