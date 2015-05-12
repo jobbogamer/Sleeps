@@ -61,6 +61,7 @@ class CountdownCollectionViewController: UICollectionViewController, UICollectio
         flowLayout.scrollDirection = .Vertical
         flowLayout.itemSize = itemSize
         flowLayout.minimumInteritemSpacing = 0
+        flowLayout.minimumLineSpacing = 20
         flowLayout.sectionInset = UIEdgeInsetsMake(20, 0, 0, 0)
         
         collectionView?.setCollectionViewLayout(flowLayout, animated: true)

@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vg6-We-l5h">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -33,18 +34,20 @@
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apple Watch" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dpl-Pt-cao">
-                                            <rect key="frame" x="32" y="75" width="98" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Talk Like A Pirate Day" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75000000000000022" translatesAutoresizingMaskIntoConstraints="NO" id="dpl-Pt-cao">
+                                            <rect key="frame" x="8" y="75" width="144" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="144" id="SgI-3X-feo"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OjX-Uh-5L3">
-                                            <rect key="frame" x="56" y="8" width="50" height="50"/>
+                                            <rect key="frame" x="51" y="8" width="59" height="59"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="50" id="8vj-B2-qWP"/>
-                                                <constraint firstAttribute="height" constant="50" id="eqG-1P-Xox"/>
+                                                <constraint firstAttribute="width" secondItem="OjX-Uh-5L3" secondAttribute="height" multiplier="1:1" id="owV-rf-KuB"/>
                                             </constraints>
                                         </view>
                                     </subviews>
@@ -53,6 +56,7 @@
                                 <constraints>
                                     <constraint firstItem="QiD-HA-neb" firstAttribute="leading" secondItem="8ax-KS-KLj" secondAttribute="leadingMargin" id="2wv-74-c7T"/>
                                     <constraint firstItem="QiD-HA-neb" firstAttribute="bottom" secondItem="8ax-KS-KLj" secondAttribute="bottomMargin" id="4fK-ba-Z3R"/>
+                                    <constraint firstItem="dpl-Pt-cao" firstAttribute="top" secondItem="OjX-Uh-5L3" secondAttribute="bottom" constant="8" symbolic="YES" id="9Mn-ED-5HH"/>
                                     <constraint firstAttribute="centerX" secondItem="dpl-Pt-cao" secondAttribute="centerX" constant="-0.5" id="CDZ-Jx-RnJ"/>
                                     <constraint firstItem="QiD-HA-neb" firstAttribute="trailing" secondItem="8ax-KS-KLj" secondAttribute="trailingMargin" id="L64-gA-KUQ"/>
                                     <constraint firstAttribute="centerX" secondItem="OjX-Uh-5L3" secondAttribute="centerX" constant="-0.5" id="gKv-im-RnN"/>
