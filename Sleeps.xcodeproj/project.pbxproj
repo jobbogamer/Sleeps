@@ -53,6 +53,7 @@
 		033FDD0A1AE19B990002E16E /* PersistenceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		03AC73A51B028C0B00C03377 /* NSDate+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Utilities.swift"; sourceTree = "<group>"; };
 		03AC73AD1B02999800C03377 /* Countdown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Countdown.swift; sourceTree = "<group>"; };
+		03AC73B01B02A48200C03377 /* update_build_number.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = update_build_number.sh; sourceTree = "<group>"; };
 		03D64BB31AFC0755001A771C /* Icons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Icons.swift; sourceTree = "<group>"; };
 		03F0C5D91AFFA51100DC5298 /* FetchRequestController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchRequestController.swift; sourceTree = "<group>"; };
 		03F0C5DB1AFFA6AD00DC5298 /* Entity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
@@ -82,6 +83,7 @@
 				0336EFD91AC9B587001D3138 /* Sleeps */,
 				0336EFF21AC9B588001D3138 /* SleepsTests */,
 				0336EFD81AC9B587001D3138 /* Products */,
+				03AC73AF1B02A46900C03377 /* Scripts */,
 			);
 			sourceTree = "<group>";
 		};
@@ -166,6 +168,14 @@
 			name = Controller;
 			sourceTree = "<group>";
 		};
+		03AC73AF1B02A46900C03377 /* Scripts */ = {
+			isa = PBXGroup;
+			children = (
+				03AC73B01B02A48200C03377 /* update_build_number.sh */,
+			);
+			name = Scripts;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -176,6 +186,7 @@
 				0336EFD31AC9B587001D3138 /* Sources */,
 				0336EFD41AC9B587001D3138 /* Frameworks */,
 				0336EFD51AC9B587001D3138 /* Resources */,
+				03AC73B11B02A4AB00C03377 /* Increment Build Number */,
 			);
 			buildRules = (
 			);
@@ -260,6 +271,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		03AC73B11B02A4AB00C03377 /* Increment Build Number */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Increment Build Number";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = /Users/Josh/Developer/Sleeps/update_build_number.sh;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0336EFD31AC9B587001D3138 /* Sources */ = {
