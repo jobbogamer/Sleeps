@@ -20,6 +20,7 @@
 		033FDD0B1AE19B990002E16E /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033FDD0A1AE19B990002E16E /* PersistenceController.swift */; };
 		03AC73A61B028C0B00C03377 /* NSDate+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AC73A51B028C0B00C03377 /* NSDate+Utilities.swift */; };
 		03AC73AE1B02999800C03377 /* Countdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AC73AD1B02999800C03377 /* Countdown.swift */; };
+		03AC73B31B02A73600C03377 /* update_build_number.sh in Resources */ = {isa = PBXBuildFile; fileRef = 03AC73B21B02A73600C03377 /* update_build_number.sh */; };
 		03D64BB41AFC0755001A771C /* Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D64BB31AFC0755001A771C /* Icons.swift */; };
 		03F0C5DA1AFFA51100DC5298 /* FetchRequestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F0C5D91AFFA51100DC5298 /* FetchRequestController.swift */; };
 		03F0C5DC1AFFA6AD00DC5298 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F0C5DB1AFFA6AD00DC5298 /* Entity.swift */; };
@@ -53,7 +54,7 @@
 		033FDD0A1AE19B990002E16E /* PersistenceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		03AC73A51B028C0B00C03377 /* NSDate+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Utilities.swift"; sourceTree = "<group>"; };
 		03AC73AD1B02999800C03377 /* Countdown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Countdown.swift; sourceTree = "<group>"; };
-		03AC73B01B02A48200C03377 /* update_build_number.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = update_build_number.sh; sourceTree = "<group>"; };
+		03AC73B21B02A73600C03377 /* update_build_number.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = update_build_number.sh; path = Scripts/update_build_number.sh; sourceTree = "<group>"; };
 		03D64BB31AFC0755001A771C /* Icons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Icons.swift; sourceTree = "<group>"; };
 		03F0C5D91AFFA51100DC5298 /* FetchRequestController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchRequestController.swift; sourceTree = "<group>"; };
 		03F0C5DB1AFFA6AD00DC5298 /* Entity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
@@ -171,7 +172,7 @@
 		03AC73AF1B02A46900C03377 /* Scripts */ = {
 			isa = PBXGroup;
 			children = (
-				03AC73B01B02A48200C03377 /* update_build_number.sh */,
+				03AC73B21B02A73600C03377 /* update_build_number.sh */,
 			);
 			name = Scripts;
 			sourceTree = "<group>";
@@ -258,6 +259,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0336EFE51AC9B588001D3138 /* Main.storyboard in Resources */,
+				03AC73B31B02A73600C03377 /* update_build_number.sh in Resources */,
 				0336EFEA1AC9B588001D3138 /* LaunchScreen.xib in Resources */,
 				0336EFE71AC9B588001D3138 /* Images.xcassets in Resources */,
 			);
@@ -285,7 +287,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = /Users/Josh/Developer/Sleeps/update_build_number.sh;
+			shellScript = "${SOURCE_ROOT}/Scripts/update_build_number.sh";
 		};
 /* End PBXShellScriptBuildPhase section */
 
