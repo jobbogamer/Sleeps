@@ -50,6 +50,20 @@ class CountdownCollectionViewController: UICollectionViewController, UICollectio
     {
         // Hide the navigation bar, because there's no need to waste space just for a title.
         navigationController?.setNavigationBarHidden(true, animated: true)
+        
+        // The size of one countdown cell should be a square with side length equal to half the
+        // width of the screen.
+        let screenSize = UIScreen.mainScreen().bounds
+        let itemSize = CGSizeMake(screenSize.width / 2, screenSize.width / 2)
+        
+        // Create a UICollectionViewFlowLayout to use as the collection view layout.
+        let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.scrollDirection = .Vertical
+        flowLayout.itemSize = itemSize
+        flowLayout.minimumInteritemSpacing = 0
+        flowLayout.sectionInset = UIEdgeInsetsMake(20, 0, 0, 0)
+        
+        collectionView?.setCollectionViewLayout(flowLayout, animated: true)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -121,11 +135,6 @@ class CountdownCollectionViewController: UICollectionViewController, UICollectio
             let days = countdown.daysFromNow()
             daysLabel.text = "\(days)"
         }
-        
-        // Set the cell size to be a square with each side as half the width of the screen, so that
-        // the collection view becomes a 2-by-N grid.
-        let screenSize = UIScreen.mainScreen().bounds
-        cell.frame = CGRectMake(0, 0, screenSize.width / 2, screenSize.width / 2)
         
         // Set up the circular icon view with the correct background colour and the correct icon,
         // as retrieved earlier.

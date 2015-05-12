@@ -85,7 +85,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     /// stack.
     func persistenceControllerDidInitialise(success: Bool)
     {
-        // Our Core Data stack has loaded, so tell the root view controller to reload its data.
+        if !success
+        {
+            println("Persistence controller failed to initialise. What now...?")
+            return
+        }
+        
+        // If this is the first launch of the app, add the default countdowns.
+        let defaults = NSUserDefaults.standardUserDefaults()
+        let key = "previouslyLaunched"
+        if !defaults.boolForKey(key)
+        {
+            Countdown.createDefaultCountdownsUsingPersistenceController(self.persistenceController!)
+            defaults.setBool(true, forKey: key)
+        }
+        
+        // Tell the root view controller to reload its data.
         collectionViewController?.reloadData()
     }
 }
