@@ -36,9 +36,6 @@
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Talk Like A Pirate Day" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75000000000000022" translatesAutoresizingMaskIntoConstraints="NO" id="dpl-Pt-cao">
                                             <rect key="frame" x="8" y="75" width="144" height="21"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="144" id="SgI-3X-feo"/>
-                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
@@ -54,14 +51,14 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
+                                    <constraint firstItem="dpl-Pt-cao" firstAttribute="leading" secondItem="8ax-KS-KLj" secondAttribute="leadingMargin" id="1rQ-xf-xmW"/>
                                     <constraint firstItem="QiD-HA-neb" firstAttribute="leading" secondItem="8ax-KS-KLj" secondAttribute="leadingMargin" id="2wv-74-c7T"/>
                                     <constraint firstItem="QiD-HA-neb" firstAttribute="bottom" secondItem="8ax-KS-KLj" secondAttribute="bottomMargin" id="4fK-ba-Z3R"/>
                                     <constraint firstItem="dpl-Pt-cao" firstAttribute="top" secondItem="OjX-Uh-5L3" secondAttribute="bottom" constant="8" symbolic="YES" id="9Mn-ED-5HH"/>
-                                    <constraint firstAttribute="centerX" secondItem="dpl-Pt-cao" secondAttribute="centerX" constant="-0.5" id="CDZ-Jx-RnJ"/>
                                     <constraint firstItem="QiD-HA-neb" firstAttribute="trailing" secondItem="8ax-KS-KLj" secondAttribute="trailingMargin" id="L64-gA-KUQ"/>
                                     <constraint firstAttribute="centerX" secondItem="OjX-Uh-5L3" secondAttribute="centerX" constant="-0.5" id="gKv-im-RnN"/>
                                     <constraint firstItem="QiD-HA-neb" firstAttribute="top" secondItem="dpl-Pt-cao" secondAttribute="bottom" constant="8" symbolic="YES" id="nXg-AS-UrA"/>
-                                    <constraint firstAttribute="centerX" secondItem="QiD-HA-neb" secondAttribute="centerX" constant="-0.5" id="sJm-1I-apF"/>
+                                    <constraint firstItem="dpl-Pt-cao" firstAttribute="trailing" secondItem="8ax-KS-KLj" secondAttribute="trailingMargin" id="qWn-gc-JN8"/>
                                     <constraint firstItem="OjX-Uh-5L3" firstAttribute="top" secondItem="8ax-KS-KLj" secondAttribute="topMargin" id="xlX-Pb-c7N"/>
                                 </constraints>
                                 <size key="customSize" width="160" height="160"/>
@@ -147,6 +144,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="pj7-rC-aaR"/>
+        <segue reference="rTm-L0-MsC"/>
     </inferredMetricsTieBreakers>
 </document>
