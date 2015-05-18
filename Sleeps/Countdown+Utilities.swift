@@ -148,6 +148,12 @@ extension Countdown: Entity {
     }
     
     
+    class func isBefore(lhs: Countdown, rhs: Countdown) -> Bool
+    {
+        return lhs.date.compare(rhs.date) == .OrderedAscending
+    }
+    
+    
     // MARK: - Instance methods
     
     
