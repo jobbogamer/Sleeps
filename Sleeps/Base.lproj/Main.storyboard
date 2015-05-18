@@ -17,7 +17,7 @@
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="eNC-4W-7c7">
                             <size key="itemSize" width="253" height="258"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="50" height="50"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
@@ -68,12 +68,58 @@
                                 </connections>
                             </collectionViewCell>
                         </cells>
+                        <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ButtonsFooter" id="arv-rP-EAa">
+                            <rect key="frame" x="0.0" y="160" width="600" height="50"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zZU-DJ-3Du" customClass="RoundedCornerButton" customModule="Sleeps" customModuleProvider="target">
+                                    <rect key="frame" x="8" y="8" width="288" height="34"/>
+                                    <color key="backgroundColor" red="0.36154100298881531" green="0.36158677935600281" blue="0.36151999235153198" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <state key="normal" title="New Countdown">
+                                        <color key="titleColor" red="0.1333333333" green="0.86666666670000003" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="10"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9gi-ci-ssZ" customClass="RoundedCornerButton" customModule="Sleeps" customModuleProvider="target">
+                                    <rect key="frame" x="304" y="8" width="288" height="34"/>
+                                    <color key="backgroundColor" red="0.36154100298881531" green="0.36158677935600281" blue="0.36151999235153198" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <state key="normal" title="Settings">
+                                        <color key="titleColor" red="0.1333333333" green="0.86666666670000003" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="10"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="9gi-ci-ssZ" firstAttribute="leading" secondItem="zZU-DJ-3Du" secondAttribute="trailing" constant="8" id="0Hz-gD-h2s"/>
+                                <constraint firstItem="zZU-DJ-3Du" firstAttribute="bottom" secondItem="arv-rP-EAa" secondAttribute="bottomMargin" id="8MC-91-s0a"/>
+                                <constraint firstItem="9gi-ci-ssZ" firstAttribute="trailing" secondItem="arv-rP-EAa" secondAttribute="trailingMargin" id="Sxk-50-j4M"/>
+                                <constraint firstItem="9gi-ci-ssZ" firstAttribute="width" secondItem="zZU-DJ-3Du" secondAttribute="width" id="bZm-cJ-33u"/>
+                                <constraint firstItem="9gi-ci-ssZ" firstAttribute="bottom" secondItem="arv-rP-EAa" secondAttribute="bottomMargin" id="dQN-BA-i5n"/>
+                                <constraint firstItem="9gi-ci-ssZ" firstAttribute="top" secondItem="arv-rP-EAa" secondAttribute="topMargin" id="iM4-uq-jQo"/>
+                                <constraint firstItem="zZU-DJ-3Du" firstAttribute="leading" secondItem="arv-rP-EAa" secondAttribute="leadingMargin" id="oJf-qv-9uw"/>
+                                <constraint firstItem="zZU-DJ-3Du" firstAttribute="top" secondItem="arv-rP-EAa" secondAttribute="topMargin" id="vCf-iO-Sc1"/>
+                            </constraints>
+                        </collectionReusableView>
                         <connections>
                             <outlet property="dataSource" destination="RQw-kI-jmH" id="cPD-k4-pdn"/>
                             <outlet property="delegate" destination="RQw-kI-jmH" id="PoT-df-xQy"/>
                         </connections>
                     </collectionView>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <toolbarItems>
+                        <barButtonItem title="Item" id="Yba-mh-x4a"/>
+                        <barButtonItem title="Item" id="IEh-9h-rca"/>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" title="Sleeps" id="qQf-vY-w1F"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Zr-5l-WGk" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -113,6 +159,11 @@
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="zYp-qg-xQw">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.1333333333" green="0.86666666670000003" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.25095915794372559" green="0.25099277496337891" blue="0.25094369053840637" alpha="0.1969444444" colorSpace="custom" customColorSpace="sRGB"/>
+                    </toolbar>
                     <connections>
                         <segue destination="RQw-kI-jmH" kind="relationship" relationship="rootViewController" id="3WW-up-8Fb"/>
                     </connections>

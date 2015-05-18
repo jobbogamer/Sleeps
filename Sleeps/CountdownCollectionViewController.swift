@@ -63,8 +63,8 @@ class CountdownCollectionViewController: UICollectionViewController, UICollectio
         flowLayout.itemSize = itemSize
         flowLayout.minimumInteritemSpacing = 0
         flowLayout.minimumLineSpacing = 10
-        flowLayout.sectionInset = UIEdgeInsetsMake(20, 0, 0, 0)
-        
+        flowLayout.sectionInset = UIEdgeInsetsMake(10, 0, 10, 0)
+        flowLayout.footerReferenceSize = CGSizeMake(0, screenSize.width / 6)
         collectionView?.setCollectionViewLayout(flowLayout, animated: true)
     }
     
@@ -104,6 +104,23 @@ class CountdownCollectionViewController: UICollectionViewController, UICollectio
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         // Always return 1, because there are no logical groups or sections in the data.
         return 1
+    }
+    
+    override func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView
+    {
+        let view: UICollectionReusableView
+        
+        if kind == UICollectionElementKindSectionFooter
+        {
+            view = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: "ButtonsFooter", forIndexPath: indexPath) as! UICollectionReusableView
+        }
+        else
+        {
+            // We should never be asked for a header, but we have to provide a return value.
+            view = UICollectionReusableView()
+        }
+        
+        return view
     }
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell
