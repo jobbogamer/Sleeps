@@ -73,7 +73,9 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
+                                    <constraint firstAttribute="centerY" secondItem="olF-iX-wQW" secondAttribute="centerY" id="FGO-O0-zRt"/>
                                     <constraint firstItem="olF-iX-wQW" firstAttribute="top" secondItem="8ax-KS-KLj" secondAttribute="top" id="KN0-FM-59q"/>
+                                    <constraint firstAttribute="centerX" secondItem="olF-iX-wQW" secondAttribute="centerX" id="bN8-Wj-f2M"/>
                                     <constraint firstItem="olF-iX-wQW" firstAttribute="bottom" secondItem="8ax-KS-KLj" secondAttribute="bottom" id="iZm-Ew-BQR"/>
                                     <constraint firstItem="olF-iX-wQW" firstAttribute="leading" secondItem="8ax-KS-KLj" secondAttribute="leading" id="l64-u0-Gl2"/>
                                     <constraint firstItem="olF-iX-wQW" firstAttribute="trailing" secondItem="8ax-KS-KLj" secondAttribute="trailing" id="lhu-MV-Qrr"/>

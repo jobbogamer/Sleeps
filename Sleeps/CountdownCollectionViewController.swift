@@ -162,6 +162,17 @@ class CountdownCollectionViewController: UICollectionViewController, UICollectio
         let imageView = cell.viewWithTag(1)!
         imageView.backgroundColor = backgroundColour
         
+        // Disable autoresizing masks for the cell's content view.
+        cell.contentView.setTranslatesAutoresizingMaskIntoConstraints(false)
+        
+        // Add autolayout constraints to the cell's content view which specify that the content view
+        // should be exactly the same size as the cell itself.
+        let options = NSLayoutFormatOptions.allZeros
+        let views: [NSObject: AnyObject] = ["contentView": cell.contentView]
+        let hConstraints = NSLayoutConstraint.constraintsWithVisualFormat("|[contentView]|", options: options, metrics: nil, views: views)
+        let vConstraints = NSLayoutConstraint.constraintsWithVisualFormat("V:|[contentView]|", options: options, metrics: nil, views: views)
+        cell.addConstraints(hConstraints + vConstraints)
+
         return cell
     }
     
