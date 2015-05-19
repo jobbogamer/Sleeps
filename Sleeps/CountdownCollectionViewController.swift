@@ -136,7 +136,7 @@ class CountdownCollectionViewController: UICollectionViewController, UICollectio
         let cell: UICollectionViewCell
         let backgroundColour: UIColor
         
-        // TODO: Create an icon object to put into the circle.
+        // TODO: Declare some kind of image to put the icon into later.
         
         // Get a cell.
         cell = collectionView.dequeueReusableCellWithReuseIdentifier("CountdownCell", forIndexPath: indexPath) as! UICollectionViewCell
@@ -162,11 +162,13 @@ class CountdownCollectionViewController: UICollectionViewController, UICollectio
         let imageView = cell.viewWithTag(1)!
         imageView.backgroundColor = backgroundColour
         
-        // Disable autoresizing masks for the cell's content view.
+        // Disable autoresizing masks for the cell's content view. If we don't do this, we'll get a
+        // warning in the console saying that some constraints had to be broken.
         cell.contentView.setTranslatesAutoresizingMaskIntoConstraints(false)
         
         // Add autolayout constraints to the cell's content view which specify that the content view
-        // should be exactly the same size as the cell itself.
+        // should be exactly the same size as the cell itself. We have to do this, even though it
+        // should be the default behaviour, because we turned off autoresizing mask constraints.
         let options = NSLayoutFormatOptions.allZeros
         let views: [NSObject: AnyObject] = ["contentView": cell.contentView]
         let hConstraints = NSLayoutConstraint.constraintsWithVisualFormat("|[contentView]|", options: options, metrics: nil, views: views)
@@ -174,15 +176,6 @@ class CountdownCollectionViewController: UICollectionViewController, UICollectio
         cell.addConstraints(hConstraints + vConstraints)
 
         return cell
-    }
-    
-    
-    
-    // MARK: - UICollectionViewDelegate
-    
-    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath)
-    {
-        // TODO: Perform a segue to the single-item view or editing view.
     }
     
 }
