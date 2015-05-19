@@ -96,6 +96,13 @@ class CountdownCollectionViewController: UICollectionViewController, UICollectio
         else
         {
             // A countdown cell was tapped.
+            if let sender    = sender as? UICollectionViewCell,
+                   indexPath = collectionView?.indexPathForCell(sender)
+            {
+                let countdown = countdowns[indexPath.row]
+                
+                // TODO: Pass the countdown to the destination view controller.
+            }
         }
     }
     
