@@ -94,7 +94,7 @@
                                     <rect key="frame" x="8" y="8" width="288" height="34"/>
                                     <color key="backgroundColor" red="0.36154100298881531" green="0.36158677935600281" blue="0.36151999235153198" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <state key="normal" title="New Countdown">
-                                        <color key="titleColor" red="0.1333333333" green="0.86666666670000003" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
                                     <userDefinedRuntimeAttributes>
@@ -107,7 +107,7 @@
                                     <rect key="frame" x="304" y="8" width="288" height="34"/>
                                     <color key="backgroundColor" red="0.36154100298881531" green="0.36158677935600281" blue="0.36151999235153198" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <state key="normal" title="Settings">
-                                        <color key="titleColor" red="0.1333333333" green="0.86666666670000003" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
                                     <userDefinedRuntimeAttributes>
