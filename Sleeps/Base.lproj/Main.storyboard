@@ -102,6 +102,9 @@
                                             <real key="value" value="10"/>
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <segue destination="H3A-fh-1qB" kind="show" identifier="NewCountdown" id="gov-E8-p9x"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9gi-ci-ssZ" customClass="RoundedCornerButton" customModule="Sleeps" customModuleProvider="target">
                                     <rect key="frame" x="304" y="8" width="288" height="34"/>
@@ -191,4 +194,7 @@
             <point key="canvasLocation" x="-269" y="419"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="gov-E8-p9x"/>
+    </inferredMetricsTieBreakers>
 </document>
