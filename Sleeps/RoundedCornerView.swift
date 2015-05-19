@@ -2,14 +2,14 @@
 //  RoundedCornerView.swift
 //  Sleeps
 //
-//  Created by Josh Asch on 18/05/2015.
+//  Created by Josh Asch on 19/05/2015.
 //  Copyright (c) 2015 Bearhat. All rights reserved.
 //
 
 import UIKit
 
-class RoundedCornerButton: UIButton {
-
+class RoundedCornerView: UIView {
+    
     /// The radius of the corners in points.
     @IBInspectable var cornerRadius: CGFloat = 0 {
         didSet {
@@ -19,3 +19,4 @@ class RoundedCornerButton: UIButton {
     }
     
 }
+

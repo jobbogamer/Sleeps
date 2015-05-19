@@ -28,39 +28,55 @@
                                     <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="175" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QiD-HA-neb">
-                                            <rect key="frame" x="8" y="104" width="144" height="48"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Talk Like A Pirate Day" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75000000000000022" translatesAutoresizingMaskIntoConstraints="NO" id="dpl-Pt-cao">
-                                            <rect key="frame" x="8" y="80" width="144" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OjX-Uh-5L3" customClass="CircularView" customModule="Sleeps" customModuleProvider="target">
-                                            <rect key="frame" x="49" y="8" width="64" height="64"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="olF-iX-wQW" customClass="RoundedCornerView" customModule="Sleeps" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
+                                            <subviews>
+                                                <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OjX-Uh-5L3" customClass="CircularView" customModule="Sleeps" customModuleProvider="target">
+                                                    <rect key="frame" x="48" y="8" width="64" height="64"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="OjX-Uh-5L3" secondAttribute="height" multiplier="1:1" id="5YZ-nl-MIe"/>
+                                                    </constraints>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Talk Like A Pirate Day" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75000000000000022" translatesAutoresizingMaskIntoConstraints="NO" id="dpl-Pt-cao">
+                                                    <rect key="frame" x="8" y="80" width="144" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="175" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QiD-HA-neb">
+                                                    <rect key="frame" x="8" y="104" width="144" height="48"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.36154100298881531" green="0.36158677935600281" blue="0.36151999235153198" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" secondItem="OjX-Uh-5L3" secondAttribute="height" multiplier="1:1" id="5YZ-nl-MIe"/>
+                                                <constraint firstItem="OjX-Uh-5L3" firstAttribute="leading" secondItem="olF-iX-wQW" secondAttribute="leading" constant="48" id="0QD-fc-DdY"/>
+                                                <constraint firstAttribute="trailing" secondItem="QiD-HA-neb" secondAttribute="trailing" constant="8" id="5Ay-hp-OUq"/>
+                                                <constraint firstItem="dpl-Pt-cao" firstAttribute="leading" secondItem="olF-iX-wQW" secondAttribute="leading" constant="8" id="As4-ox-lke"/>
+                                                <constraint firstItem="OjX-Uh-5L3" firstAttribute="top" secondItem="olF-iX-wQW" secondAttribute="top" constant="8" id="KBF-et-XiM"/>
+                                                <constraint firstItem="QiD-HA-neb" firstAttribute="leading" secondItem="olF-iX-wQW" secondAttribute="leading" constant="8" id="PDr-vn-q1I"/>
+                                                <constraint firstAttribute="trailing" secondItem="OjX-Uh-5L3" secondAttribute="trailing" constant="48" id="Qx5-e2-TNt"/>
+                                                <constraint firstItem="dpl-Pt-cao" firstAttribute="top" secondItem="OjX-Uh-5L3" secondAttribute="bottom" constant="8" id="Wtk-va-ngx"/>
+                                                <constraint firstAttribute="bottom" secondItem="QiD-HA-neb" secondAttribute="bottom" constant="8" id="hNz-E4-Wkh"/>
+                                                <constraint firstAttribute="trailing" secondItem="dpl-Pt-cao" secondAttribute="trailing" constant="8" id="qsU-px-Wwe"/>
                                             </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="10"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
                                         </view>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
-                                    <constraint firstItem="dpl-Pt-cao" firstAttribute="leading" secondItem="8ax-KS-KLj" secondAttribute="leadingMargin" id="1rQ-xf-xmW"/>
-                                    <constraint firstItem="QiD-HA-neb" firstAttribute="leading" secondItem="8ax-KS-KLj" secondAttribute="leadingMargin" id="2wv-74-c7T"/>
-                                    <constraint firstItem="QiD-HA-neb" firstAttribute="bottom" secondItem="8ax-KS-KLj" secondAttribute="bottomMargin" id="4fK-ba-Z3R"/>
-                                    <constraint firstItem="dpl-Pt-cao" firstAttribute="top" secondItem="OjX-Uh-5L3" secondAttribute="bottom" constant="8" symbolic="YES" id="9Mn-ED-5HH"/>
-                                    <constraint firstItem="QiD-HA-neb" firstAttribute="trailing" secondItem="8ax-KS-KLj" secondAttribute="trailingMargin" id="L64-gA-KUQ"/>
-                                    <constraint firstAttribute="centerX" secondItem="OjX-Uh-5L3" secondAttribute="centerX" constant="-0.5" id="gKv-im-RnN"/>
-                                    <constraint firstAttribute="centerY" secondItem="dpl-Pt-cao" secondAttribute="centerY" constant="-10.5" id="gav-On-Jby"/>
-                                    <constraint firstItem="QiD-HA-neb" firstAttribute="top" secondItem="dpl-Pt-cao" secondAttribute="bottom" constant="3" id="nXg-AS-UrA"/>
-                                    <constraint firstItem="dpl-Pt-cao" firstAttribute="trailing" secondItem="8ax-KS-KLj" secondAttribute="trailingMargin" id="qWn-gc-JN8"/>
-                                    <constraint firstItem="OjX-Uh-5L3" firstAttribute="top" secondItem="8ax-KS-KLj" secondAttribute="topMargin" id="xlX-Pb-c7N"/>
+                                    <constraint firstItem="olF-iX-wQW" firstAttribute="top" secondItem="8ax-KS-KLj" secondAttribute="top" id="KN0-FM-59q"/>
+                                    <constraint firstItem="olF-iX-wQW" firstAttribute="bottom" secondItem="8ax-KS-KLj" secondAttribute="bottom" id="iZm-Ew-BQR"/>
+                                    <constraint firstItem="olF-iX-wQW" firstAttribute="leading" secondItem="8ax-KS-KLj" secondAttribute="leading" id="l64-u0-Gl2"/>
+                                    <constraint firstItem="olF-iX-wQW" firstAttribute="trailing" secondItem="8ax-KS-KLj" secondAttribute="trailing" id="lhu-MV-Qrr"/>
                                 </constraints>
                                 <size key="customSize" width="160" height="160"/>
                                 <connections>

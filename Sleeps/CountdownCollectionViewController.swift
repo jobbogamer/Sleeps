@@ -52,19 +52,27 @@ class CountdownCollectionViewController: UICollectionViewController, UICollectio
     {
         super.viewDidLoad()
         
+        // The margin between each countdown in the view, and between the countdowns and the edge of
+        // the screen.
+        let itemSpacing: CGFloat = 10
+        
         // The size of one countdown cell should be a square with side length equal to half the
-        // width of the screen.
+        // available width of the screen.
         let screenSize = UIScreen.mainScreen().bounds
-        let itemSize = CGSizeMake(screenSize.width / 2, screenSize.width / 2)
+        let itemLength = (screenSize.width - (itemSpacing * 3)) / 2
         
         // Create a UICollectionViewFlowLayout to use as the collection view layout.
         let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.scrollDirection = .Vertical
-        flowLayout.itemSize = itemSize
-        flowLayout.minimumInteritemSpacing = 0
-        flowLayout.minimumLineSpacing = 10
-        flowLayout.sectionInset = UIEdgeInsetsMake(10, 0, 10, 0)
-        flowLayout.footerReferenceSize = CGSizeMake(0, screenSize.width / 6)
+        
+        // Set the flow layout properties.
+        flowLayout.scrollDirection         = .Vertical
+        flowLayout.itemSize                = CGSizeMake(itemLength, itemLength)
+        flowLayout.minimumInteritemSpacing = itemSpacing
+        flowLayout.minimumLineSpacing      = itemSpacing
+        flowLayout.sectionInset            = UIEdgeInsets.InsetsWithEqualSize(itemSpacing)
+        flowLayout.footerReferenceSize     = CGSizeMake(0, itemLength * 0.4)
+        
+        // Add the flow layout to the collection view.
         collectionView?.setCollectionViewLayout(flowLayout, animated: true)
     }
     

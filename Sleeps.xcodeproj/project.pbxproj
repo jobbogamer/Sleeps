@@ -22,6 +22,8 @@
 		03AC73AE1B02999800C03377 /* Countdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AC73AD1B02999800C03377 /* Countdown.swift */; };
 		03AC73B31B02A73600C03377 /* update_build_number.sh in Resources */ = {isa = PBXBuildFile; fileRef = 03AC73B21B02A73600C03377 /* update_build_number.sh */; };
 		03D64BB41AFC0755001A771C /* Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D64BB31AFC0755001A771C /* Icons.swift */; };
+		03E273631B0BB0680013BFE5 /* RoundedCornerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E273621B0BB0680013BFE5 /* RoundedCornerView.swift */; };
+		03E273651B0BB5520013BFE5 /* UIEdgeInsets+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E273641B0BB5520013BFE5 /* UIEdgeInsets+Helpers.swift */; };
 		03F0C5DA1AFFA51100DC5298 /* FetchRequestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F0C5D91AFFA51100DC5298 /* FetchRequestController.swift */; };
 		03F0C5DC1AFFA6AD00DC5298 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F0C5DB1AFFA6AD00DC5298 /* Entity.swift */; };
 		03F97D2F1B0A9AE500D4ED09 /* CircularView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F97D2E1B0A9AE500D4ED09 /* CircularView.swift */; };
@@ -58,6 +60,8 @@
 		03AC73AD1B02999800C03377 /* Countdown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Countdown.swift; sourceTree = "<group>"; };
 		03AC73B21B02A73600C03377 /* update_build_number.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = update_build_number.sh; path = Scripts/update_build_number.sh; sourceTree = "<group>"; };
 		03D64BB31AFC0755001A771C /* Icons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Icons.swift; sourceTree = "<group>"; };
+		03E273621B0BB0680013BFE5 /* RoundedCornerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedCornerView.swift; sourceTree = "<group>"; };
+		03E273641B0BB5520013BFE5 /* UIEdgeInsets+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIEdgeInsets+Helpers.swift"; sourceTree = "<group>"; };
 		03F0C5D91AFFA51100DC5298 /* FetchRequestController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchRequestController.swift; sourceTree = "<group>"; };
 		03F0C5DB1AFFA6AD00DC5298 /* Entity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
 		03F97D2E1B0A9AE500D4ED09 /* CircularView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularView.swift; sourceTree = "<group>"; };
@@ -156,7 +160,9 @@
 			children = (
 				03F97D2E1B0A9AE500D4ED09 /* CircularView.swift */,
 				03F97D301B0AA65A00D4ED09 /* RoundedCornerButton.swift */,
+				03E273621B0BB0680013BFE5 /* RoundedCornerView.swift */,
 				03D64BB31AFC0755001A771C /* Icons.swift */,
+				03E273641B0BB5520013BFE5 /* UIEdgeInsets+Helpers.swift */,
 				0336EFE31AC9B588001D3138 /* Main.storyboard */,
 				0336EFE81AC9B588001D3138 /* LaunchScreen.xib */,
 				0336EFE61AC9B588001D3138 /* Images.xcassets */,
@@ -307,12 +313,14 @@
 				0301BAF11AF806040037AA72 /* Countdown+Utilities.swift in Sources */,
 				03AC73A61B028C0B00C03377 /* NSDate+Utilities.swift in Sources */,
 				0336EFE21AC9B588001D3138 /* EditViewController.swift in Sources */,
+				03E273631B0BB0680013BFE5 /* RoundedCornerView.swift in Sources */,
 				03F97D2F1B0A9AE500D4ED09 /* CircularView.swift in Sources */,
 				0336EFDD1AC9B588001D3138 /* AppDelegate.swift in Sources */,
 				03D64BB41AFC0755001A771C /* Icons.swift in Sources */,
 				03F0C5DA1AFFA51100DC5298 /* FetchRequestController.swift in Sources */,
 				03F0C5DC1AFFA6AD00DC5298 /* Entity.swift in Sources */,
 				0336EFE01AC9B588001D3138 /* Sleeps.xcdatamodeld in Sources */,
+				03E273651B0BB5520013BFE5 /* UIEdgeInsets+Helpers.swift in Sources */,
 				032F20F11AD154A200D7BA6C /* SettingsViewController.swift in Sources */,
 				03AC73AE1B02999800C03377 /* Countdown.swift in Sources */,
 				03F97D311B0AA65A00D4ED09 /* RoundedCornerButton.swift in Sources */,
