@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0301BAF11AF806040037AA72 /* Countdown+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0301BAF01AF806040037AA72 /* Countdown+Utilities.swift */; };
 		032F20F11AD154A200D7BA6C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032F20F01AD154A200D7BA6C /* SettingsViewController.swift */; };
+		033533BF1B0CF79C00767725 /* CountdownCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033533BE1B0CF79C00767725 /* CountdownCell.swift */; };
 		0336EFDD1AC9B588001D3138 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0336EFDC1AC9B588001D3138 /* AppDelegate.swift */; };
 		0336EFE01AC9B588001D3138 /* Sleeps.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0336EFDE1AC9B588001D3138 /* Sleeps.xcdatamodeld */; };
 		0336EFE21AC9B588001D3138 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0336EFE11AC9B588001D3138 /* EditViewController.swift */; };
@@ -43,6 +44,7 @@
 /* Begin PBXFileReference section */
 		0301BAF01AF806040037AA72 /* Countdown+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Countdown+Utilities.swift"; sourceTree = "<group>"; };
 		032F20F01AD154A200D7BA6C /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		033533BE1B0CF79C00767725 /* CountdownCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountdownCell.swift; sourceTree = "<group>"; };
 		0336EFD71AC9B587001D3138 /* Sleeps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sleeps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0336EFDB1AC9B588001D3138 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0336EFDC1AC9B588001D3138 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 		0336F0021AC9D965001D3138 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				033533BE1B0CF79C00767725 /* CountdownCell.swift */,
 				03F97D2E1B0A9AE500D4ED09 /* CircularView.swift */,
 				03F97D301B0AA65A00D4ED09 /* RoundedCornerButton.swift */,
 				03E273621B0BB0680013BFE5 /* RoundedCornerView.swift */,
@@ -311,6 +314,7 @@
 				033FDD0B1AE19B990002E16E /* PersistenceController.swift in Sources */,
 				0336F0051AC9FFA0001D3138 /* CountdownCollectionViewController.swift in Sources */,
 				0301BAF11AF806040037AA72 /* Countdown+Utilities.swift in Sources */,
+				033533BF1B0CF79C00767725 /* CountdownCell.swift in Sources */,
 				03AC73A61B028C0B00C03377 /* NSDate+Utilities.swift in Sources */,
 				0336EFE21AC9B588001D3138 /* EditViewController.swift in Sources */,
 				03E273631B0BB0680013BFE5 /* RoundedCornerView.swift in Sources */,

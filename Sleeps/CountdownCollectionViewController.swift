@@ -116,10 +116,12 @@ class CountdownCollectionViewController: UICollectionViewController, UICollectio
         return countdowns.count
     }
     
+    
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         // Always return 1, because there are no logical groups or sections in the data.
         return 1
     }
+    
     
     override func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView
     {
@@ -138,49 +140,14 @@ class CountdownCollectionViewController: UICollectionViewController, UICollectio
         return view
     }
     
+    
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell
     {
-        let cell: UICollectionViewCell
-        let backgroundColour: UIColor
-        
-        // TODO: Declare some kind of image to put the icon into later.
-        
         // Get a cell.
-        cell = collectionView.dequeueReusableCellWithReuseIdentifier("CountdownCell", forIndexPath: indexPath) as! UICollectionViewCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("CountdownCell", forIndexPath: indexPath) as! CountdownCell
         
-        let countdown = countdowns[indexPath.row]
-        
-        // TODO: Get the correct image for the circle.
-        
-        // Convert the countdown's colour property to an actual colour.
-        backgroundColour = countdown.getColour()
-        
-        // Put the countdown's name in the view.
-        let nameLabel = cell.viewWithTag(2) as! UILabel
-        nameLabel.text = countdown.name
-        
-        // Put the number of days in the view.
-        let daysLabel = cell.viewWithTag(3) as! UILabel
-        let days = countdown.daysFromNow()
-        daysLabel.text = "\(days)"
-        
-        // Set up the circular icon view with the correct background colour and the correct icon,
-        // as retrieved earlier.
-        let imageView = cell.viewWithTag(1)!
-        imageView.backgroundColor = backgroundColour
-        
-        // Disable autoresizing masks for the cell's content view. If we don't do this, we'll get a
-        // warning in the console saying that some constraints had to be broken.
-        cell.contentView.setTranslatesAutoresizingMaskIntoConstraints(false)
-        
-        // Add autolayout constraints to the cell's content view which specify that the content view
-        // should be exactly the same size as the cell itself. We have to do this, even though it
-        // should be the default behaviour, because we turned off autoresizing mask constraints.
-        let options = NSLayoutFormatOptions.allZeros
-        let views: [NSObject: AnyObject] = ["contentView": cell.contentView]
-        let hConstraints = NSLayoutConstraint.constraintsWithVisualFormat("|[contentView]|", options: options, metrics: nil, views: views)
-        let vConstraints = NSLayoutConstraint.constraintsWithVisualFormat("V:|[contentView]|", options: options, metrics: nil, views: views)
-        cell.addConstraints(hConstraints + vConstraints)
+        // Give the cell the countdown at the correct index.
+        cell.countdown = countdowns[indexPath.row]
 
         return cell
     }
