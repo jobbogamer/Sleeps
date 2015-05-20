@@ -160,14 +160,14 @@
 		0336F0021AC9D965001D3138 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0336EFE31AC9B588001D3138 /* Main.storyboard */,
+				0336EFE81AC9B588001D3138 /* LaunchScreen.xib */,
 				033533BE1B0CF79C00767725 /* CountdownCell.swift */,
 				03F97D2E1B0A9AE500D4ED09 /* CircularView.swift */,
 				03F97D301B0AA65A00D4ED09 /* RoundedCornerButton.swift */,
 				03E273621B0BB0680013BFE5 /* RoundedCornerView.swift */,
 				03D64BB31AFC0755001A771C /* Icons.swift */,
 				03E273641B0BB5520013BFE5 /* UIEdgeInsets+Helpers.swift */,
-				0336EFE31AC9B588001D3138 /* Main.storyboard */,
-				0336EFE81AC9B588001D3138 /* LaunchScreen.xib */,
 				0336EFE61AC9B588001D3138 /* Images.xcassets */,
 			);
 			name = View;

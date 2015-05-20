@@ -82,7 +82,7 @@ class CountdownCollectionViewController: UICollectionViewController, UICollectio
         flowLayout.minimumInteritemSpacing = itemSpacing
         flowLayout.minimumLineSpacing      = itemSpacing
         flowLayout.sectionInset            = UIEdgeInsets.InsetsWithEqualSize(itemSpacing)
-        flowLayout.footerReferenceSize     = CGSizeMake(0, itemLength * 0.4)
+        flowLayout.footerReferenceSize     = CGSizeMake(screenSize.width, itemLength * 0.4)
         
         // Add the flow layout to the collection view.
         collectionView?.setCollectionViewLayout(flowLayout, animated: true)
