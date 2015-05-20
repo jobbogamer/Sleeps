@@ -54,7 +54,7 @@ class CountdownCollectionViewController: UICollectionViewController, UICollectio
         
         // The margin between each countdown in the view, and between the countdowns and the edge of
         // the screen.
-        let itemSpacing: CGFloat = 10
+        let itemSpacing: CGFloat = 8
         
         // The size of one countdown cell should be a square with side length equal to half the
         // available width of the screen.
