@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 
+
 class CountdownCollectionViewController: UICollectionViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
     /// Persistence controller passed in from the AppDelegate at launch.
@@ -59,7 +60,18 @@ class CountdownCollectionViewController: UICollectionViewController, UICollectio
         // The size of one countdown cell should be a square with side length equal to half the
         // available width of the screen.
         let screenSize = UIScreen.mainScreen().bounds
-        let itemLength = (screenSize.width - (itemSpacing * 3)) / 2
+        let availableSpace = screenSize.width - (itemSpacing * 3)
+        let itemLength: CGFloat
+        
+        // If the available space is an odd number, subtract one to avoid half-pixel values.
+        if availableSpace % 2 == 1
+        {
+            itemLength = (availableSpace - 1) / 2
+        }
+        else
+        {
+            itemLength = availableSpace / 2
+        }
         
         // Create a UICollectionViewFlowLayout to use as the collection view layout.
         let flowLayout = UICollectionViewFlowLayout()
