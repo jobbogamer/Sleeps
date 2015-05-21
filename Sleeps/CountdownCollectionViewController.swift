@@ -53,14 +53,10 @@ class CountdownCollectionViewController: UICollectionViewController, UICollectio
     {
         super.viewDidLoad()
         
-        // The margin between each countdown in the view, and between the countdowns and the edge of
-        // the screen.
-        let itemSpacing: CGFloat = 8
-        
         // The size of one countdown cell should be a square with side length equal to half the
         // available width of the screen.
         let screenSize = UIScreen.mainScreen().bounds
-        let availableSpace = screenSize.width - (itemSpacing * 3)
+        let availableSpace = screenSize.width - (kCollectionViewOuterMargin * 2) - kCollectionViewItemSpacing
         let itemLength: CGFloat
         
         // If the available space is an odd number, subtract one to avoid half-pixel values.
@@ -79,10 +75,9 @@ class CountdownCollectionViewController: UICollectionViewController, UICollectio
         // Set the flow layout properties.
         flowLayout.scrollDirection         = .Vertical
         flowLayout.itemSize                = CGSizeMake(itemLength, itemLength)
-        flowLayout.minimumInteritemSpacing = itemSpacing
-        flowLayout.minimumLineSpacing      = itemSpacing
-        flowLayout.sectionInset            = UIEdgeInsets.InsetsWithEqualSize(itemSpacing)
-        flowLayout.footerReferenceSize     = CGSizeMake(screenSize.width, itemLength * 0.4)
+        flowLayout.minimumInteritemSpacing = kCollectionViewItemSpacing
+        flowLayout.minimumLineSpacing      = kCollectionViewItemSpacing
+        flowLayout.sectionInset            = UIEdgeInsets.InsetsWithEqualSize(kCollectionViewOuterMargin)
         
         // Add the flow layout to the collection view.
         collectionView?.setCollectionViewLayout(flowLayout, animated: true)
@@ -101,7 +96,7 @@ class CountdownCollectionViewController: UICollectionViewController, UICollectio
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Choose what to do based on the segue being performed.
-        if segue.identifier! == "NewCountdown"
+        if segue.identifier! == kNewCountdownSegueIdentifier
         {
             // The New button was tapped.
         }
@@ -135,31 +130,16 @@ class CountdownCollectionViewController: UICollectionViewController, UICollectio
     }
     
     
-    override func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView
-    {
-        let view: UICollectionReusableView
-        
-        if kind == UICollectionElementKindSectionFooter
-        {
-            view = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: "ButtonsFooter", forIndexPath: indexPath) as! UICollectionReusableView
-        }
-        else
-        {
-            // We should never be asked for a header, but we have to provide a return value.
-            view = UICollectionReusableView()
-        }
-        
-        return view
-    }
-    
-    
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell
     {
         // Get a cell.
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("CountdownCell", forIndexPath: indexPath) as! CountdownCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(kCountdownCellIdentifier, forIndexPath: indexPath) as! CountdownCell
         
         // Give the cell the countdown at the correct index.
         cell.countdown = countdowns[indexPath.row]
+        
+        // Tell the cell to set up its visual properties.
+        cell.setUp()
 
         return cell
     }

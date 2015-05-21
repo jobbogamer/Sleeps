@@ -3,7 +3,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Sleeps-->
@@ -11,13 +10,13 @@
             <objects>
                 <collectionViewController id="RQw-kI-jmH" customClass="CountdownCollectionViewController" customModule="Sleeps" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="x2s-QX-2Sr">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.26106438040733337" green="0.26109910011291504" blue="0.26104840636253357" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="eNC-4W-7c7">
                             <size key="itemSize" width="253" height="258"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="50" height="50"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
@@ -33,7 +32,7 @@
                                             <subviews>
                                                 <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OjX-Uh-5L3" customClass="CircularView" customModule="Sleeps" customModuleProvider="target">
                                                     <rect key="frame" x="48" y="8" width="64" height="64"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="OjX-Uh-5L3" secondAttribute="height" multiplier="1:1" id="5YZ-nl-MIe"/>
                                                     </constraints>
@@ -41,17 +40,16 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Talk Like A Pirate Day" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75000000000000022" translatesAutoresizingMaskIntoConstraints="NO" id="dpl-Pt-cao">
                                                     <rect key="frame" x="8" y="80" width="144" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="textColor" red="0.49226117134094238" green="0.49232131242752075" blue="0.4922335147857666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="175" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QiD-HA-neb">
                                                     <rect key="frame" x="8" y="104" width="144" height="48"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.36154100298881531" green="0.36158677935600281" blue="0.36151999235153198" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstItem="OjX-Uh-5L3" firstAttribute="leading" secondItem="olF-iX-wQW" secondAttribute="leading" constant="48" id="0QD-fc-DdY"/>
                                                 <constraint firstAttribute="trailing" secondItem="QiD-HA-neb" secondAttribute="trailing" constant="8" id="5Ay-hp-OUq"/>
@@ -65,7 +63,7 @@
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                    <real key="value" value="10"/>
+                                                    <real key="value" value="0.0"/>
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </view>
@@ -91,66 +89,21 @@
                                 </connections>
                             </collectionViewCell>
                         </cells>
-                        <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ButtonsFooter" id="arv-rP-EAa">
-                            <rect key="frame" x="0.0" y="160" width="600" height="50"/>
-                            <autoresizingMask key="autoresizingMask"/>
-                            <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zZU-DJ-3Du" customClass="RoundedCornerButton" customModule="Sleeps" customModuleProvider="target">
-                                    <rect key="frame" x="8" y="8" width="288" height="34"/>
-                                    <color key="backgroundColor" red="0.36154100298881531" green="0.36158677935600281" blue="0.36151999235153198" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <state key="normal" title="New Countdown">
-                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                            <real key="value" value="10"/>
-                                        </userDefinedRuntimeAttribute>
-                                    </userDefinedRuntimeAttributes>
-                                    <connections>
-                                        <segue destination="H3A-fh-1qB" kind="show" identifier="NewCountdown" id="gov-E8-p9x"/>
-                                    </connections>
-                                </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9gi-ci-ssZ" customClass="RoundedCornerButton" customModule="Sleeps" customModuleProvider="target">
-                                    <rect key="frame" x="304" y="8" width="288" height="34"/>
-                                    <color key="backgroundColor" red="0.36154100298881531" green="0.36158677935600281" blue="0.36151999235153198" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <state key="normal" title="Settings">
-                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                            <real key="value" value="10"/>
-                                        </userDefinedRuntimeAttribute>
-                                    </userDefinedRuntimeAttributes>
-                                </button>
-                            </subviews>
-                            <constraints>
-                                <constraint firstItem="9gi-ci-ssZ" firstAttribute="leading" secondItem="zZU-DJ-3Du" secondAttribute="trailing" constant="8" id="0Hz-gD-h2s"/>
-                                <constraint firstItem="zZU-DJ-3Du" firstAttribute="bottom" secondItem="arv-rP-EAa" secondAttribute="bottomMargin" id="8MC-91-s0a"/>
-                                <constraint firstItem="9gi-ci-ssZ" firstAttribute="trailing" secondItem="arv-rP-EAa" secondAttribute="trailingMargin" id="Sxk-50-j4M"/>
-                                <constraint firstItem="9gi-ci-ssZ" firstAttribute="width" secondItem="zZU-DJ-3Du" secondAttribute="width" id="bZm-cJ-33u"/>
-                                <constraint firstItem="9gi-ci-ssZ" firstAttribute="bottom" secondItem="arv-rP-EAa" secondAttribute="bottomMargin" id="dQN-BA-i5n"/>
-                                <constraint firstItem="9gi-ci-ssZ" firstAttribute="top" secondItem="arv-rP-EAa" secondAttribute="topMargin" id="iM4-uq-jQo"/>
-                                <constraint firstItem="zZU-DJ-3Du" firstAttribute="leading" secondItem="arv-rP-EAa" secondAttribute="leadingMargin" id="oJf-qv-9uw"/>
-                                <constraint firstItem="zZU-DJ-3Du" firstAttribute="top" secondItem="arv-rP-EAa" secondAttribute="topMargin" id="vCf-iO-Sc1"/>
-                            </constraints>
-                        </collectionReusableView>
                         <connections>
                             <outlet property="dataSource" destination="RQw-kI-jmH" id="cPD-k4-pdn"/>
                             <outlet property="delegate" destination="RQw-kI-jmH" id="PoT-df-xQy"/>
                         </connections>
                     </collectionView>
-                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <toolbarItems>
-                        <barButtonItem title="Item" id="Yba-mh-x4a"/>
-                        <barButtonItem title="Item" id="IEh-9h-rca"/>
+                        <barButtonItem title="New" id="Yba-mh-x4a"/>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="H6b-Bt-g5a"/>
+                        <barButtonItem title="Settings" id="IEh-9h-rca"/>
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="Sleeps" id="qQf-vY-w1F"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Zr-5l-WGk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="543" y="417"/>
+            <point key="canvasLocation" x="584" y="409"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="6he-0S-Ewv">
@@ -161,45 +114,39 @@
                         <viewControllerLayoutGuide type="bottom" id="UCV-J1-cDw"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Afw-UP-P8q">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.26106438040733337" green="0.26109910011291504" blue="0.26104840636253357" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="me4-ZS-PcZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1404" y="419"/>
+            <point key="canvasLocation" x="1312" y="409"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="QbX-to-zGY">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vg6-We-l5h" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="vg6-We-l5h" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Rho-ke-Vac">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.13333333333333333" green="0.8666666666666667" blue="0.3843137254901961" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="barTintColor" red="0.25095915794372559" green="0.25099277496337891" blue="0.25094369053840637" alpha="0.19694444444444445" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="zYp-qg-xQw">
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" red="0.1333333333" green="0.86666666670000003" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="barTintColor" red="0.25095915794372559" green="0.25099277496337891" blue="0.25094369053840637" alpha="0.1969444444" colorSpace="custom" customColorSpace="sRGB"/>
                     </toolbar>
                     <connections>
-                        <segue destination="RQw-kI-jmH" kind="relationship" relationship="rootViewController" id="3WW-up-8Fb"/>
+                        <segue destination="RQw-kI-jmH" kind="relationship" relationship="rootViewController" id="bTa-2V-RIH"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fOp-B7-pU1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-269" y="419"/>
+            <point key="canvasLocation" x="-127" y="409"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="gov-E8-p9x"/>
-    </inferredMetricsTieBreakers>
 </document>

@@ -25,6 +25,13 @@ class CountdownCell: UICollectionViewCell {
     }
     
     
+    func setUp()
+    {
+        layer.borderWidth = kCollectionViewItemBorderWidth
+        layer.borderColor = kCollectionViewItemBorderColour.CGColor
+    }
+    
+    
     /// Update the icon and labels with the countdown's properties.
     private func updateView()
     {

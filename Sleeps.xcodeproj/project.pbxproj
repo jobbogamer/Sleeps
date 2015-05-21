@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0301BAF11AF806040037AA72 /* Countdown+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0301BAF01AF806040037AA72 /* Countdown+Utilities.swift */; };
+		0322F6A61B0E45E6006D3D8E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0322F6A51B0E45E6006D3D8E /* Constants.swift */; };
 		032F20F11AD154A200D7BA6C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032F20F01AD154A200D7BA6C /* SettingsViewController.swift */; };
 		033533BF1B0CF79C00767725 /* CountdownCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033533BE1B0CF79C00767725 /* CountdownCell.swift */; };
 		0336EFDD1AC9B588001D3138 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0336EFDC1AC9B588001D3138 /* AppDelegate.swift */; };
@@ -43,6 +44,7 @@
 
 /* Begin PBXFileReference section */
 		0301BAF01AF806040037AA72 /* Countdown+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Countdown+Utilities.swift"; sourceTree = "<group>"; };
+		0322F6A51B0E45E6006D3D8E /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		032F20F01AD154A200D7BA6C /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		033533BE1B0CF79C00767725 /* CountdownCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountdownCell.swift; sourceTree = "<group>"; };
 		0336EFD71AC9B587001D3138 /* Sleeps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sleeps.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -176,6 +178,7 @@
 		0336F0031AC9D96B001D3138 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				0322F6A51B0E45E6006D3D8E /* Constants.swift */,
 				0336EFDC1AC9B588001D3138 /* AppDelegate.swift */,
 				0336EFE11AC9B588001D3138 /* EditViewController.swift */,
 				032F20F01AD154A200D7BA6C /* SettingsViewController.swift */,
@@ -328,6 +331,7 @@
 				032F20F11AD154A200D7BA6C /* SettingsViewController.swift in Sources */,
 				03AC73AE1B02999800C03377 /* Countdown.swift in Sources */,
 				03F97D311B0AA65A00D4ED09 /* RoundedCornerButton.swift in Sources */,
+				0322F6A61B0E45E6006D3D8E /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
