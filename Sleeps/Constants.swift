@@ -8,6 +8,12 @@
 
 import UIKit
 
+/* General ****************************************************************************************/
+
+/// Global tint colour used for buttons, etc.
+let kGlobalTintColour: UIColor = UIColor(red:0.061, green:0.715, blue:0.374, alpha:1)
+
+
 /* CountdownCollectionView ************************************************************************/
 
 /// The identifier of the segue from the countdown collection view to the New Countdown screen.

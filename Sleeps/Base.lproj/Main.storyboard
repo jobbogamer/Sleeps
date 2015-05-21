@@ -32,7 +32,7 @@
                                             <subviews>
                                                 <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OjX-Uh-5L3" customClass="CircularView" customModule="Sleeps" customModuleProvider="target">
                                                     <rect key="frame" x="48" y="8" width="64" height="64"/>
-                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="backgroundColor" red="0.098802708089351654" green="0.71547949314117432" blue="0.3206152617931366" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="OjX-Uh-5L3" secondAttribute="height" multiplier="1:1" id="5YZ-nl-MIe"/>
                                                     </constraints>
@@ -109,15 +109,23 @@
         <scene sceneID="6he-0S-Ewv">
             <objects>
                 <viewController id="H3A-fh-1qB" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="fUi-Eo-WrW"/>
-                        <viewControllerLayoutGuide type="bottom" id="UCV-J1-cDw"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Afw-UP-P8q">
-                        <rect key="frame" x="0.0" y="64" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.26106438040733337" green="0.26109910011291504" blue="0.26104840636253357" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </view>
+                    <visualEffectView key="view" opaque="NO" contentMode="scaleToFill" id="M5r-Gn-DbJ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="kNO-td-sG1">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ym1-Ir-jtu">
+                                    <rect key="frame" x="8" y="8" width="37" height="30"/>
+                                    <state key="normal" title="Done">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                </button>
+                            </subviews>
+                        </view>
+                        <blurEffect style="extraLight"/>
+                    </visualEffectView>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="me4-ZS-PcZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
