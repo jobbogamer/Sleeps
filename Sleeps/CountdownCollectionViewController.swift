@@ -87,7 +87,9 @@ class CountdownCollectionViewController: UICollectionViewController, UICollectio
         super.viewWillAppear(animated)
         
         // Whenever the view is about to appear on screen, reload the countdowns into the view.
-        reloadData()        
+        reloadData()
+        
+        navigationController?.toolbarHidden = false
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -108,7 +110,11 @@ class CountdownCollectionViewController: UICollectionViewController, UICollectio
             {
                 let countdown = countdowns[indexPath.row]
                 
-                // TODO: Pass the countdown to the destination view controller.
+                // Pass the countdown to the destination view controller.
+                let editViewController = segue.destinationViewController as? EditViewController
+                editViewController?.countdown = countdown
+                
+                navigationController?.toolbarHidden = true
             }
         }
     }
