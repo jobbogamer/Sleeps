@@ -264,7 +264,6 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Rho-ke-Vac">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" red="0.13333333333333333" green="0.8666666666666667" blue="0.3843137254901961" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         </textAttributes>
