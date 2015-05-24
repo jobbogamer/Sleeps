@@ -142,7 +142,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XeK-wQ-4tb" customClass="RoundedCornerButton" customModule="Sleeps" customModuleProvider="target">
-                                <rect key="frame" x="325" y="548" width="259" height="44"/>
+                                <rect key="frame" x="304" y="548" width="280" height="44"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="R8x-HI-qm5"/>
@@ -191,7 +191,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Wi-FB-ym2" customClass="RoundedCornerButton" customModule="Sleeps" customModuleProvider="target">
-                                <rect key="frame" x="16" y="548" width="260" height="44"/>
+                                <rect key="frame" x="16" y="548" width="280" height="44"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="Xxq-QM-bMG"/>
@@ -232,7 +232,7 @@
                             <constraint firstItem="0Wi-FB-ym2" firstAttribute="top" secondItem="Sne-XX-wrZ" secondAttribute="bottom" id="Q4M-gR-WUU"/>
                             <constraint firstItem="8w1-XW-64e" firstAttribute="trailing" secondItem="iUn-jW-d0c" secondAttribute="trailingMargin" id="RAt-Ac-0eW"/>
                             <constraint firstItem="CmR-9k-lfu" firstAttribute="width" secondItem="3N3-ie-7xx" secondAttribute="width" id="SBx-eg-uYK"/>
-                            <constraint firstItem="XeK-wQ-4tb" firstAttribute="leading" secondItem="0Wi-FB-ym2" secondAttribute="trailing" constant="49" id="ZYo-gg-6kv"/>
+                            <constraint firstItem="XeK-wQ-4tb" firstAttribute="leading" secondItem="0Wi-FB-ym2" secondAttribute="trailing" constant="8" symbolic="YES" id="ZYo-gg-6kv"/>
                             <constraint firstItem="c4l-cq-ciB" firstAttribute="leading" secondItem="iUn-jW-d0c" secondAttribute="leadingMargin" id="a8r-rF-MrQ"/>
                             <constraint firstItem="oAv-td-bM3" firstAttribute="top" secondItem="8w1-XW-64e" secondAttribute="bottom" id="c7S-X0-Ufd"/>
                             <constraint firstItem="EDR-0k-U0c" firstAttribute="top" secondItem="XeK-wQ-4tb" secondAttribute="bottom" constant="8" id="fLi-dx-cLc"/>
