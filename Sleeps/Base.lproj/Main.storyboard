@@ -248,7 +248,12 @@
                     </view>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="dateButton" destination="oAv-td-bM3" id="SXi-wS-85r"/>
+                        <outlet property="daysLabel" destination="3N3-ie-7xx" id="Hjs-6f-73H"/>
                         <outlet property="editButton" destination="0Wi-FB-ym2" id="SgN-0L-LO9"/>
+                        <outlet property="iconView" destination="j4l-vm-Ji0" id="Eqr-9X-i5k"/>
+                        <outlet property="nameField" destination="CmR-9k-lfu" id="q2a-Ez-cmk"/>
+                        <outlet property="repeatButton" destination="BcD-99-vok" id="sv3-sB-1EE"/>
                         <outlet property="shareButton" destination="XeK-wQ-4tb" id="c0H-a3-2g5"/>
                     </connections>
                 </viewController>

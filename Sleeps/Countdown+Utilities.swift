@@ -183,7 +183,26 @@ extension Countdown: Entity {
     /// Set the countdown's repeat interval using an enum value rather than a raw Int16.
     func setRepeatInterval(interval: RepeatInterval)
     {
-        self.repeatInterval = repeatInterval.integerValue
+        self.repeatInterval = NSNumber(short: interval.rawValue)
+    }
+    
+    
+    func repeatIntervalString() -> String
+    {
+        switch (self.getRepeatInterval())
+        {
+        case .Yearly:
+            return "Repeats Yearly"
+            
+        case .Monthly:
+            return "Repeats Monthly"
+            
+        case .Weekly:
+            return "Repeats Weekly"
+            
+        case .Never:
+            return "Never Repeats"
+        }
     }
     
 }
