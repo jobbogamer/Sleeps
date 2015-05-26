@@ -11,7 +11,7 @@ import UIKit
 /* General ****************************************************************************************/
 
 /// Global tint colour used for buttons, etc.
-let kGlobalTintColour: UIColor = UIColor(red:0.061, green:0.715, blue:0.374, alpha:1)
+let kGlobalTintColour: UIColor = UIColor(hue:0.391, saturation:0.75, brightness:0.8, alpha:1)
 
 
 /* CountdownCollectionView ************************************************************************/
