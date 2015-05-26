@@ -183,9 +183,9 @@
 			children = (
 				0322F6A51B0E45E6006D3D8E /* Constants.swift */,
 				0336EFDC1AC9B588001D3138 /* AppDelegate.swift */,
+				0336F0041AC9FFA0001D3138 /* CountdownCollectionViewController.swift */,
 				0336EFE11AC9B588001D3138 /* EditViewController.swift */,
 				032F20F01AD154A200D7BA6C /* SettingsViewController.swift */,
-				0336F0041AC9FFA0001D3138 /* CountdownCollectionViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";

@@ -12,7 +12,7 @@
             <objects>
                 <collectionViewController id="RQw-kI-jmH" customClass="CountdownCollectionViewController" customModule="Sleeps" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="x2s-QX-2Sr">
-                        <rect key="frame" x="0.0" y="64" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="eNC-4W-7c7">
@@ -116,11 +116,11 @@
                         <viewControllerLayoutGuide type="bottom" id="EDR-0k-U0c"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="iUn-jW-d0c">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j4l-vm-Ji0" customClass="CircularView" customModule="Sleeps" customModuleProvider="target">
-                                <rect key="frame" x="250" y="93" width="100" height="100"/>
+                                <rect key="frame" x="250" y="29" width="100" height="100"/>
                                 <color key="backgroundColor" red="0.098802708089351654" green="0.71547949314117432" blue="0.3206152617931366" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="j4l-vm-Ji0" secondAttribute="height" multiplier="1:1" id="8qG-kY-Eoi"/>
@@ -128,7 +128,7 @@
                                 </constraints>
                             </view>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Talk Like A Pirate Day" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CmR-9k-lfu">
-                                <rect key="frame" x="165" y="236" width="270" height="29"/>
+                                <rect key="frame" x="165" y="172" width="270" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="270" id="q8R-13-J3a"/>
                                 </constraints>
@@ -136,13 +136,13 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="175" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3N3-ie-7xx">
-                                <rect key="frame" x="165" y="273" width="270" height="43"/>
+                                <rect key="frame" x="165" y="209" width="270" height="43"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XeK-wQ-4tb" customClass="CapsuleButton" customModule="Sleeps" customModuleProvider="target">
-                                <rect key="frame" x="16" y="540" width="568" height="44"/>
+                                <rect key="frame" x="16" y="476" width="568" height="44"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="R8x-HI-qm5"/>
@@ -152,7 +152,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oAv-td-bM3">
-                                <rect key="frame" x="16" y="359" width="568" height="35"/>
+                                <rect key="frame" x="16" y="295" width="568" height="35"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -161,7 +161,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BcD-99-vok">
-                                <rect key="frame" x="16" y="402" width="568" height="35"/>
+                                <rect key="frame" x="16" y="338" width="568" height="35"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -170,7 +170,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Wi-FB-ym2" customClass="CapsuleButton" customModule="Sleeps" customModuleProvider="target">
-                                <rect key="frame" x="16" y="480" width="568" height="44"/>
+                                <rect key="frame" x="16" y="416" width="568" height="44"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="1Mc-8w-V0S"/>
@@ -180,19 +180,19 @@
                                 </state>
                             </button>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m9e-aa-IdF" userLabel="TopSpacer">
-                                <rect key="frame" x="16" y="72" width="568" height="21"/>
+                                <rect key="frame" x="16" y="8" width="568" height="21"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5jn-Cj-DL3" userLabel="IconNameSpacer">
-                                <rect key="frame" x="16" y="193" width="568" height="43"/>
+                                <rect key="frame" x="16" y="129" width="568" height="43"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g1i-zN-ET0" userLabel="CountDateSpacer">
-                                <rect key="frame" x="16" y="316" width="568" height="43"/>
+                                <rect key="frame" x="16" y="252" width="568" height="43"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pcl-fe-U7M" userLabel="BottomSpacer">
-                                <rect key="frame" x="16" y="437" width="568" height="43"/>
+                                <rect key="frame" x="16" y="373" width="568" height="43"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
@@ -254,12 +254,13 @@
         <scene sceneID="QbX-to-zGY">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="vg6-We-l5h" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Rho-ke-Vac">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Rho-ke-Vac">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
-                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>

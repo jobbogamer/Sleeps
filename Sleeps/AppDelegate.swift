@@ -35,6 +35,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         collectionViewController = navigationController.viewControllers[0] as? CountdownCollectionViewController
         collectionViewController?.persistenceController = self.persistenceController
         
+        navigationController.navigationBar.barTintColor = kGlobalTintColour
+        
         // Set the global tint colour.
         window?.tintColor = kGlobalTintColour
         

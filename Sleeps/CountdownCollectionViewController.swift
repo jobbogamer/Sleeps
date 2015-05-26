@@ -126,7 +126,7 @@ class CountdownCollectionViewController: UICollectionViewController, UICollectio
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
         // Return the number of items fetched from the database.
-        return countdowns.count
+        return countdowns.count * 3
     }
     
     
@@ -142,7 +142,7 @@ class CountdownCollectionViewController: UICollectionViewController, UICollectio
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(kCountdownCellIdentifier, forIndexPath: indexPath) as! CountdownCell
         
         // Give the cell the countdown at the correct index.
-        cell.countdown = countdowns[indexPath.row]
+        cell.countdown = countdowns[indexPath.row % countdowns.count]
         
         // Tell the cell to set up its visual properties.
         cell.setUp()
