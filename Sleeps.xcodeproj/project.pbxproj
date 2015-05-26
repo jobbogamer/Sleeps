@@ -20,6 +20,7 @@
 		0336EFF61AC9B588001D3138 /* SleepsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0336EFF51AC9B588001D3138 /* SleepsTests.swift */; };
 		0336F0051AC9FFA0001D3138 /* CountdownCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0336F0041AC9FFA0001D3138 /* CountdownCollectionViewController.swift */; };
 		033FDD0B1AE19B990002E16E /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033FDD0A1AE19B990002E16E /* PersistenceController.swift */; };
+		03689B461B15024100343483 /* CapsuleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03689B451B15024100343483 /* CapsuleButton.swift */; };
 		03AC73A61B028C0B00C03377 /* NSDate+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AC73A51B028C0B00C03377 /* NSDate+Utilities.swift */; };
 		03AC73AE1B02999800C03377 /* Countdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AC73AD1B02999800C03377 /* Countdown.swift */; };
 		03AC73B31B02A73600C03377 /* update_build_number.sh in Resources */ = {isa = PBXBuildFile; fileRef = 03AC73B21B02A73600C03377 /* update_build_number.sh */; };
@@ -60,6 +61,7 @@
 		0336EFF51AC9B588001D3138 /* SleepsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepsTests.swift; sourceTree = "<group>"; };
 		0336F0041AC9FFA0001D3138 /* CountdownCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountdownCollectionViewController.swift; sourceTree = "<group>"; };
 		033FDD0A1AE19B990002E16E /* PersistenceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
+		03689B451B15024100343483 /* CapsuleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CapsuleButton.swift; sourceTree = "<group>"; };
 		03AC73A51B028C0B00C03377 /* NSDate+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Utilities.swift"; sourceTree = "<group>"; };
 		03AC73AD1B02999800C03377 /* Countdown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Countdown.swift; sourceTree = "<group>"; };
 		03AC73B21B02A73600C03377 /* update_build_number.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = update_build_number.sh; path = Scripts/update_build_number.sh; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 				03F97D2E1B0A9AE500D4ED09 /* CircularView.swift */,
 				03F97D301B0AA65A00D4ED09 /* RoundedCornerButton.swift */,
 				03E273621B0BB0680013BFE5 /* RoundedCornerView.swift */,
+				03689B451B15024100343483 /* CapsuleButton.swift */,
 				03D64BB31AFC0755001A771C /* Icons.swift */,
 				03E273641B0BB5520013BFE5 /* UIEdgeInsets+Helpers.swift */,
 				0336EFE61AC9B588001D3138 /* Images.xcassets */,
@@ -316,6 +319,7 @@
 			files = (
 				033FDD0B1AE19B990002E16E /* PersistenceController.swift in Sources */,
 				0336F0051AC9FFA0001D3138 /* CountdownCollectionViewController.swift in Sources */,
+				03689B461B15024100343483 /* CapsuleButton.swift in Sources */,
 				0301BAF11AF806040037AA72 /* Countdown+Utilities.swift in Sources */,
 				033533BF1B0CF79C00767725 /* CountdownCell.swift in Sources */,
 				03AC73A61B028C0B00C03377 /* NSDate+Utilities.swift in Sources */,

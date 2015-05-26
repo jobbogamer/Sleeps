@@ -35,11 +35,11 @@ class EditViewController: UIViewController {
     @IBOutlet weak var repeatButton: UIButton!
     
     /// The Edit button in the bottom left.
-    @IBOutlet weak var editButton: RoundedCornerButton!
+    @IBOutlet weak var editButton: CapsuleButton!
     
     /// The Share button in the bottom right.
-    @IBOutlet weak var shareButton: RoundedCornerButton!
-    
+    @IBOutlet weak var shareButton: CapsuleButton!
+        
     
     private func updateView()
     {
