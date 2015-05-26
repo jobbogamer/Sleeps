@@ -88,8 +88,6 @@ class CountdownCollectionViewController: UICollectionViewController, UICollectio
         
         // Whenever the view is about to appear on screen, reload the countdowns into the view.
         reloadData()
-        
-        navigationController?.toolbarHidden = false
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -113,8 +111,6 @@ class CountdownCollectionViewController: UICollectionViewController, UICollectio
                 // Pass the countdown to the destination view controller.
                 let editViewController = segue.destinationViewController as? EditViewController
                 editViewController?.countdown = countdown
-                
-                navigationController?.toolbarHidden = true
             }
         }
     }
@@ -126,7 +122,7 @@ class CountdownCollectionViewController: UICollectionViewController, UICollectio
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
         // Return the number of items fetched from the database.
-        return countdowns.count * 3
+        return countdowns.count + 1
     }
     
     
@@ -138,16 +134,29 @@ class CountdownCollectionViewController: UICollectionViewController, UICollectio
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell
     {
-        // Get a cell.
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(kCountdownCellIdentifier, forIndexPath: indexPath) as! CountdownCell
-        
-        // Give the cell the countdown at the correct index.
-        cell.countdown = countdowns[indexPath.row % countdowns.count]
-        
-        // Tell the cell to set up its visual properties.
-        cell.setUp()
-
-        return cell
+        if indexPath.row == countdowns.count
+        {
+            // Get a ButtonsCell.
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier(kButtonsCellIdentifier, forIndexPath: indexPath) as! ButtonsCell
+            
+            // Tell the cell to set up its visual properties.
+            cell.setUp()
+            
+            return cell
+        }
+        else
+        {
+            // Get a CountdownCell.
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier(kCountdownCellIdentifier, forIndexPath: indexPath) as! CountdownCell
+            
+            // Give the cell the countdown from the array at the correct index.
+            cell.countdown = countdowns[indexPath.row]
+            
+            // Tell the cell to set up its visual properties.
+            cell.setUp()
+            
+            return cell
+        }
     }
     
 }

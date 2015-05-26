@@ -22,6 +22,9 @@ let kNewCountdownSegueIdentifier: String = "NewCountdown"
 /// The identifier for countdown cells.
 let kCountdownCellIdentifier: String = "CountdownCell"
 
+/// The identifier for the collection view cell with the New and Settings buttons.
+let kButtonsCellIdentifier: String = "ButtonsCell"
+
 /// The spacing, in points, between collection view cells.
 let kCollectionViewItemSpacing: CGFloat = 2
 

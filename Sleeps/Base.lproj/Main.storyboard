@@ -83,11 +83,90 @@
                                 <size key="customSize" width="160" height="160"/>
                                 <connections>
                                     <outlet property="background" destination="olF-iX-wQW" id="4RE-Gf-oaD"/>
-                                    <outlet property="backgroundView" destination="olF-iX-wQW" id="L5G-cr-1FK"/>
                                     <outlet property="daysLabel" destination="QiD-HA-neb" id="G4a-0P-Yzs"/>
                                     <outlet property="iconView" destination="OjX-Uh-5L3" id="46P-SZ-GLk"/>
                                     <outlet property="nameLabel" destination="dpl-Pt-cao" id="0UW-3F-0mW"/>
                                     <segue destination="H3A-fh-1qB" kind="show" identifier="EditCountdown" id="pj7-rC-aaR"/>
+                                </connections>
+                            </collectionViewCell>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ButtonsCell" id="C1A-gX-0PK" customClass="ButtonsCell" customModule="Sleeps" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Hp-dq-lY4" customClass="RoundedCornerView" customModule="Sleeps" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eKA-xf-gnU" customClass="CapsuleButton" customModule="Sleeps" customModuleProvider="target">
+                                                    <rect key="frame" x="8" y="28" width="144" height="44"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="44" id="OMq-PX-CJ0"/>
+                                                    </constraints>
+                                                    <state key="normal" title="New">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="test:" destination="C1A-gX-0PK" eventType="touchUpInside" id="jKs-Mt-dB8"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QLh-JS-4Mg" customClass="CapsuleButton" customModule="Sleeps" customModuleProvider="target">
+                                                    <rect key="frame" x="8" y="88" width="144" height="44"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="44" id="oHH-av-MBz"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Settings">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                </button>
+                                                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ruf-Sh-olQ" userLabel="TopSpacer">
+                                                    <rect key="frame" x="8" y="8" width="144" height="12"/>
+                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                </view>
+                                                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Pn-Ur-Ldh" userLabel="BottomSpacer">
+                                                    <rect key="frame" x="8" y="140" width="144" height="12"/>
+                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstItem="eKA-xf-gnU" firstAttribute="leading" secondItem="1Hp-dq-lY4" secondAttribute="leading" constant="8" id="15m-QM-gyY"/>
+                                                <constraint firstAttribute="trailing" secondItem="Ruf-Sh-olQ" secondAttribute="trailing" constant="8" id="1KG-vy-vMp"/>
+                                                <constraint firstItem="Ruf-Sh-olQ" firstAttribute="height" secondItem="9Pn-Ur-Ldh" secondAttribute="height" id="1zZ-pS-eDM"/>
+                                                <constraint firstItem="9Pn-Ur-Ldh" firstAttribute="top" secondItem="QLh-JS-4Mg" secondAttribute="bottom" constant="8" id="2cH-Su-lP8"/>
+                                                <constraint firstAttribute="bottom" secondItem="9Pn-Ur-Ldh" secondAttribute="bottom" constant="8" id="54k-46-8Ex"/>
+                                                <constraint firstItem="Ruf-Sh-olQ" firstAttribute="top" secondItem="1Hp-dq-lY4" secondAttribute="top" constant="8" id="CPW-rc-jhL"/>
+                                                <constraint firstItem="QLh-JS-4Mg" firstAttribute="top" secondItem="eKA-xf-gnU" secondAttribute="bottom" constant="16" id="DHM-s0-xAW"/>
+                                                <constraint firstItem="Ruf-Sh-olQ" firstAttribute="leading" secondItem="1Hp-dq-lY4" secondAttribute="leading" constant="8" id="PgD-R0-7a0"/>
+                                                <constraint firstItem="9Pn-Ur-Ldh" firstAttribute="leading" secondItem="1Hp-dq-lY4" secondAttribute="leading" constant="8" id="YRC-PI-zix"/>
+                                                <constraint firstItem="eKA-xf-gnU" firstAttribute="top" secondItem="Ruf-Sh-olQ" secondAttribute="bottom" constant="8" id="bqF-8b-b5J"/>
+                                                <constraint firstItem="QLh-JS-4Mg" firstAttribute="leading" secondItem="1Hp-dq-lY4" secondAttribute="leading" constant="8" id="ePA-pC-LcG"/>
+                                                <constraint firstAttribute="trailing" secondItem="eKA-xf-gnU" secondAttribute="trailing" constant="8" id="egy-me-k7Y"/>
+                                                <constraint firstAttribute="trailing" secondItem="QLh-JS-4Mg" secondAttribute="trailing" constant="8" id="ox4-xM-phO"/>
+                                                <constraint firstAttribute="trailing" secondItem="9Pn-Ur-Ldh" secondAttribute="trailing" constant="8" id="yEE-rU-9Uj"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="0.0"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="centerX" secondItem="1Hp-dq-lY4" secondAttribute="centerX" id="0xZ-oO-hLa"/>
+                                    <constraint firstItem="1Hp-dq-lY4" firstAttribute="top" secondItem="C1A-gX-0PK" secondAttribute="top" id="Bgw-C7-mka"/>
+                                    <constraint firstItem="1Hp-dq-lY4" firstAttribute="trailing" secondItem="C1A-gX-0PK" secondAttribute="trailing" id="ERd-j3-ywE"/>
+                                    <constraint firstItem="1Hp-dq-lY4" firstAttribute="bottom" secondItem="C1A-gX-0PK" secondAttribute="bottom" id="LdR-9j-7Lh"/>
+                                    <constraint firstItem="1Hp-dq-lY4" firstAttribute="leading" secondItem="C1A-gX-0PK" secondAttribute="leading" id="eyo-fx-XZX"/>
+                                </constraints>
+                                <size key="customSize" width="160" height="160"/>
+                                <connections>
+                                    <outlet property="background" destination="1Hp-dq-lY4" id="114-ZA-Zld"/>
+                                    <outlet property="newButton" destination="eKA-xf-gnU" id="oON-GY-TR5"/>
+                                    <outlet property="settingsButton" destination="QLh-JS-4Mg" id="sGA-TA-LIM"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -253,7 +332,7 @@
         <!--Navigation Controller-->
         <scene sceneID="QbX-to-zGY">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="vg6-We-l5h" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vg6-We-l5h" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Rho-ke-Vac">
