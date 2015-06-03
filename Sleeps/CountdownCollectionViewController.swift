@@ -94,7 +94,12 @@ class CountdownCollectionViewController: UICollectionViewController, UICollectio
         super.viewDidAppear(animated)
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    
+    
+    // MARK: - Segues
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    {
         // Choose what to do based on the segue being performed.
         if segue.identifier! == kNewCountdownSegueIdentifier
         {
@@ -116,6 +121,12 @@ class CountdownCollectionViewController: UICollectionViewController, UICollectio
     }
     
     
+    @IBAction func unwindToViewController (sender: UIStoryboardSegue)
+    {
+        // Does nothing for now. Just exists to allow an exit segue from the edit view to this view.
+    }
+    
+    
     
     // MARK: - UICollectionViewDataSource
     
@@ -126,7 +137,8 @@ class CountdownCollectionViewController: UICollectionViewController, UICollectio
     }
     
     
-    override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int
+    {
         // Always return 1, because there are no logical groups or sections in the data.
         return 1
     }
