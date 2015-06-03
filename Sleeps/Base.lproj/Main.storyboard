@@ -108,7 +108,7 @@
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="test:" destination="C1A-gX-0PK" eventType="touchUpInside" id="jKs-Mt-dB8"/>
+                                                        <segue destination="H3A-fh-1qB" kind="show" identifier="NewCountdown" id="phz-T7-bGb"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QLh-JS-4Mg" customClass="CapsuleButton" customModule="Sleeps" customModuleProvider="target">
@@ -274,6 +274,12 @@
                                 <rect key="frame" x="16" y="373" width="568" height="43"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Mz-ye-xgb">
+                                <rect key="frame" x="547" y="4" width="37" height="30"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -285,6 +291,7 @@
                             <constraint firstItem="EDR-0k-U0c" firstAttribute="top" secondItem="XeK-wQ-4tb" secondAttribute="bottom" constant="16" id="H6R-Gd-q6g"/>
                             <constraint firstItem="XeK-wQ-4tb" firstAttribute="trailing" secondItem="iUn-jW-d0c" secondAttribute="trailingMargin" id="HX8-uG-eLR"/>
                             <constraint firstItem="pcl-fe-U7M" firstAttribute="trailing" secondItem="iUn-jW-d0c" secondAttribute="trailingMargin" id="HlR-i9-xRm"/>
+                            <constraint firstItem="7Mz-ye-xgb" firstAttribute="top" secondItem="oYT-JC-6Wa" secondAttribute="bottom" constant="4" id="K4o-ii-mow"/>
                             <constraint firstItem="0Wi-FB-ym2" firstAttribute="leading" secondItem="iUn-jW-d0c" secondAttribute="leadingMargin" id="Kmo-Jf-Hmh"/>
                             <constraint firstItem="oAv-td-bM3" firstAttribute="leading" secondItem="iUn-jW-d0c" secondAttribute="leadingMargin" id="L1L-as-8FK"/>
                             <constraint firstItem="m9e-aa-IdF" firstAttribute="top" secondItem="oYT-JC-6Wa" secondAttribute="bottom" constant="8" id="LF9-9U-1H8"/>
@@ -304,6 +311,7 @@
                             <constraint firstItem="m9e-aa-IdF" firstAttribute="leading" secondItem="iUn-jW-d0c" secondAttribute="leadingMargin" id="jiM-9Q-vSb"/>
                             <constraint firstAttribute="centerX" secondItem="j4l-vm-Ji0" secondAttribute="centerX" id="kOJ-am-Gh6"/>
                             <constraint firstAttribute="centerX" secondItem="CmR-9k-lfu" secondAttribute="centerX" id="mml-iZ-Oni"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="7Mz-ye-xgb" secondAttribute="trailing" id="qXl-u2-KG4"/>
                             <constraint firstAttribute="centerX" secondItem="3N3-ie-7xx" secondAttribute="centerX" id="qcQ-b6-Toh"/>
                             <constraint firstItem="3N3-ie-7xx" firstAttribute="top" secondItem="CmR-9k-lfu" secondAttribute="bottom" constant="8" id="qcb-N0-EC2"/>
                             <constraint firstItem="XeK-wQ-4tb" firstAttribute="leading" secondItem="iUn-jW-d0c" secondAttribute="leadingMargin" id="r4V-3e-F7u"/>
@@ -318,6 +326,7 @@
                     <connections>
                         <outlet property="dateButton" destination="oAv-td-bM3" id="SXi-wS-85r"/>
                         <outlet property="daysLabel" destination="3N3-ie-7xx" id="Hjs-6f-73H"/>
+                        <outlet property="doneButton" destination="7Mz-ye-xgb" id="Q9d-Kq-5LQ"/>
                         <outlet property="editButton" destination="0Wi-FB-ym2" id="iV0-Pc-hiV"/>
                         <outlet property="iconView" destination="j4l-vm-Ji0" id="Eqr-9X-i5k"/>
                         <outlet property="nameField" destination="CmR-9k-lfu" id="q2a-Ez-cmk"/>
@@ -356,4 +365,7 @@
             <point key="canvasLocation" x="-127" y="409"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="phz-T7-bGb"/>
+    </inferredMetricsTieBreakers>
 </document>

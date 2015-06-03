@@ -19,6 +19,9 @@ let kGlobalTintColour: UIColor = UIColor(hue:0.391, saturation:0.75, brightness:
 /// The identifier of the segue from the countdown collection view to the New Countdown screen.
 let kNewCountdownSegueIdentifier: String = "NewCountdown"
 
+/// The identifier of the segue from the countdown collection view to the Edit Countdown screen.
+let kEditCountdownSegueIdentifier: String = "EditCountdown"
+
 /// The identifier for countdown cells.
 let kCountdownCellIdentifier: String = "CountdownCell"
 

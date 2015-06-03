@@ -19,6 +19,9 @@ class EditViewController: UIViewController {
         }
     }
     
+    /// The Done button in the top right.
+    @IBOutlet weak var doneButton: UIButton!
+    
     /// The circular icon view at the top.
     @IBOutlet weak var iconView: CircularView!
     
@@ -43,14 +46,17 @@ class EditViewController: UIViewController {
     
     private func updateView()
     {
-        // Set up all the fields and buttons in the view.
-        iconView?.backgroundColor = countdown.getColour()
-        nameField?.text = countdown.name
-        daysLabel?.text = String(countdown.daysFromNow())
-        dateButton?.setTitle(countdown.date.localisedString(), forState: .Normal)
-        repeatButton?.setTitle(countdown.repeatIntervalString(), forState: .Normal)
-        
-        // TODO: Set the icon.
+        if let countdown = countdown
+        {
+            // Set up all the fields and buttons in the view.
+            iconView?.backgroundColor = countdown.getColour()
+            nameField?.text = countdown.name
+            daysLabel?.text = String(countdown.daysFromNow())
+            dateButton?.setTitle(countdown.date.localisedString(), forState: .Normal)
+            repeatButton?.setTitle(countdown.repeatIntervalString(), forState: .Normal)
+            
+            // TODO: Set the icon.
+        }
     }
     
 
