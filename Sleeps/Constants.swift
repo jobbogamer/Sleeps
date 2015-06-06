@@ -14,6 +14,15 @@ import UIKit
 let kGlobalTintColour: UIColor = UIColor(hue:0.391, saturation:0.75, brightness:0.8, alpha:1)
 
 
+/* Navigation Controller***************************************************************************/
+
+/// Background colour to give to the navigation bar and toolbar.
+let kNavigationControllerBarColour: UIColor = kGlobalTintColour
+
+/// Tint colour used for bar button items and navigation bar titles.
+let kNavigationControllerTintColour: UIColor = UIColor.whiteColor()
+
+
 /* CountdownCollectionView ************************************************************************/
 
 /// The identifier of the segue from the countdown collection view to the New Countdown screen.

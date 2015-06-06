@@ -135,7 +135,7 @@ class CountdownCollectionViewController: UICollectionViewController, UICollectio
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
         // Return the number of items fetched from the database.
-        return countdowns.count + 1
+        return countdowns.count
     }
     
     
@@ -148,6 +148,10 @@ class CountdownCollectionViewController: UICollectionViewController, UICollectio
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell
     {
+        // Check whether we're being asked for the ButtonsCell.
+        // Note: The buttons cell is implemented, but currently is not activated; change the return
+        // value of `collectionView:numberOfItemsInSection:` to return `countdowns.count + 1` to
+        // reactivate it.
         if indexPath.row == countdowns.count
         {
             // Get a ButtonsCell.

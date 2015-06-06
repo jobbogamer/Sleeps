@@ -11,7 +11,7 @@
             <objects>
                 <collectionViewController id="RQw-kI-jmH" customClass="CountdownCollectionViewController" customModule="Sleeps" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="x2s-QX-2Sr">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="492"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="eNC-4W-7c7">
@@ -175,9 +175,11 @@
                         </connections>
                     </collectionView>
                     <toolbarItems>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="CFB-to-laV"/>
                         <barButtonItem title="New" id="Yba-mh-x4a"/>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="H6b-Bt-g5a"/>
                         <barButtonItem title="Settings" id="IEh-9h-rca"/>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="XZV-Rx-XTw"/>
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="Sleeps" id="qQf-vY-w1F"/>
                 </collectionViewController>
@@ -360,7 +362,7 @@
         <!--Navigation Controller-->
         <scene sceneID="QbX-to-zGY">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vg6-We-l5h" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="vg6-We-l5h" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Rho-ke-Vac">
@@ -372,7 +374,7 @@
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
-                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="zYp-qg-xQw">
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" id="zYp-qg-xQw">
                         <autoresizingMask key="autoresizingMask"/>
                     </toolbar>
                     <connections>

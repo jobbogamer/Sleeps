@@ -35,10 +35,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         collectionViewController = navigationController.viewControllers[0] as? CountdownCollectionViewController
         collectionViewController?.persistenceController = self.persistenceController
         
+        // Fill the background colour of the navigation bar and toolbar.
         navigationController.navigationBar.barTintColor = kGlobalTintColour
+        navigationController.toolbar.barTintColor = kGlobalTintColour
         
         // Set the global tint colour.
         window?.tintColor = kGlobalTintColour
+        
+        // Make the toolbar items and white.
+        navigationController.navigationBar.tintColor = kNavigationControllerTintColour
+        navigationController.toolbar.tintColor = kNavigationControllerTintColour
         
         return true
     }
