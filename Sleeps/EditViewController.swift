@@ -25,6 +25,9 @@ class EditViewController: UIViewController {
     /// The circular icon view at the top.
     @IBOutlet weak var iconView: CircularView!
     
+    /// The layout constraint which controls the height of iconVIew.
+    @IBOutlet weak var iconViewHeightConstraint: NSLayoutConstraint!
+    
     /// The name text field.
     @IBOutlet weak var nameField: UITextField!
     
@@ -62,6 +65,15 @@ class EditViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Once support is dropped for the 4s, hopefully that's the end of the 3.5 inch screen size.
+        // Until then, the edit view doesn't fit on 3.5 inch screens, so we need to detect that size
+        // and shrink the icon view a bit in order to let everything fit on screen.
+        if UIScreen.mainScreen().bounds.size.height < 568
+        {
+            iconViewHeightConstraint.constant = 70
+            iconView.setNeedsUpdateConstraints()
+        }
         
         // Give the Edit and Share buttons an outline.
         editButton.layer.borderColor  = kGlobalTintColour.CGColor

@@ -198,7 +198,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aAB-BJ-xp5" customClass="RoundedCornerView" customModule="Sleeps" customModuleProvider="target">
-                                <rect key="frame" x="16" y="28" width="568" height="564"/>
+                                <rect key="frame" x="16" y="28" width="568" height="556"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j4l-vm-Ji0" customClass="CircularView" customModule="Sleeps" customModuleProvider="target">
                                         <rect key="frame" x="234" y="46" width="100" height="100"/>
@@ -209,18 +209,18 @@
                                         </constraints>
                                     </view>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Talk Like A Pirate Day" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CmR-9k-lfu">
-                                        <rect key="frame" x="8" y="191" width="552" height="29"/>
+                                        <rect key="frame" x="8" y="189" width="552" height="29"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="175" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3N3-ie-7xx">
-                                        <rect key="frame" x="8" y="228" width="552" height="43"/>
+                                        <rect key="frame" x="8" y="226" width="552" height="43"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XeK-wQ-4tb" customClass="CapsuleButton" customModule="Sleeps" customModuleProvider="target">
-                                        <rect key="frame" x="8" y="500" width="552" height="44"/>
+                                        <rect key="frame" x="8" y="492" width="552" height="44"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="R8x-HI-qm5"/>
@@ -230,7 +230,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oAv-td-bM3">
-                                        <rect key="frame" x="8" y="317" width="552" height="35"/>
+                                        <rect key="frame" x="8" y="311" width="552" height="35"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -239,7 +239,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BcD-99-vok">
-                                        <rect key="frame" x="8" y="360" width="552" height="35"/>
+                                        <rect key="frame" x="8" y="354" width="552" height="35"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -248,7 +248,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Wi-FB-ym2" customClass="CapsuleButton" customModule="Sleeps" customModuleProvider="target">
-                                        <rect key="frame" x="8" y="440" width="552" height="44"/>
+                                        <rect key="frame" x="8" y="432" width="552" height="44"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="1Mc-8w-V0S"/>
@@ -262,15 +262,15 @@
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5jn-Cj-DL3" userLabel="IconNameSpacer">
-                                        <rect key="frame" x="8" y="146" width="552" height="45"/>
+                                        <rect key="frame" x="8" y="146" width="552" height="43"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g1i-zN-ET0" userLabel="CountDateSpacer">
-                                        <rect key="frame" x="8" y="271" width="552" height="46"/>
+                                        <rect key="frame" x="8" y="269" width="552" height="42"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pcl-fe-U7M" userLabel="BottomSpacer">
-                                        <rect key="frame" x="8" y="395" width="552" height="45"/>
+                                        <rect key="frame" x="8" y="389" width="552" height="43"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Mz-ye-xgb">
@@ -334,7 +334,7 @@
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="aAB-BJ-xp5" firstAttribute="top" secondItem="oYT-JC-6Wa" secondAttribute="bottom" constant="8" symbolic="YES" id="272-31-gPP"/>
-                            <constraint firstItem="EDR-0k-U0c" firstAttribute="top" secondItem="aAB-BJ-xp5" secondAttribute="bottom" constant="8" symbolic="YES" id="YyS-1k-TLd"/>
+                            <constraint firstItem="EDR-0k-U0c" firstAttribute="top" secondItem="aAB-BJ-xp5" secondAttribute="bottom" constant="16" id="YyS-1k-TLd"/>
                             <constraint firstItem="aAB-BJ-xp5" firstAttribute="trailing" secondItem="iUn-jW-d0c" secondAttribute="trailingMargin" id="dV3-Pj-QnW"/>
                             <constraint firstItem="aAB-BJ-xp5" firstAttribute="leading" secondItem="iUn-jW-d0c" secondAttribute="leadingMargin" id="jgt-i0-8fS"/>
                         </constraints>
@@ -346,6 +346,7 @@
                         <outlet property="doneButton" destination="7Mz-ye-xgb" id="Q9d-Kq-5LQ"/>
                         <outlet property="editButton" destination="0Wi-FB-ym2" id="iV0-Pc-hiV"/>
                         <outlet property="iconView" destination="j4l-vm-Ji0" id="Eqr-9X-i5k"/>
+                        <outlet property="iconViewHeightConstraint" destination="tqE-xo-MXm" id="826-vt-nbc"/>
                         <outlet property="nameField" destination="CmR-9k-lfu" id="q2a-Ez-cmk"/>
                         <outlet property="repeatButton" destination="BcD-99-vok" id="sv3-sB-1EE"/>
                         <outlet property="shareButton" destination="XeK-wQ-4tb" id="zIg-Nc-1Ox"/>
