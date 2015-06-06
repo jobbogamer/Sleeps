@@ -27,7 +27,6 @@
 		03AC73AE1B02999800C03377 /* Countdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AC73AD1B02999800C03377 /* Countdown.swift */; };
 		03AC73B31B02A73600C03377 /* update_build_number.sh in Resources */ = {isa = PBXBuildFile; fileRef = 03AC73B21B02A73600C03377 /* update_build_number.sh */; };
 		03BF16701B1F9FA900D24D8D /* CardViewTransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BF166F1B1F9FA900D24D8D /* CardViewTransitionManager.swift */; };
-		03BF16721B1FA92E00D24D8D /* CardViewSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BF16711B1FA92E00D24D8D /* CardViewSegue.swift */; };
 		03D64BB41AFC0755001A771C /* Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D64BB31AFC0755001A771C /* Icons.swift */; };
 		03E273631B0BB0680013BFE5 /* RoundedCornerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E273621B0BB0680013BFE5 /* RoundedCornerView.swift */; };
 		03E273651B0BB5520013BFE5 /* UIEdgeInsets+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E273641B0BB5520013BFE5 /* UIEdgeInsets+Helpers.swift */; };
@@ -72,7 +71,6 @@
 		03AC73AD1B02999800C03377 /* Countdown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Countdown.swift; sourceTree = "<group>"; };
 		03AC73B21B02A73600C03377 /* update_build_number.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = update_build_number.sh; path = Scripts/update_build_number.sh; sourceTree = "<group>"; };
 		03BF166F1B1F9FA900D24D8D /* CardViewTransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardViewTransitionManager.swift; sourceTree = "<group>"; };
-		03BF16711B1FA92E00D24D8D /* CardViewSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardViewSegue.swift; sourceTree = "<group>"; };
 		03D64BB31AFC0755001A771C /* Icons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Icons.swift; sourceTree = "<group>"; };
 		03E273621B0BB0680013BFE5 /* RoundedCornerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedCornerView.swift; sourceTree = "<group>"; };
 		03E273641B0BB5520013BFE5 /* UIEdgeInsets+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIEdgeInsets+Helpers.swift"; sourceTree = "<group>"; };
@@ -184,7 +182,6 @@
 				03D64BB31AFC0755001A771C /* Icons.swift */,
 				03E273641B0BB5520013BFE5 /* UIEdgeInsets+Helpers.swift */,
 				0336EFE61AC9B588001D3138 /* Images.xcassets */,
-				03BF16711B1FA92E00D24D8D /* CardViewSegue.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -339,7 +336,6 @@
 				0336EFE21AC9B588001D3138 /* EditViewController.swift in Sources */,
 				03689B481B15131400343483 /* AutoLayoutCollectionViewCell.swift in Sources */,
 				03E273631B0BB0680013BFE5 /* RoundedCornerView.swift in Sources */,
-				03BF16721B1FA92E00D24D8D /* CardViewSegue.swift in Sources */,
 				03F97D2F1B0A9AE500D4ED09 /* CircularView.swift in Sources */,
 				0336EFDD1AC9B588001D3138 /* AppDelegate.swift in Sources */,
 				03D64BB41AFC0755001A771C /* Icons.swift in Sources */,
