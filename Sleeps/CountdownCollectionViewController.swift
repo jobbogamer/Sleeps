@@ -123,7 +123,9 @@ class CountdownCollectionViewController: UICollectionViewController, UICollectio
     
     @IBAction func unwindToViewController (sender: UIStoryboardSegue)
     {
-        // Does nothing for now. Just exists to allow an exit segue from the edit view to this view.
+        // There's a bug in iOS which means that using an exit segue doesn't automatically exit from
+        // the presented view controller, so dismiss it manually.
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     
