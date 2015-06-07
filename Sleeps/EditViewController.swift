@@ -71,8 +71,8 @@ class EditViewController: UIViewController {
         // and shrink the icon view a bit in order to let everything fit on screen.
         if UIScreen.mainScreen().bounds.size.height < 568
         {
-            iconViewHeightConstraint.constant = 70
-            iconView.setNeedsUpdateConstraints()
+            //iconViewHeightConstraint.constant = 70
+            //iconView.setNeedsUpdateConstraints()
         }
         
         // Give the Edit and Share buttons an outline.

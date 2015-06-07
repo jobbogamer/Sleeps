@@ -203,26 +203,26 @@
                                 <rect key="frame" x="16" y="28" width="568" height="556"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j4l-vm-Ji0" customClass="CircularView" customModule="Sleeps" customModuleProvider="target">
-                                        <rect key="frame" x="234" y="46" width="100" height="100"/>
+                                        <rect key="frame" x="244" y="46" width="80" height="80"/>
                                         <color key="backgroundColor" red="0.098802708089351654" green="0.71547949314117432" blue="0.3206152617931366" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="j4l-vm-Ji0" secondAttribute="height" multiplier="1:1" id="8qG-kY-Eoi"/>
-                                            <constraint firstAttribute="height" constant="100" id="tqE-xo-MXm"/>
+                                            <constraint firstAttribute="height" constant="80" id="tqE-xo-MXm"/>
                                         </constraints>
                                     </view>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Talk Like A Pirate Day" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CmR-9k-lfu">
-                                        <rect key="frame" x="8" y="189" width="552" height="29"/>
+                                        <rect key="frame" x="8" y="195" width="552" height="29"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="175" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3N3-ie-7xx">
-                                        <rect key="frame" x="8" y="226" width="552" height="43"/>
+                                        <rect key="frame" x="8" y="232" width="552" height="43"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XeK-wQ-4tb" customClass="CapsuleButton" customModule="Sleeps" customModuleProvider="target">
-                                        <rect key="frame" x="8" y="492" width="552" height="44"/>
+                                        <rect key="frame" x="292" y="492" width="260" height="44"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="R8x-HI-qm5"/>
@@ -232,7 +232,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oAv-td-bM3">
-                                        <rect key="frame" x="8" y="311" width="552" height="35"/>
+                                        <rect key="frame" x="8" y="345" width="552" height="35"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -241,21 +241,11 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BcD-99-vok">
-                                        <rect key="frame" x="8" y="354" width="552" height="35"/>
+                                        <rect key="frame" x="8" y="388" width="552" height="35"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="Repeats Yearly">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Wi-FB-ym2" customClass="CapsuleButton" customModule="Sleeps" customModuleProvider="target">
-                                        <rect key="frame" x="8" y="432" width="552" height="44"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="44" id="1Mc-8w-V0S"/>
-                                        </constraints>
-                                        <state key="normal" title="Edit">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
@@ -264,18 +254,18 @@
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5jn-Cj-DL3" userLabel="IconNameSpacer">
-                                        <rect key="frame" x="8" y="146" width="552" height="43"/>
+                                        <rect key="frame" x="8" y="126" width="552" height="69"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g1i-zN-ET0" userLabel="CountDateSpacer">
-                                        <rect key="frame" x="8" y="269" width="552" height="42"/>
+                                        <rect key="frame" x="8" y="275" width="552" height="70"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pcl-fe-U7M" userLabel="BottomSpacer">
-                                        <rect key="frame" x="8" y="389" width="552" height="43"/>
+                                        <rect key="frame" x="8" y="423" width="552" height="69"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Mz-ye-xgb">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Mz-ye-xgb" customClass="CapsuleButton" customModule="Sleeps" customModuleProvider="target">
                                         <rect key="frame" x="523" y="8" width="37" height="30"/>
                                         <state key="normal" title="Done">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -283,6 +273,16 @@
                                         <connections>
                                             <segue destination="6EB-7o-XUR" kind="unwind" unwindAction="unwindToViewController:" id="2iO-XA-OJu"/>
                                         </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Wi-FB-ym2" customClass="CapsuleButton" customModule="Sleeps" customModuleProvider="target">
+                                        <rect key="frame" x="16" y="492" width="260" height="44"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="1Mc-8w-V0S"/>
+                                        </constraints>
+                                        <state key="normal" title="Edit">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -292,6 +292,7 @@
                                     <constraint firstAttribute="trailing" secondItem="7Mz-ye-xgb" secondAttribute="trailing" constant="8" id="2ZM-ag-ioj"/>
                                     <constraint firstAttribute="trailing" secondItem="CmR-9k-lfu" secondAttribute="trailing" constant="8" id="2j9-xP-8d9"/>
                                     <constraint firstItem="m9e-aa-IdF" firstAttribute="leading" secondItem="aAB-BJ-xp5" secondAttribute="leading" constant="8" id="30l-IL-hd9"/>
+                                    <constraint firstItem="XeK-wQ-4tb" firstAttribute="leading" secondItem="0Wi-FB-ym2" secondAttribute="trailing" constant="16" id="4UH-9M-VcW"/>
                                     <constraint firstItem="5jn-Cj-DL3" firstAttribute="leading" secondItem="aAB-BJ-xp5" secondAttribute="leading" constant="8" id="5Qi-OJ-dGv"/>
                                     <constraint firstAttribute="trailing" secondItem="5jn-Cj-DL3" secondAttribute="trailing" constant="8" id="8F9-Xs-276"/>
                                     <constraint firstItem="g1i-zN-ET0" firstAttribute="top" secondItem="3N3-ie-7xx" secondAttribute="bottom" id="8ji-0i-9xJ"/>
@@ -299,11 +300,10 @@
                                     <constraint firstItem="g1i-zN-ET0" firstAttribute="height" secondItem="5jn-Cj-DL3" secondAttribute="height" id="F1f-sY-bLS"/>
                                     <constraint firstAttribute="centerX" secondItem="j4l-vm-Ji0" secondAttribute="centerX" id="FOu-81-Fnv"/>
                                     <constraint firstItem="m9e-aa-IdF" firstAttribute="top" secondItem="aAB-BJ-xp5" secondAttribute="top" constant="8" id="GQw-Kw-lxL"/>
-                                    <constraint firstItem="XeK-wQ-4tb" firstAttribute="top" secondItem="0Wi-FB-ym2" secondAttribute="bottom" constant="16" id="H0n-U6-iNw"/>
-                                    <constraint firstAttribute="trailing" secondItem="0Wi-FB-ym2" secondAttribute="trailing" constant="8" id="Hsu-2X-Axf"/>
-                                    <constraint firstAttribute="trailing" secondItem="XeK-wQ-4tb" secondAttribute="trailing" constant="8" id="JKx-ac-krq"/>
+                                    <constraint firstAttribute="trailing" secondItem="XeK-wQ-4tb" secondAttribute="trailing" constant="16" id="JKx-ac-krq"/>
                                     <constraint firstAttribute="trailing" secondItem="m9e-aa-IdF" secondAttribute="trailing" constant="8" id="Kxu-ah-ey4"/>
                                     <constraint firstItem="pcl-fe-U7M" firstAttribute="top" secondItem="BcD-99-vok" secondAttribute="bottom" id="NrT-AJ-Jup"/>
+                                    <constraint firstItem="XeK-wQ-4tb" firstAttribute="width" secondItem="0Wi-FB-ym2" secondAttribute="width" id="PU2-tr-wrX"/>
                                     <constraint firstItem="oAv-td-bM3" firstAttribute="top" secondItem="g1i-zN-ET0" secondAttribute="bottom" id="RSl-yC-Bjv"/>
                                     <constraint firstAttribute="bottom" secondItem="XeK-wQ-4tb" secondAttribute="bottom" constant="20" symbolic="YES" id="RfH-N0-d3d"/>
                                     <constraint firstItem="BcD-99-vok" firstAttribute="top" secondItem="oAv-td-bM3" secondAttribute="bottom" constant="8" id="TiN-wd-t51"/>
@@ -312,7 +312,7 @@
                                     <constraint firstItem="3N3-ie-7xx" firstAttribute="top" secondItem="CmR-9k-lfu" secondAttribute="bottom" constant="8" id="XqL-5I-eZe"/>
                                     <constraint firstItem="CmR-9k-lfu" firstAttribute="leading" secondItem="aAB-BJ-xp5" secondAttribute="leading" constant="8" id="XsO-KV-lFc"/>
                                     <constraint firstItem="0Wi-FB-ym2" firstAttribute="top" secondItem="pcl-fe-U7M" secondAttribute="bottom" id="YUW-kQ-9W4"/>
-                                    <constraint firstItem="0Wi-FB-ym2" firstAttribute="leading" secondItem="aAB-BJ-xp5" secondAttribute="leading" constant="8" id="Yh0-GL-02J"/>
+                                    <constraint firstItem="0Wi-FB-ym2" firstAttribute="leading" secondItem="aAB-BJ-xp5" secondAttribute="leading" constant="16" id="Yh0-GL-02J"/>
                                     <constraint firstItem="5jn-Cj-DL3" firstAttribute="top" secondItem="j4l-vm-Ji0" secondAttribute="bottom" id="cTd-aQ-hRH"/>
                                     <constraint firstItem="g1i-zN-ET0" firstAttribute="height" secondItem="pcl-fe-U7M" secondAttribute="height" id="ek0-wa-g3W"/>
                                     <constraint firstAttribute="trailing" secondItem="3N3-ie-7xx" secondAttribute="trailing" constant="8" id="fTE-Bt-k2I"/>
@@ -322,9 +322,9 @@
                                     <constraint firstItem="pcl-fe-U7M" firstAttribute="leading" secondItem="aAB-BJ-xp5" secondAttribute="leading" constant="8" id="mXm-jh-JpF"/>
                                     <constraint firstAttribute="trailing" secondItem="oAv-td-bM3" secondAttribute="trailing" constant="8" id="mpC-xr-gYJ"/>
                                     <constraint firstItem="7Mz-ye-xgb" firstAttribute="height" secondItem="m9e-aa-IdF" secondAttribute="height" id="mrW-Ow-hbJ"/>
-                                    <constraint firstItem="XeK-wQ-4tb" firstAttribute="leading" secondItem="aAB-BJ-xp5" secondAttribute="leading" constant="8" id="rz2-Ym-vZE"/>
                                     <constraint firstItem="j4l-vm-Ji0" firstAttribute="top" secondItem="m9e-aa-IdF" secondAttribute="bottom" constant="8" symbolic="YES" id="tEx-SU-mC2"/>
                                     <constraint firstItem="oAv-td-bM3" firstAttribute="leading" secondItem="aAB-BJ-xp5" secondAttribute="leading" constant="8" id="uk6-ON-GY2"/>
+                                    <constraint firstAttribute="bottom" secondItem="0Wi-FB-ym2" secondAttribute="bottom" constant="20" id="xjl-GL-gur"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
