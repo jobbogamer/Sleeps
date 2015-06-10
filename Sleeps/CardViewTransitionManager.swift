@@ -23,7 +23,7 @@ class CardViewTransitionManager: NSObject, UIViewControllerAnimatedTransitioning
     }
     
     
-    func transitionDuration(transitionContext: UIViewControllerContextTransitioning) -> NSTimeInterval
+    func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval
     {
         return 0.5
     }

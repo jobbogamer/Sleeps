@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 
-class CountdownCollectionViewController: UICollectionViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class CountdownCollectionViewController: UICollectionViewController {
     
     /// Persistence controller passed in from the AppDelegate at launch.
     var persistenceController: PersistenceController?
@@ -39,7 +39,7 @@ class CountdownCollectionViewController: UICollectionViewController, UICollectio
             if let fetchedCountdowns = FetchRequestController.getAllObjectsOfType(Countdown.self, fromPersistenceController: persistenceController)
             {
                 var sortedCountdowns = fetchedCountdowns
-                sortedCountdowns.sort(Countdown.isBefore)
+                sortedCountdowns.sortInPlace(Countdown.isBefore)
                 self.countdowns = sortedCountdowns
             }
         }

@@ -82,7 +82,7 @@ extension Countdown: Entity {
         // Get the current date to work out what year to set for each countdown.
         let now = NSDate()
         let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
-        let units: NSCalendarUnit = (.CalendarUnitYear | .CalendarUnitMonth | .CalendarUnitDay)
+        let units: NSCalendarUnit = [.Year, .Month, .Day]
         let dateComponents = calendar!.components(units, fromDate: now)
 
         let thisYear = dateComponents.year
@@ -120,7 +120,7 @@ extension Countdown: Entity {
         }
         
         // First default countdown: Pi Day (14/3).
-        var piDay = createObjectInContext(persistenceController.managedObjectContext!)
+        let piDay = createObjectInContext(persistenceController.managedObjectContext!)
         piDay.name = "Pi Day"
         piDay.colour = Int(arc4random_uniform(9))
         // TODO: Set the icon.
@@ -128,7 +128,7 @@ extension Countdown: Entity {
         piDay.date = NSDate.bhat_dateWithYear(piYear, month: 3, day: 14)
         
         // Second default countdown: Star Wars Day (4/5).
-        var starWarsDay = createObjectInContext(persistenceController.managedObjectContext!)
+        let starWarsDay = createObjectInContext(persistenceController.managedObjectContext!)
         starWarsDay.name = "Star Wars Day"
         starWarsDay.colour = Int(arc4random_uniform(9))
         // TODO: Set the icon.
@@ -136,7 +136,7 @@ extension Countdown: Entity {
         starWarsDay.date = NSDate.bhat_dateWithYear(starWarsYear, month: 5, day: 4)
     
         // Third default countdown: Talk Like A Pirate Day (19/9)
-        var pirateDay = createObjectInContext(persistenceController.managedObjectContext!)
+        let pirateDay = createObjectInContext(persistenceController.managedObjectContext!)
         pirateDay.name = "Talk Like A Pirate Day"
         pirateDay.colour = Int(arc4random_uniform(9))
         // TODO: Set the icon.
@@ -161,7 +161,8 @@ extension Countdown: Entity {
     func daysFromNow() -> Int
     {
         let calendar = NSCalendar.currentCalendar()
-        let dateComponents = calendar.components(.CalendarUnitDay, fromDate: NSDate(), toDate: date, options: nil)
+        let options = NSCalendarOptions()
+        let dateComponents = calendar.components(NSCalendarUnit.Day, fromDate: NSDate(), toDate: date, options: options)
         return dateComponents.day
     }
     

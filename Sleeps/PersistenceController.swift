@@ -47,25 +47,35 @@ public class PersistenceController {
             // do the save.
             publicContext.performBlockAndWait
             {
-                var error: NSErrorPointer = nil
-                if publicContext.save(error)
+                do
                 {
+                    try publicContext.save()
                     // The call to the private context is fine to be asynchronous.
                     privateContext.performBlock
                     {
-                        if !privateContext.save(error)
+                        do
                         {
-                            let err = error.memory!
-                            println("Failed to save to private context: \(err.localizedDescription)")
-                            println("\(err.userInfo)")
+                            try privateContext.save()
+                        }
+                        catch let error as NSError
+                        {
+                            print("Failed to save to private context: \(error.localizedDescription)")
+                            print("\(error.userInfo)")
+                        }
+                        catch
+                        {
+                            fatalError()
                         }
                     }
                 }
-                else
+                catch let error as NSError
                 {
-                    let err = error.memory!
-                    println("Failed to save to main context: \(err.localizedDescription)")
-                    println("\(err.userInfo)")
+                    print("Failed to save to main context: \(error.localizedDescription)")
+                    print("\(error.userInfo)")
+                }
+                catch
+                {
+                    fatalError()
                 }
             }
         }
@@ -76,7 +86,7 @@ public class PersistenceController {
     private func initialiseCoreData()
     {
         // If we already have a managed object context, stop before we overwrite the old instance.
-        if let context = self.managedObjectContext
+        if let _ = self.managedObjectContext
         {
             return
         }
@@ -116,28 +126,26 @@ public class PersistenceController {
                 // Get the URL to the store on disk. We use the Documents directory, and a filename
                 // of "DataModel.sqlite".
                 let fileManager = NSFileManager.defaultManager()
-                let documentsURL: NSURL? = fileManager.URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).last as? NSURL
+                let documentsURL: NSURL? = fileManager.URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).last
                 let storeURL = documentsURL?.URLByAppendingPathComponent("DataModel.sqlite")
                 
                 // Actually create the store.
-                var error: NSError? = nil
                 var failed = false
                 if let storeCoordinator = storeCoordinator
                 {
-                    let store = storeCoordinator.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: storeURL, options: options, error: &error)
-                    
-                    // If something went wrong, log it to the console.
-                    if store == nil
+                    do
                     {
-                        if let error = error
-                        {
-                            println("Error initialising persistent store coordinator: \(error.localizedDescription)")
-                            println("\(error.userInfo)")
-                        }
-                        else
-                        {
-                            println("Unknown error when initialising persistent store coordinator")
-                        }
+                        try storeCoordinator.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: storeURL, options: options)
+                    }
+                    catch let error as NSError
+                    {
+                        failed = true
+                        print("Error initialising persistent store coordinator: \(error.localizedDescription)")
+                        print("\(error.userInfo)")
+                    }
+                    catch
+                    {
+                        fatalError()
                     }
                 }
                 else
@@ -148,13 +156,13 @@ public class PersistenceController {
                 // Call the callback which we were provided with, passing in a Bool to show whether
                 // the operation was successful.
                 dispatch_sync(dispatch_get_main_queue()) {
-                    self.callback(!failed && error == nil)
+                    self.callback(!failed)
                 }
             }
         }
         else
         {
-            println("Could not initialise Core Data; no data model was found")
+            print("Could not initialise Core Data; no data model was found")
             
             // Call the callback which we were provided with, passing in false to show that an
             // error occurred.

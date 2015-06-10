@@ -18,11 +18,11 @@ class AutoLayoutCollectionViewCell: UICollectionViewCell {
     override func updateConstraints()
     {
         // Turn off autoresizing mask contraints.
-        contentView.setTranslatesAutoresizingMaskIntoConstraints(false)
+        contentView.translatesAutoresizingMaskIntoConstraints = false
         
         // Add constraints to the contentView to say that it must match the size of the cell.
-        let options = NSLayoutFormatOptions.allZeros
-        let views: [NSObject: AnyObject] = ["contentView": contentView]
+        let options = NSLayoutFormatOptions()
+        let views: [String: AnyObject] = ["contentView": contentView]
         let hConstraints = NSLayoutConstraint.constraintsWithVisualFormat("|[contentView]|", options: options, metrics: nil, views: views)
         let vConstraints = NSLayoutConstraint.constraintsWithVisualFormat("V:|[contentView]|", options: options, metrics: nil, views: views)
         addConstraints(hConstraints + vConstraints)

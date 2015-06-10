@@ -18,21 +18,17 @@ class FetchRequestController {
             let fetchRequest = NSFetchRequest(entityName: type.entityName)
             
             // Execute the fetch request.
-            var error: NSError? = nil
-            var results = context.executeFetchRequest(fetchRequest, error: &error) as! [T]?
-            
-            // Check whether anything went wrong.
-            if let error = error
+            do
             {
-                println("Error fetching objects: - \(error.localizedDescription)")
-                println("\(error.userInfo)")
+                let results = try context.executeFetchRequest(fetchRequest) as? [T]
+                return results
+            }
+            catch let error as NSError
+            {
+                print("Error fetching objects: - \(error.localizedDescription)")
+                print("\(error.userInfo)")
                 
                 return nil
-            }
-            else
-            {
-                // Nothing went wrong so return the results.
-                return results
             }
         }
         else

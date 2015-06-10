@@ -98,7 +98,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     {
         if !success
         {
-            println("Persistence controller failed to initialise. What now...?")
+            print("Persistence controller failed to initialise. What now...?")
             return
         }
         
