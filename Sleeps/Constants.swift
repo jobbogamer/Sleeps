@@ -11,7 +11,7 @@ import UIKit
 /* General ****************************************************************************************/
 
 /// Global tint colour used for buttons, etc.
-let kGlobalTintColour: UIColor = UIColor(hue:0.391, saturation:0.75, brightness:0.8, alpha:1)
+let kGlobalTintColour: UIColor = UIColor(hue:125/360, saturation:0.6, brightness:0.75, alpha:1)
 
 
 /* Navigation Controller***************************************************************************/
