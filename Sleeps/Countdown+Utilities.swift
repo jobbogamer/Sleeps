@@ -162,7 +162,7 @@ extension Countdown: Entity {
     {
         let calendar = NSCalendar.currentCalendar()
         let options = NSCalendarOptions()
-        let dateComponents = calendar.components(NSCalendarUnit.Day, fromDate: NSDate(), toDate: date, options: options)
+        let dateComponents = calendar.components([.Day], fromDate: NSDate(), toDate: date, options: options)
         return dateComponents.day
     }
     
