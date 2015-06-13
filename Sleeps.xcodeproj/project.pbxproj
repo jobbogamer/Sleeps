@@ -17,7 +17,6 @@
 		0336EFE51AC9B588001D3138 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0336EFE31AC9B588001D3138 /* Main.storyboard */; };
 		0336EFE71AC9B588001D3138 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0336EFE61AC9B588001D3138 /* Images.xcassets */; };
 		0336EFEA1AC9B588001D3138 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0336EFE81AC9B588001D3138 /* LaunchScreen.xib */; };
-		0336EFF61AC9B588001D3138 /* SleepsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0336EFF51AC9B588001D3138 /* SleepsTests.swift */; };
 		0336F0051AC9FFA0001D3138 /* CountdownCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0336F0041AC9FFA0001D3138 /* CountdownCollectionViewController.swift */; };
 		033FDD0B1AE19B990002E16E /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033FDD0A1AE19B990002E16E /* PersistenceController.swift */; };
 		03689B461B15024100343483 /* CapsuleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03689B451B15024100343483 /* CapsuleButton.swift */; };
@@ -28,6 +27,8 @@
 		03AC73B31B02A73600C03377 /* update_build_number.sh in Resources */ = {isa = PBXBuildFile; fileRef = 03AC73B21B02A73600C03377 /* update_build_number.sh */; };
 		03BF16701B1F9FA900D24D8D /* CardViewTransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BF166F1B1F9FA900D24D8D /* CardViewTransitionManager.swift */; };
 		03D64BB41AFC0755001A771C /* Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D64BB31AFC0755001A771C /* Icons.swift */; };
+		03DF35C01B2CB1EC0099F745 /* CountdownTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DF35BF1B2CB1EC0099F745 /* CountdownTests.swift */; };
+		03DF35C71B2CB6B30099F745 /* Sleeps.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0336EFDE1AC9B588001D3138 /* Sleeps.xcdatamodeld */; };
 		03E273631B0BB0680013BFE5 /* RoundedCornerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E273621B0BB0680013BFE5 /* RoundedCornerView.swift */; };
 		03E273651B0BB5520013BFE5 /* UIEdgeInsets+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E273641B0BB5520013BFE5 /* UIEdgeInsets+Helpers.swift */; };
 		03F0C5DA1AFFA51100DC5298 /* FetchRequestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F0C5D91AFFA51100DC5298 /* FetchRequestController.swift */; };
@@ -61,7 +62,6 @@
 		0336EFE91AC9B588001D3138 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		0336EFEF1AC9B588001D3138 /* SleepsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SleepsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0336EFF41AC9B588001D3138 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0336EFF51AC9B588001D3138 /* SleepsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepsTests.swift; sourceTree = "<group>"; };
 		0336F0041AC9FFA0001D3138 /* CountdownCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountdownCollectionViewController.swift; sourceTree = "<group>"; };
 		033FDD0A1AE19B990002E16E /* PersistenceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		03689B451B15024100343483 /* CapsuleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CapsuleButton.swift; sourceTree = "<group>"; };
@@ -72,6 +72,7 @@
 		03AC73B21B02A73600C03377 /* update_build_number.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = update_build_number.sh; path = Scripts/update_build_number.sh; sourceTree = "<group>"; };
 		03BF166F1B1F9FA900D24D8D /* CardViewTransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardViewTransitionManager.swift; sourceTree = "<group>"; };
 		03D64BB31AFC0755001A771C /* Icons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Icons.swift; sourceTree = "<group>"; };
+		03DF35BF1B2CB1EC0099F745 /* CountdownTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountdownTests.swift; sourceTree = "<group>"; };
 		03E273621B0BB0680013BFE5 /* RoundedCornerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedCornerView.swift; sourceTree = "<group>"; };
 		03E273641B0BB5520013BFE5 /* UIEdgeInsets+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIEdgeInsets+Helpers.swift"; sourceTree = "<group>"; };
 		03F0C5D91AFFA51100DC5298 /* FetchRequestController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchRequestController.swift; sourceTree = "<group>"; };
@@ -139,7 +140,7 @@
 		0336EFF21AC9B588001D3138 /* SleepsTests */ = {
 			isa = PBXGroup;
 			children = (
-				0336EFF51AC9B588001D3138 /* SleepsTests.swift */,
+				03DF35BF1B2CB1EC0099F745 /* CountdownTests.swift */,
 				0336EFF31AC9B588001D3138 /* Supporting Files */,
 			);
 			path = SleepsTests;
@@ -357,7 +358,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0336EFF61AC9B588001D3138 /* SleepsTests.swift in Sources */,
+				03DF35C01B2CB1EC0099F745 /* CountdownTests.swift in Sources */,
+				03DF35C71B2CB6B30099F745 /* Sleeps.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
