@@ -8,12 +8,36 @@
 
 import UIKit
 import XCTest
+import CoreData
 
 class SleepsTests: XCTestCase {
     
+    var managedObjectModel: NSManagedObjectContext!
+    
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        
+        // Create an in-memory Core Data stack which can be used to test interaction with the
+        // database, without having to actually store anything on disk.
+        if let model = NSManagedObjectModel.mergedModelFromBundles([NSBundle.mainBundle()])
+        {
+            let storeCoordinator = NSPersistentStoreCoordinator(managedObjectModel: model)
+            do
+            {
+                try storeCoordinator.addPersistentStoreWithType(NSInMemoryStoreType, configuration: nil, URL: nil, options: nil)
+                managedObjectModel = NSManagedObjectContext()
+                managedObjectModel.persistentStoreCoordinator = storeCoordinator
+            }
+            catch
+            {
+                XCTFail("Failed to initialise a mock Core Data stack")
+            }
+        }
+        else
+        {
+            XCTFail("Failed to initialise an object model")
+        }
+        
     }
     
     override func tearDown() {
