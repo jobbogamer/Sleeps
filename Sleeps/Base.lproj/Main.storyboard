@@ -205,7 +205,7 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j4l-vm-Ji0" customClass="CircularView" customModule="Sleeps" customModuleProvider="target">
                                         <rect key="frame" x="240" y="46" width="80" height="80"/>
-                                        <color key="backgroundColor" red="0.098802708089351654" green="0.71547949314117432" blue="0.3206152617931366" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.53523164987564087" green="0.35020774602890015" blue="0.78467643260955811" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="j4l-vm-Ji0" secondAttribute="height" multiplier="1:1" id="8qG-kY-Eoi"/>
                                             <constraint firstAttribute="height" constant="80" id="tqE-xo-MXm"/>

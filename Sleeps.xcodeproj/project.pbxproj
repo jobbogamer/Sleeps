@@ -132,6 +132,7 @@
 		0336EFDA1AC9B588001D3138 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0336EFE61AC9B588001D3138 /* Images.xcassets */,
 				0336EFDB1AC9B588001D3138 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -182,7 +183,6 @@
 				03E273621B0BB0680013BFE5 /* RoundedCornerView.swift */,
 				03D64BB31AFC0755001A771C /* Icons.swift */,
 				03E273641B0BB5520013BFE5 /* UIEdgeInsets+Helpers.swift */,
-				0336EFE61AC9B588001D3138 /* Images.xcassets */,
 			);
 			name = View;
 			sourceTree = "<group>";
