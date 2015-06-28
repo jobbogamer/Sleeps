@@ -16,11 +16,14 @@ let kGlobalTintColour: UIColor = UIColor(hue:260/360, saturation:50/100, brightn
 
 /* Navigation Controller***************************************************************************/
 
+/// Whether the navigation bar and toolbar should be filled with a background colour.
+let kNavigationControllerBarFilled: Bool = false
+
 /// Background colour to give to the navigation bar and toolbar.
 let kNavigationControllerBarColour: UIColor = kGlobalTintColour
 
 /// Tint colour used for bar button items and navigation bar titles.
-let kNavigationControllerTintColour: UIColor = UIColor.whiteColor()
+let kNavigationControllerTintColour: UIColor = kGlobalTintColour
 
 
 /* CountdownCollectionView ************************************************************************/
