@@ -16,7 +16,7 @@ class CountdownCollectionViewController: UICollectionViewController {
     var persistenceController: PersistenceController?
     
     /// Array of Countdown objects from the database, used as the data for the collection view.
-    var countdowns: [Countdown] = [Countdown]() {
+    var countdowns = [Countdown]() {
         
         didSet {
             // Whenever our array of countdowns changes, reload the collection view data.
@@ -114,7 +114,7 @@ class CountdownCollectionViewController: UICollectionViewController {
                 let countdown = countdowns[indexPath.row]
                 
                 // Pass the countdown to the destination view controller.
-                let editViewController = segue.destinationViewController as? EditViewController
+                let editViewController = segue.destinationViewController as? CountdownEditViewController
                 editViewController?.countdown = countdown
             }
         }

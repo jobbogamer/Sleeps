@@ -36,7 +36,7 @@ class CountdownCell: AutoLayoutCollectionViewCell {
     /// Update the icon and labels with the countdown's properties.
     private func updateView()
     {
-        iconView.backgroundColor = countdown.getColour()
+        iconView.backgroundColor = countdown.uiColour
         nameLabel.text           = countdown.name
         daysLabel.text           = String(countdown.daysFromNow())
         

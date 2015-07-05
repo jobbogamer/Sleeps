@@ -19,15 +19,27 @@ enum RepeatInterval: Int16
 }
 
 
+// Conform Countdown to Entity.
 extension Countdown: Entity {
-    
-    // MARK: - Class functions
     
     /// Get the entity name as used in the Core Data model. Required for the `Entity` protocol.
     static var entityName: String {
         get { return "Countdown" }
     }
     
+}
+
+
+// Add some additional helper functions to Countdown
+extension Countdown {
+    
+    var uiColour: UIColor {
+        
+        get {
+            return Countdown.colourFromIndex(self.colour.integerValue)
+        }
+        
+    }
     
     
     /// Create a new `Countdown` object in the given `NSManagedObjectContext`.
@@ -36,6 +48,25 @@ extension Countdown: Entity {
         return NSEntityDescription.insertNewObjectForEntityForName(self.entityName, inManagedObjectContext: context) as! Countdown
     }
     
+    
+    /// Determine whether `lhs` occurs before `rhs`.
+    class func isBefore(lhs: Countdown, rhs: Countdown) -> Bool
+    {
+        let dateComparison = lhs.date.compare(rhs.date)
+        
+        if dateComparison == .OrderedAscending
+        {
+            return true
+        }
+        else if dateComparison == .OrderedDescending
+        {
+            return false
+        }
+        else
+        {
+            return lhs.name < rhs.name
+        }
+    }
     
     
     /// Return the `UIColor` object represented by the countdown's `colour` property.
@@ -148,12 +179,6 @@ extension Countdown: Entity {
     }
     
     
-    class func isBefore(lhs: Countdown, rhs: Countdown) -> Bool
-    {
-        return lhs.date.compare(rhs.date) == .OrderedAscending
-    }
-    
-    
     // MARK: - Instance methods
     
     
@@ -164,13 +189,6 @@ extension Countdown: Entity {
         let options = NSCalendarOptions()
         let dateComponents = calendar.components([.Day], fromDate: NSDate(), toDate: date, options: options)
         return dateComponents.day
-    }
-    
-    
-    /// Get the countdown's colour as a `UIColor` object.
-    func getColour() -> UIColor
-    {
-        return Countdown.colourFromIndex(self.colour.integerValue)
     }
     
     
