@@ -46,7 +46,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.tintColor = kGlobalTintColour
         
         // Tint the navigation bar.
-        navigationController.navigationBar.titleTextAttributes?[NSForegroundColorAttributeName] = kNavigationControllerTintColour
         navigationController.navigationBar.tintColor = kNavigationControllerTintColour
         navigationController.toolbar.tintColor = kNavigationControllerTintColour
         
