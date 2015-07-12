@@ -185,10 +185,25 @@ extension Countdown {
     /// Get the number of days between the countdown's `date` and now.
     func daysFromNow() -> Int
     {
-        let calendar = NSCalendar.currentCalendar()
-        let options = NSCalendarOptions()
-        let dateComponents = calendar.components([.Day], fromDate: NSDate(), toDate: date, options: options)
-        return dateComponents.day
+        let diff = self.date.timeIntervalSinceNow
+        let days = diff / 86400
+        
+        // If today is the target date, i.e. it was midnight last night, then the date will be
+        // between zero and negative one days from now.
+        if days > -1 && days < 0
+        {
+            return 0
+        }
+        else
+        {
+            // Return the number of whole days plus one, because a countdown's date is always set to
+            // exactly midnight. Finding the difference between the date and the current date will
+            // never be an exact number of days (unless it's 00:00:00), and the remainder will
+            // always be too small, not too large. For example, if the target date is midnight
+            // tonight, the difference between then and now will be 0 days and some remainder,
+            // therefore we must add one.
+            return Int(days) + 1
+        }
     }
     
     
@@ -222,6 +237,31 @@ extension Countdown {
         case .Never:
             return "Never Repeats"
         }
+    }
+    
+    
+    func modifyDateForRepeat()
+    {
+        let calendar = NSCalendar.currentCalendar()
+        let options = NSCalendarOptions()
+        let dateComponents = NSDateComponents()
+        
+        switch self.getRepeatInterval()
+        {
+        case .Yearly:
+            dateComponents.year = 1
+            
+        case.Monthly:
+            dateComponents.month = 1
+            
+        case.Weekly:
+            dateComponents.day = 7
+            
+        case.Never:
+            return
+        }
+        
+        self.date = calendar.dateByAddingComponents(dateComponents, toDate: self.date, options: options)!
     }
     
 }
