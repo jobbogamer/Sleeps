@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8121.17" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vg6-We-l5h">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8152.3" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vg6-We-l5h">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8124.4"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -177,9 +177,9 @@
                     </collectionView>
                     <toolbarItems>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="CFB-to-laV"/>
-                        <barButtonItem title="New" id="Yba-mh-x4a"/>
+                        <barButtonItem image="gear_bbi" id="IEh-9h-rca"/>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="H6b-Bt-g5a"/>
-                        <barButtonItem title="Settings" id="IEh-9h-rca"/>
+                        <barButtonItem systemItem="add" id="Yba-mh-x4a"/>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="XZV-Rx-XTw"/>
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="Sleeps" id="qQf-vY-w1F"/>
@@ -390,6 +390,9 @@
             <point key="canvasLocation" x="-127" y="409"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="gear_bbi" width="22" height="22"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="pj7-rC-aaR"/>
     </inferredMetricsTieBreakers>
