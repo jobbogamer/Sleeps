@@ -37,6 +37,9 @@ let kEditCountdownSegueIdentifier: String = "EditCountdown"
 /// The identifier of the segue from the New/Edit screen back to the collection view.
 let kDismissCardViewSegueIdentifier: String = "DismissCardView"
 
+/// The identifier of the segue from the countdown collection view to the Settings screen.
+let kSettingsScreenSegueIdentifier: String = "ShowSettings"
+
 /// The identifier for countdown cells.
 let kCountdownCellIdentifier: String = "CountdownCell"
 
