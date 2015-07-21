@@ -26,6 +26,9 @@
 		03AC73AE1B02999800C03377 /* Countdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AC73AD1B02999800C03377 /* Countdown.swift */; };
 		03AC73B31B02A73600C03377 /* update_build_number.sh in Resources */ = {isa = PBXBuildFile; fileRef = 03AC73B21B02A73600C03377 /* update_build_number.sh */; };
 		03BF16701B1F9FA900D24D8D /* CardViewTransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BF166F1B1F9FA900D24D8D /* CardViewTransitionManager.swift */; };
+		03D50F161B5E61580007B76D /* CountdownTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D50F151B5E61580007B76D /* CountdownTableViewController.swift */; };
+		03D50F181B5E64930007B76D /* CircularImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D50F171B5E64930007B76D /* CircularImageView.swift */; };
+		03D50F1A1B5E67970007B76D /* CountdownTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D50F191B5E67970007B76D /* CountdownTableCell.swift */; };
 		03D64BB41AFC0755001A771C /* Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D64BB31AFC0755001A771C /* Icons.swift */; };
 		03DF35C01B2CB1EC0099F745 /* CountdownTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DF35BF1B2CB1EC0099F745 /* CountdownTests.swift */; };
 		03DF35C71B2CB6B30099F745 /* Sleeps.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0336EFDE1AC9B588001D3138 /* Sleeps.xcdatamodeld */; };
@@ -71,6 +74,9 @@
 		03AC73AD1B02999800C03377 /* Countdown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Countdown.swift; sourceTree = "<group>"; };
 		03AC73B21B02A73600C03377 /* update_build_number.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = update_build_number.sh; path = Scripts/update_build_number.sh; sourceTree = "<group>"; };
 		03BF166F1B1F9FA900D24D8D /* CardViewTransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardViewTransitionManager.swift; sourceTree = "<group>"; };
+		03D50F151B5E61580007B76D /* CountdownTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountdownTableViewController.swift; sourceTree = "<group>"; };
+		03D50F171B5E64930007B76D /* CircularImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularImageView.swift; sourceTree = "<group>"; };
+		03D50F191B5E67970007B76D /* CountdownTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountdownTableCell.swift; sourceTree = "<group>"; };
 		03D64BB31AFC0755001A771C /* Icons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Icons.swift; sourceTree = "<group>"; };
 		03DF35BF1B2CB1EC0099F745 /* CountdownTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountdownTests.swift; sourceTree = "<group>"; };
 		03E273621B0BB0680013BFE5 /* RoundedCornerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedCornerView.swift; sourceTree = "<group>"; };
@@ -178,10 +184,12 @@
 				03689B471B15131400343483 /* AutoLayoutCollectionViewCell.swift */,
 				03689B491B15146300343483 /* ButtonsCell.swift */,
 				033533BE1B0CF79C00767725 /* CountdownCell.swift */,
+				03D50F191B5E67970007B76D /* CountdownTableCell.swift */,
 				03F97D2E1B0A9AE500D4ED09 /* CircularView.swift */,
 				03689B451B15024100343483 /* CapsuleButton.swift */,
 				03F97D301B0AA65A00D4ED09 /* RoundedCornerButton.swift */,
 				03E273621B0BB0680013BFE5 /* RoundedCornerView.swift */,
+				03D50F171B5E64930007B76D /* CircularImageView.swift */,
 				03D64BB31AFC0755001A771C /* Icons.swift */,
 				03E273641B0BB5520013BFE5 /* UIEdgeInsets+Helpers.swift */,
 			);
@@ -194,6 +202,7 @@
 				0322F6A51B0E45E6006D3D8E /* Constants.swift */,
 				0336EFDC1AC9B588001D3138 /* AppDelegate.swift */,
 				0336F0041AC9FFA0001D3138 /* CountdownCollectionViewController.swift */,
+				03D50F151B5E61580007B76D /* CountdownTableViewController.swift */,
 				0336EFE11AC9B588001D3138 /* CountdownEditViewController.swift */,
 				032F20F01AD154A200D7BA6C /* SettingsViewController.swift */,
 				03BF166F1B1F9FA900D24D8D /* CardViewTransitionManager.swift */,
@@ -337,11 +346,14 @@
 				033533BF1B0CF79C00767725 /* CountdownCell.swift in Sources */,
 				03689B4A1B15146300343483 /* ButtonsCell.swift in Sources */,
 				03AC73A61B028C0B00C03377 /* NSDate+Utilities.swift in Sources */,
+				03D50F1A1B5E67970007B76D /* CountdownTableCell.swift in Sources */,
+				03D50F181B5E64930007B76D /* CircularImageView.swift in Sources */,
 				0336EFE21AC9B588001D3138 /* CountdownEditViewController.swift in Sources */,
 				03689B481B15131400343483 /* AutoLayoutCollectionViewCell.swift in Sources */,
 				03E273631B0BB0680013BFE5 /* RoundedCornerView.swift in Sources */,
 				03F97D2F1B0A9AE500D4ED09 /* CircularView.swift in Sources */,
 				0336EFDD1AC9B588001D3138 /* AppDelegate.swift in Sources */,
+				03D50F161B5E61580007B76D /* CountdownTableViewController.swift in Sources */,
 				03D64BB41AFC0755001A771C /* Icons.swift in Sources */,
 				03F0C5DA1AFFA51100DC5298 /* FetchRequestController.swift in Sources */,
 				03F0C5DC1AFFA6AD00DC5298 /* Entity.swift in Sources */,
