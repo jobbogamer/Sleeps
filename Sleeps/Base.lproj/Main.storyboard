@@ -10,7 +10,7 @@
         <!--Sleeps-->
         <scene sceneID="b8Z-fG-w7Z">
             <objects>
-                <collectionViewController id="RQw-kI-jmH" customClass="CountdownCollectionViewController" customModule="Sleeps" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="CountdownCollectionView" id="RQw-kI-jmH" customClass="CountdownCollectionViewController" customModule="Sleeps" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="x2s-QX-2Sr">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -192,13 +192,13 @@
         <scene sceneID="CPm-TR-D0d">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u1e-c0-nHu" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tableViewController id="rxI-PE-atn" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="CountdownTableView" id="rxI-PE-atn" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="92" sectionHeaderHeight="22" sectionFooterHeight="22" id="5oh-WJ-e0a">
                         <rect key="frame" x="0.0" y="64" width="600" height="492"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="92" id="SSd-tc-Yr3">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="CountdownCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="CountdownCell" rowHeight="92" id="SSd-tc-Yr3">
                                 <rect key="frame" x="0.0" y="22" width="600" height="92"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SSd-tc-Yr3" id="iAf-rY-4R3">
