@@ -194,12 +194,12 @@
             <objects>
                 <tableViewController storyboardIdentifier="CountdownTableView" id="rxI-PE-atn" customClass="CountdownTableViewController" customModule="Sleeps" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="92" sectionHeaderHeight="22" sectionFooterHeight="22" id="5oh-WJ-e0a">
-                        <rect key="frame" x="0.0" y="64" width="600" height="492"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="CountdownCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="CountdownTableCell" rowHeight="92" id="SSd-tc-Yr3" customClass="CountdownTableCell" customModule="Sleeps" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="22" width="600" height="92"/>
+                                <rect key="frame" x="0.0" y="86" width="600" height="92"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SSd-tc-Yr3" id="iAf-rY-4R3">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="91"/>
@@ -270,6 +270,7 @@
                                     <outlet property="daysLabel" destination="WB5-IX-bjd" id="bj8-MM-VIf"/>
                                     <outlet property="iconView" destination="AJu-on-aPB" id="waE-3n-6Ng"/>
                                     <outlet property="nameLabel" destination="ZG0-Dl-GHV" id="p3F-H8-n0h"/>
+                                    <segue destination="H3A-fh-1qB" kind="presentation" identifier="EditCountdown" modalPresentationStyle="overFullScreen" id="lwN-hd-0KF"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -282,7 +283,11 @@
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="6uq-px-sS4"/>
                         <barButtonItem image="gear_bbi" id="ykj-CY-dMx"/>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="IEL-i7-ozd"/>
-                        <barButtonItem systemItem="add" id="h64-Xa-9yP"/>
+                        <barButtonItem systemItem="add" id="h64-Xa-9yP">
+                            <connections>
+                                <segue destination="H3A-fh-1qB" kind="presentation" identifier="NewCountdown" modalPresentationStyle="overFullScreen" id="OL7-xs-adl"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="cCs-hf-ieR"/>
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="Sleeps" id="a0K-jj-LaE"/>
@@ -366,7 +371,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="6EB-7o-XUR" kind="unwind" unwindAction="unwindToViewController:" id="2iO-XA-OJu"/>
+                                            <segue destination="6EB-7o-XUR" kind="unwind" unwindAction="unwindToViewController:" id="on8-eq-Lil"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Wi-FB-ym2" customClass="CapsuleButton" customModule="Sleeps" customModuleProvider="target">
@@ -462,7 +467,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="me4-ZS-PcZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="6EB-7o-XUR" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1301" y="409"/>
+            <point key="canvasLocation" x="1406" y="782"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="QbX-to-zGY">
@@ -470,7 +475,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="vg6-We-l5h" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Rho-ke-Vac">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Rho-ke-Vac">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -480,7 +485,7 @@
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
-                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" id="zYp-qg-xQw">
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="zYp-qg-xQw">
                         <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </toolbar>
@@ -497,6 +502,6 @@
         <image name="gear_bbi" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="pj7-rC-aaR"/>
+        <segue reference="OL7-xs-adl"/>
     </inferredMetricsTieBreakers>
 </document>

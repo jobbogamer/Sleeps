@@ -69,8 +69,21 @@ class CountdownTableViewController: UITableViewController {
         // Choose what to do based on the segue being performed.
         if segue.identifier! == kNewCountdownSegueIdentifier {
             // The New button was tapped.
+        } else if segue.identifier == kEditCountdownSegueIdentifier {
+            // Get the countdown object from the table cell and pass it to the edit view.
+            let cell = sender as! CountdownTableCell
+            let editViewController = segue.destinationViewController as! CountdownEditViewController
+            editViewController.countdown = cell.countdown
         }
     }
+    
+    
+    @IBAction func unwindToViewController (sender: UIStoryboardSegue) {
+        // There's a bug in iOS which means that using an exit segue doesn't automatically exit from
+        // the presented view controller, so dismiss it manually.
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+
     
     
     
