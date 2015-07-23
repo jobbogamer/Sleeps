@@ -70,6 +70,10 @@ class CountdownTableViewController: UITableViewController {
         if segue.identifier! == kNewCountdownSegueIdentifier {
             // The New button was tapped.
         } else if segue.identifier == kEditCountdownSegueIdentifier {
+            // Deselect the chosen cell so that it doesn't stay selected after the edit view is
+            // dismissed.
+            self.tableView.deselectRowAtIndexPath(self.tableView.indexPathForSelectedRow!, animated: false)
+            
             // Get the countdown object from the table cell and pass it to the edit view.
             let cell = sender as! CountdownTableCell
             let editViewController = segue.destinationViewController as! CountdownEditViewController

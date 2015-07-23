@@ -33,7 +33,17 @@ class CountdownTableCell: UITableViewCell {
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
+        // Ensure the icon view does not disappear during selection.
+        guard let countdown = countdown else { return }
+        iconView.backgroundColor = countdown.uiColour
+    }
+    
+    override func setHighlighted(highlighted: Bool, animated: Bool) {
+        super.setHighlighted(highlighted, animated: animated)
+        
+        // Ensure the icon view does not disappear during highlight.
+        guard let countdown = countdown else { return }
+        iconView.backgroundColor = countdown.uiColour
     }
 
 }
