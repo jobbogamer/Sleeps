@@ -13,14 +13,36 @@ class CountdownTableViewController: UITableViewController {
     /// Persistence controller passed in from the AppDelegate at launch.
     var persistenceController: PersistenceController?
     
-    /// Array of Countdown objects from the database, used as the data for the collection view.
+    /// Array of Countdown objects from the database, used as the data for the table view.
     var countdowns = [Countdown]() {
         
         didSet {
-            // Whenever our array of countdowns changes, reload the collection view data.
+            // Whenever our array of countdowns changes, reload the table view data.
             tableView?.reloadData()
         }
         
+    }
+    
+    
+    
+    // MARK: - Database
+    
+    /// Get all the countdowns from the persistence controller and store them in the countdowns
+    /// array. This function only does anything if the persistence controller exists.
+    func reloadData()
+    {
+        // Use FetchRequestController to get all the countdowns from the database. If no error
+        // occurs, set `self.countdowns` to the returned results, which will trigger the collection
+        // view to refresh itself.
+        if let persistenceController = persistenceController
+        {
+            if let fetchedCountdowns = FetchRequestController.getAllObjectsOfType(Countdown.self, fromPersistenceController: persistenceController)
+            {
+                var sortedCountdowns = fetchedCountdowns
+                sortedCountdowns.sortInPlace(Countdown.isBefore)
+                self.countdowns = sortedCountdowns
+            }
+        }
     }
 
     
@@ -68,9 +90,11 @@ class CountdownTableViewController: UITableViewController {
     
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(kCountdownCellIdentifier, forIndexPath: indexPath)
+        // Get a countdown cell.
+        let cell = tableView.dequeueReusableCellWithIdentifier(kCountdownTableCellIdentifier, forIndexPath: indexPath) as! CountdownTableCell
 
-        // Configure the cell...
+        // Give the cell a countdown to display.
+        cell.countdown = countdowns[indexPath.row]
 
         return cell
     }

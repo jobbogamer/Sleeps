@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var persistenceController: PersistenceController?
     
     /// The root view controller.
-    var collectionViewController: CountdownCollectionViewController?
+    var tableViewController: CountdownTableViewController?
     
     
     // MARK: - Activation
@@ -32,8 +32,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Pass the persistence controller into the root view controller.
         let navigationController = window?.rootViewController as! UINavigationController
-        collectionViewController = navigationController.viewControllers[0] as? CountdownCollectionViewController
-        collectionViewController?.persistenceController = self.persistenceController
+        tableViewController = navigationController.viewControllers[0] as? CountdownTableViewController
+        tableViewController?.persistenceController = self.persistenceController
         
         // Fill the background colour of the navigation bar and toolbar if enabled.
         if (kNavigationControllerBarFilled)
@@ -115,7 +115,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         // Tell the root view controller to reload its data.
-        collectionViewController?.reloadData()
+        dispatch_async(dispatch_get_main_queue()) {
+            tableViewController?.reloadData()
+        }
     }
 }
 
