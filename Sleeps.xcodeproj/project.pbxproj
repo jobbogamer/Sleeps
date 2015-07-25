@@ -10,14 +10,12 @@
 		0301BAF11AF806040037AA72 /* Countdown+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0301BAF01AF806040037AA72 /* Countdown+Utilities.swift */; };
 		0322F6A61B0E45E6006D3D8E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0322F6A51B0E45E6006D3D8E /* Constants.swift */; };
 		032F20F11AD154A200D7BA6C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032F20F01AD154A200D7BA6C /* SettingsViewController.swift */; };
-		033533BF1B0CF79C00767725 /* CountdownCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033533BE1B0CF79C00767725 /* CountdownCell.swift */; };
 		0336EFDD1AC9B588001D3138 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0336EFDC1AC9B588001D3138 /* AppDelegate.swift */; };
 		0336EFE01AC9B588001D3138 /* Sleeps.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0336EFDE1AC9B588001D3138 /* Sleeps.xcdatamodeld */; };
 		0336EFE21AC9B588001D3138 /* CountdownEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0336EFE11AC9B588001D3138 /* CountdownEditViewController.swift */; };
 		0336EFE51AC9B588001D3138 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0336EFE31AC9B588001D3138 /* Main.storyboard */; };
 		0336EFE71AC9B588001D3138 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0336EFE61AC9B588001D3138 /* Images.xcassets */; };
 		0336EFEA1AC9B588001D3138 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0336EFE81AC9B588001D3138 /* LaunchScreen.xib */; };
-		0336F0051AC9FFA0001D3138 /* CountdownCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0336F0041AC9FFA0001D3138 /* CountdownCollectionViewController.swift */; };
 		033FDD0B1AE19B990002E16E /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033FDD0A1AE19B990002E16E /* PersistenceController.swift */; };
 		03689B461B15024100343483 /* CapsuleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03689B451B15024100343483 /* CapsuleButton.swift */; };
 		03689B481B15131400343483 /* AutoLayoutCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03689B471B15131400343483 /* AutoLayoutCollectionViewCell.swift */; };
@@ -54,7 +52,6 @@
 		0301BAF01AF806040037AA72 /* Countdown+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Countdown+Utilities.swift"; sourceTree = "<group>"; };
 		0322F6A51B0E45E6006D3D8E /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		032F20F01AD154A200D7BA6C /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		033533BE1B0CF79C00767725 /* CountdownCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountdownCell.swift; sourceTree = "<group>"; };
 		0336EFD71AC9B587001D3138 /* Sleeps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sleeps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0336EFDB1AC9B588001D3138 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0336EFDC1AC9B588001D3138 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -65,7 +62,6 @@
 		0336EFE91AC9B588001D3138 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		0336EFEF1AC9B588001D3138 /* SleepsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SleepsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0336EFF41AC9B588001D3138 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0336F0041AC9FFA0001D3138 /* CountdownCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountdownCollectionViewController.swift; sourceTree = "<group>"; };
 		033FDD0A1AE19B990002E16E /* PersistenceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		03689B451B15024100343483 /* CapsuleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CapsuleButton.swift; sourceTree = "<group>"; };
 		03689B471B15131400343483 /* AutoLayoutCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoLayoutCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -183,7 +179,6 @@
 				0336EFE81AC9B588001D3138 /* LaunchScreen.xib */,
 				03689B471B15131400343483 /* AutoLayoutCollectionViewCell.swift */,
 				03689B491B15146300343483 /* ButtonsCell.swift */,
-				033533BE1B0CF79C00767725 /* CountdownCell.swift */,
 				03D50F191B5E67970007B76D /* CountdownTableCell.swift */,
 				03F97D2E1B0A9AE500D4ED09 /* CircularView.swift */,
 				03689B451B15024100343483 /* CapsuleButton.swift */,
@@ -201,7 +196,6 @@
 			children = (
 				0322F6A51B0E45E6006D3D8E /* Constants.swift */,
 				0336EFDC1AC9B588001D3138 /* AppDelegate.swift */,
-				0336F0041AC9FFA0001D3138 /* CountdownCollectionViewController.swift */,
 				03D50F151B5E61580007B76D /* CountdownTableViewController.swift */,
 				0336EFE11AC9B588001D3138 /* CountdownEditViewController.swift */,
 				032F20F01AD154A200D7BA6C /* SettingsViewController.swift */,
@@ -340,10 +334,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				033FDD0B1AE19B990002E16E /* PersistenceController.swift in Sources */,
-				0336F0051AC9FFA0001D3138 /* CountdownCollectionViewController.swift in Sources */,
 				03689B461B15024100343483 /* CapsuleButton.swift in Sources */,
 				0301BAF11AF806040037AA72 /* Countdown+Utilities.swift in Sources */,
-				033533BF1B0CF79C00767725 /* CountdownCell.swift in Sources */,
 				03689B4A1B15146300343483 /* ButtonsCell.swift in Sources */,
 				03AC73A61B028C0B00C03377 /* NSDate+Utilities.swift in Sources */,
 				03D50F1A1B5E67970007B76D /* CountdownTableCell.swift in Sources */,

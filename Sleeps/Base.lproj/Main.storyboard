@@ -3,192 +3,10 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8124.4"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--Sleeps-->
-        <scene sceneID="b8Z-fG-w7Z">
-            <objects>
-                <collectionViewController storyboardIdentifier="CountdownCollectionView" id="RQw-kI-jmH" customClass="CountdownCollectionViewController" customModule="Sleeps" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="x2s-QX-2Sr">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="eNC-4W-7c7">
-                            <size key="itemSize" width="253" height="258"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CountdownCell" id="8ax-KS-KLj" customClass="CountdownCell" customModule="Sleeps" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="olF-iX-wQW" customClass="RoundedCornerView" customModule="Sleeps" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
-                                            <subviews>
-                                                <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OjX-Uh-5L3" customClass="CircularView" customModule="Sleeps" customModuleProvider="target">
-                                                    <rect key="frame" x="48" y="8" width="64" height="64"/>
-                                                    <color key="backgroundColor" red="0.15895691514015198" green="0.88085287809371948" blue="0.28218299150466919" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="OjX-Uh-5L3" secondAttribute="height" multiplier="1:1" id="5YZ-nl-MIe"/>
-                                                    </constraints>
-                                                </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Talk Like A Pirate Day" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75000000000000022" translatesAutoresizingMaskIntoConstraints="NO" id="dpl-Pt-cao">
-                                                    <rect key="frame" x="8" y="80" width="144" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.49226117134094238" green="0.49232131242752075" blue="0.4922335147857666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="175" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QiD-HA-neb">
-                                                    <rect key="frame" x="8" y="104" width="144" height="48"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <constraints>
-                                                <constraint firstItem="OjX-Uh-5L3" firstAttribute="leading" secondItem="olF-iX-wQW" secondAttribute="leading" constant="48" id="0QD-fc-DdY"/>
-                                                <constraint firstAttribute="trailing" secondItem="QiD-HA-neb" secondAttribute="trailing" constant="8" id="5Ay-hp-OUq"/>
-                                                <constraint firstItem="dpl-Pt-cao" firstAttribute="leading" secondItem="olF-iX-wQW" secondAttribute="leading" constant="8" id="As4-ox-lke"/>
-                                                <constraint firstItem="OjX-Uh-5L3" firstAttribute="top" secondItem="olF-iX-wQW" secondAttribute="top" constant="8" id="KBF-et-XiM"/>
-                                                <constraint firstItem="QiD-HA-neb" firstAttribute="leading" secondItem="olF-iX-wQW" secondAttribute="leading" constant="8" id="PDr-vn-q1I"/>
-                                                <constraint firstAttribute="trailing" secondItem="OjX-Uh-5L3" secondAttribute="trailing" constant="48" id="Qx5-e2-TNt"/>
-                                                <constraint firstItem="dpl-Pt-cao" firstAttribute="top" secondItem="OjX-Uh-5L3" secondAttribute="bottom" constant="8" id="Wtk-va-ngx"/>
-                                                <constraint firstAttribute="bottom" secondItem="QiD-HA-neb" secondAttribute="bottom" constant="8" id="hNz-E4-Wkh"/>
-                                                <constraint firstAttribute="trailing" secondItem="dpl-Pt-cao" secondAttribute="trailing" constant="8" id="qsU-px-Wwe"/>
-                                            </constraints>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                    <real key="value" value="0.0"/>
-                                                </userDefinedRuntimeAttribute>
-                                            </userDefinedRuntimeAttributes>
-                                        </view>
-                                    </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
-                                <constraints>
-                                    <constraint firstAttribute="centerY" secondItem="olF-iX-wQW" secondAttribute="centerY" id="FGO-O0-zRt"/>
-                                    <constraint firstItem="olF-iX-wQW" firstAttribute="top" secondItem="8ax-KS-KLj" secondAttribute="top" id="KN0-FM-59q"/>
-                                    <constraint firstAttribute="centerX" secondItem="olF-iX-wQW" secondAttribute="centerX" id="bN8-Wj-f2M"/>
-                                    <constraint firstItem="olF-iX-wQW" firstAttribute="bottom" secondItem="8ax-KS-KLj" secondAttribute="bottom" id="iZm-Ew-BQR"/>
-                                    <constraint firstItem="olF-iX-wQW" firstAttribute="leading" secondItem="8ax-KS-KLj" secondAttribute="leading" id="l64-u0-Gl2"/>
-                                    <constraint firstItem="olF-iX-wQW" firstAttribute="trailing" secondItem="8ax-KS-KLj" secondAttribute="trailing" id="lhu-MV-Qrr"/>
-                                </constraints>
-                                <size key="customSize" width="160" height="160"/>
-                                <connections>
-                                    <outlet property="background" destination="olF-iX-wQW" id="4RE-Gf-oaD"/>
-                                    <outlet property="daysLabel" destination="QiD-HA-neb" id="G4a-0P-Yzs"/>
-                                    <outlet property="iconView" destination="OjX-Uh-5L3" id="46P-SZ-GLk"/>
-                                    <outlet property="nameLabel" destination="dpl-Pt-cao" id="0UW-3F-0mW"/>
-                                    <segue destination="H3A-fh-1qB" kind="presentation" identifier="EditCountdown" modalPresentationStyle="overFullScreen" id="pj7-rC-aaR"/>
-                                </connections>
-                            </collectionViewCell>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ButtonsCell" id="C1A-gX-0PK" customClass="ButtonsCell" customModule="Sleeps" customModuleProvider="target">
-                                <rect key="frame" x="220" y="0.0" width="160" height="160"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Hp-dq-lY4" customClass="RoundedCornerView" customModule="Sleeps" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eKA-xf-gnU" customClass="CapsuleButton" customModule="Sleeps" customModuleProvider="target">
-                                                    <rect key="frame" x="8" y="28" width="144" height="44"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="44" id="OMq-PX-CJ0"/>
-                                                    </constraints>
-                                                    <state key="normal" title="New">
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                    <connections>
-                                                        <segue destination="H3A-fh-1qB" kind="presentation" identifier="NewCountdown" modalPresentationStyle="overFullScreen" id="phz-T7-bGb"/>
-                                                    </connections>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QLh-JS-4Mg" customClass="CapsuleButton" customModule="Sleeps" customModuleProvider="target">
-                                                    <rect key="frame" x="8" y="88" width="144" height="44"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="44" id="oHH-av-MBz"/>
-                                                    </constraints>
-                                                    <state key="normal" title="Settings">
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                </button>
-                                                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ruf-Sh-olQ" userLabel="TopSpacer">
-                                                    <rect key="frame" x="8" y="8" width="144" height="12"/>
-                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                </view>
-                                                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Pn-Ur-Ldh" userLabel="BottomSpacer">
-                                                    <rect key="frame" x="8" y="140" width="144" height="12"/>
-                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                </view>
-                                            </subviews>
-                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <constraints>
-                                                <constraint firstItem="eKA-xf-gnU" firstAttribute="leading" secondItem="1Hp-dq-lY4" secondAttribute="leading" constant="8" id="15m-QM-gyY"/>
-                                                <constraint firstAttribute="trailing" secondItem="Ruf-Sh-olQ" secondAttribute="trailing" constant="8" id="1KG-vy-vMp"/>
-                                                <constraint firstItem="Ruf-Sh-olQ" firstAttribute="height" secondItem="9Pn-Ur-Ldh" secondAttribute="height" id="1zZ-pS-eDM"/>
-                                                <constraint firstItem="9Pn-Ur-Ldh" firstAttribute="top" secondItem="QLh-JS-4Mg" secondAttribute="bottom" constant="8" id="2cH-Su-lP8"/>
-                                                <constraint firstAttribute="bottom" secondItem="9Pn-Ur-Ldh" secondAttribute="bottom" constant="8" id="54k-46-8Ex"/>
-                                                <constraint firstItem="Ruf-Sh-olQ" firstAttribute="top" secondItem="1Hp-dq-lY4" secondAttribute="top" constant="8" id="CPW-rc-jhL"/>
-                                                <constraint firstItem="QLh-JS-4Mg" firstAttribute="top" secondItem="eKA-xf-gnU" secondAttribute="bottom" constant="16" id="DHM-s0-xAW"/>
-                                                <constraint firstItem="Ruf-Sh-olQ" firstAttribute="leading" secondItem="1Hp-dq-lY4" secondAttribute="leading" constant="8" id="PgD-R0-7a0"/>
-                                                <constraint firstItem="9Pn-Ur-Ldh" firstAttribute="leading" secondItem="1Hp-dq-lY4" secondAttribute="leading" constant="8" id="YRC-PI-zix"/>
-                                                <constraint firstItem="eKA-xf-gnU" firstAttribute="top" secondItem="Ruf-Sh-olQ" secondAttribute="bottom" constant="8" id="bqF-8b-b5J"/>
-                                                <constraint firstItem="QLh-JS-4Mg" firstAttribute="leading" secondItem="1Hp-dq-lY4" secondAttribute="leading" constant="8" id="ePA-pC-LcG"/>
-                                                <constraint firstAttribute="trailing" secondItem="eKA-xf-gnU" secondAttribute="trailing" constant="8" id="egy-me-k7Y"/>
-                                                <constraint firstAttribute="trailing" secondItem="QLh-JS-4Mg" secondAttribute="trailing" constant="8" id="ox4-xM-phO"/>
-                                                <constraint firstAttribute="trailing" secondItem="9Pn-Ur-Ldh" secondAttribute="trailing" constant="8" id="yEE-rU-9Uj"/>
-                                            </constraints>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                    <real key="value" value="0.0"/>
-                                                </userDefinedRuntimeAttribute>
-                                            </userDefinedRuntimeAttributes>
-                                        </view>
-                                    </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
-                                <constraints>
-                                    <constraint firstAttribute="centerX" secondItem="1Hp-dq-lY4" secondAttribute="centerX" id="0xZ-oO-hLa"/>
-                                    <constraint firstItem="1Hp-dq-lY4" firstAttribute="top" secondItem="C1A-gX-0PK" secondAttribute="top" id="Bgw-C7-mka"/>
-                                    <constraint firstItem="1Hp-dq-lY4" firstAttribute="trailing" secondItem="C1A-gX-0PK" secondAttribute="trailing" id="ERd-j3-ywE"/>
-                                    <constraint firstItem="1Hp-dq-lY4" firstAttribute="bottom" secondItem="C1A-gX-0PK" secondAttribute="bottom" id="LdR-9j-7Lh"/>
-                                    <constraint firstItem="1Hp-dq-lY4" firstAttribute="leading" secondItem="C1A-gX-0PK" secondAttribute="leading" id="eyo-fx-XZX"/>
-                                </constraints>
-                                <size key="customSize" width="160" height="160"/>
-                                <connections>
-                                    <outlet property="background" destination="1Hp-dq-lY4" id="114-ZA-Zld"/>
-                                    <outlet property="newButton" destination="eKA-xf-gnU" id="oON-GY-TR5"/>
-                                    <outlet property="settingsButton" destination="QLh-JS-4Mg" id="sGA-TA-LIM"/>
-                                </connections>
-                            </collectionViewCell>
-                        </cells>
-                        <connections>
-                            <outlet property="dataSource" destination="RQw-kI-jmH" id="cPD-k4-pdn"/>
-                            <outlet property="delegate" destination="RQw-kI-jmH" id="PoT-df-xQy"/>
-                        </connections>
-                    </collectionView>
-                    <toolbarItems>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="CFB-to-laV"/>
-                        <barButtonItem image="gear_bbi" id="IEh-9h-rca"/>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="H6b-Bt-g5a"/>
-                        <barButtonItem systemItem="add" id="Yba-mh-x4a"/>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="XZV-Rx-XTw"/>
-                    </toolbarItems>
-                    <navigationItem key="navigationItem" title="Sleeps" id="qQf-vY-w1F"/>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6Zr-5l-WGk" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="584" y="409"/>
-        </scene>
         <!--Sleeps-->
         <scene sceneID="CPm-TR-D0d">
             <objects>
@@ -270,7 +88,7 @@
                                     <outlet property="daysLabel" destination="WB5-IX-bjd" id="bj8-MM-VIf"/>
                                     <outlet property="iconView" destination="AJu-on-aPB" id="waE-3n-6Ng"/>
                                     <outlet property="nameLabel" destination="ZG0-Dl-GHV" id="p3F-H8-n0h"/>
-                                    <segue destination="H3A-fh-1qB" kind="presentation" identifier="EditCountdown" modalPresentationStyle="overFullScreen" id="lwN-hd-0KF"/>
+                                    <segue destination="H3A-fh-1qB" kind="show" identifier="EditCountdown" id="lwN-hd-0KF"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -285,7 +103,7 @@
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="IEL-i7-ozd"/>
                         <barButtonItem systemItem="add" id="h64-Xa-9yP">
                             <connections>
-                                <segue destination="H3A-fh-1qB" kind="presentation" identifier="NewCountdown" modalPresentationStyle="overFullScreen" id="OL7-xs-adl"/>
+                                <segue destination="H3A-fh-1qB" kind="show" identifier="NewCountdown" id="OL7-xs-adl"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="cCs-hf-ieR"/>
@@ -294,7 +112,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u1e-c0-nHu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="584" y="1180"/>
+            <point key="canvasLocation" x="622" y="409"/>
         </scene>
         <!--Countdown Edit View Controller-->
         <scene sceneID="6he-0S-Ewv">
@@ -307,167 +125,12 @@
                     <view key="view" contentMode="scaleToFill" id="iUn-jW-d0c">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aAB-BJ-xp5" customClass="RoundedCornerView" customModule="Sleeps" customModuleProvider="target">
-                                <rect key="frame" x="20" y="28" width="560" height="556"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j4l-vm-Ji0" customClass="CircularView" customModule="Sleeps" customModuleProvider="target">
-                                        <rect key="frame" x="240" y="46" width="80" height="80"/>
-                                        <color key="backgroundColor" red="0.53523164987564087" green="0.35020774602890015" blue="0.78467643260955811" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="j4l-vm-Ji0" secondAttribute="height" multiplier="1:1" id="8qG-kY-Eoi"/>
-                                            <constraint firstAttribute="height" constant="80" id="tqE-xo-MXm"/>
-                                        </constraints>
-                                    </view>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Talk Like A Pirate Day" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CmR-9k-lfu">
-                                        <rect key="frame" x="8" y="210" width="544" height="29"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="175" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3N3-ie-7xx">
-                                        <rect key="frame" x="8" y="247" width="544" height="43"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XeK-wQ-4tb" customClass="CapsuleButton" customModule="Sleeps" customModuleProvider="target">
-                                        <rect key="frame" x="288" y="504" width="256" height="44"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="44" id="R8x-HI-qm5"/>
-                                        </constraints>
-                                        <state key="normal" title="Share">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oAv-td-bM3">
-                                        <rect key="frame" x="8" y="373" width="268" height="35"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                        <state key="normal" title="19th September 2015">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
-                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m9e-aa-IdF" userLabel="TopSpacer">
-                                        <rect key="frame" x="8" y="8" width="544" height="30"/>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                    </view>
-                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5jn-Cj-DL3" userLabel="IconNameSpacer">
-                                        <rect key="frame" x="8" y="126" width="544" height="84"/>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                    </view>
-                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g1i-zN-ET0" userLabel="CountDateSpacer">
-                                        <rect key="frame" x="8" y="290" width="544" height="83"/>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                    </view>
-                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pcl-fe-U7M" userLabel="BottomSpacer">
-                                        <rect key="frame" x="8" y="408" width="544" height="84"/>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                    </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Mz-ye-xgb" customClass="CapsuleButton" customModule="Sleeps" customModuleProvider="target">
-                                        <rect key="frame" x="515" y="8" width="37" height="30"/>
-                                        <state key="normal" title="Done">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="6EB-7o-XUR" kind="unwind" unwindAction="unwindToViewController:" id="on8-eq-Lil"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Wi-FB-ym2" customClass="CapsuleButton" customModule="Sleeps" customModuleProvider="target">
-                                        <rect key="frame" x="16" y="492" width="256" height="44"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="44" id="1Mc-8w-V0S"/>
-                                        </constraints>
-                                        <state key="normal" title="Edit">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BcD-99-vok">
-                                        <rect key="frame" x="284" y="373" width="268" height="35"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                        <state key="normal" title="Repeats Yearly">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="pcl-fe-U7M" secondAttribute="trailing" constant="8" id="0z0-eG-arS"/>
-                                    <constraint firstItem="3N3-ie-7xx" firstAttribute="leading" secondItem="aAB-BJ-xp5" secondAttribute="leading" constant="8" id="1CM-yk-fly"/>
-                                    <constraint firstItem="BcD-99-vok" firstAttribute="top" secondItem="g1i-zN-ET0" secondAttribute="bottom" id="1sz-io-rt5"/>
-                                    <constraint firstAttribute="trailing" secondItem="7Mz-ye-xgb" secondAttribute="trailing" constant="8" id="2ZM-ag-ioj"/>
-                                    <constraint firstAttribute="trailing" secondItem="CmR-9k-lfu" secondAttribute="trailing" constant="8" id="2j9-xP-8d9"/>
-                                    <constraint firstItem="m9e-aa-IdF" firstAttribute="leading" secondItem="aAB-BJ-xp5" secondAttribute="leading" constant="8" id="30l-IL-hd9"/>
-                                    <constraint firstItem="XeK-wQ-4tb" firstAttribute="leading" secondItem="0Wi-FB-ym2" secondAttribute="trailing" constant="16" id="4UH-9M-VcW"/>
-                                    <constraint firstItem="5jn-Cj-DL3" firstAttribute="leading" secondItem="aAB-BJ-xp5" secondAttribute="leading" constant="8" id="5Qi-OJ-dGv"/>
-                                    <constraint firstAttribute="trailing" secondItem="5jn-Cj-DL3" secondAttribute="trailing" constant="8" id="8F9-Xs-276"/>
-                                    <constraint firstItem="g1i-zN-ET0" firstAttribute="top" secondItem="3N3-ie-7xx" secondAttribute="bottom" id="8ji-0i-9xJ"/>
-                                    <constraint firstAttribute="trailing" secondItem="g1i-zN-ET0" secondAttribute="trailing" constant="8" id="Cp7-qd-Fry"/>
-                                    <constraint firstItem="g1i-zN-ET0" firstAttribute="height" secondItem="5jn-Cj-DL3" secondAttribute="height" id="F1f-sY-bLS"/>
-                                    <constraint firstAttribute="centerX" secondItem="j4l-vm-Ji0" secondAttribute="centerX" id="FOu-81-Fnv"/>
-                                    <constraint firstItem="BcD-99-vok" firstAttribute="leading" secondItem="oAv-td-bM3" secondAttribute="trailing" constant="8" id="G5N-FO-DH4"/>
-                                    <constraint firstItem="m9e-aa-IdF" firstAttribute="top" secondItem="aAB-BJ-xp5" secondAttribute="top" constant="8" id="GQw-Kw-lxL"/>
-                                    <constraint firstItem="pcl-fe-U7M" firstAttribute="top" secondItem="oAv-td-bM3" secondAttribute="bottom" id="Guy-2a-agG"/>
-                                    <constraint firstAttribute="trailing" secondItem="XeK-wQ-4tb" secondAttribute="trailing" constant="16" id="JKx-ac-krq"/>
-                                    <constraint firstAttribute="trailing" secondItem="m9e-aa-IdF" secondAttribute="trailing" constant="8" id="Kxu-ah-ey4"/>
-                                    <constraint firstItem="pcl-fe-U7M" firstAttribute="top" secondItem="BcD-99-vok" secondAttribute="bottom" id="NrT-AJ-Jup"/>
-                                    <constraint firstItem="XeK-wQ-4tb" firstAttribute="width" secondItem="0Wi-FB-ym2" secondAttribute="width" id="PU2-tr-wrX"/>
-                                    <constraint firstItem="oAv-td-bM3" firstAttribute="top" secondItem="g1i-zN-ET0" secondAttribute="bottom" id="RSl-yC-Bjv"/>
-                                    <constraint firstAttribute="bottom" secondItem="XeK-wQ-4tb" secondAttribute="bottom" constant="20" symbolic="YES" id="RfH-N0-d3d"/>
-                                    <constraint firstItem="BcD-99-vok" firstAttribute="width" secondItem="oAv-td-bM3" secondAttribute="width" id="TfB-hr-Yfc"/>
-                                    <constraint firstItem="CmR-9k-lfu" firstAttribute="top" secondItem="5jn-Cj-DL3" secondAttribute="bottom" id="Wih-TE-J7F"/>
-                                    <constraint firstItem="g1i-zN-ET0" firstAttribute="leading" secondItem="aAB-BJ-xp5" secondAttribute="leading" constant="8" id="Wmu-So-j2F"/>
-                                    <constraint firstItem="3N3-ie-7xx" firstAttribute="top" secondItem="CmR-9k-lfu" secondAttribute="bottom" constant="8" id="XqL-5I-eZe"/>
-                                    <constraint firstItem="CmR-9k-lfu" firstAttribute="leading" secondItem="aAB-BJ-xp5" secondAttribute="leading" constant="8" id="XsO-KV-lFc"/>
-                                    <constraint firstItem="0Wi-FB-ym2" firstAttribute="top" secondItem="pcl-fe-U7M" secondAttribute="bottom" id="YUW-kQ-9W4"/>
-                                    <constraint firstItem="0Wi-FB-ym2" firstAttribute="leading" secondItem="aAB-BJ-xp5" secondAttribute="leading" constant="16" id="Yh0-GL-02J"/>
-                                    <constraint firstItem="5jn-Cj-DL3" firstAttribute="top" secondItem="j4l-vm-Ji0" secondAttribute="bottom" id="cTd-aQ-hRH"/>
-                                    <constraint firstItem="g1i-zN-ET0" firstAttribute="height" secondItem="pcl-fe-U7M" secondAttribute="height" id="ek0-wa-g3W"/>
-                                    <constraint firstAttribute="trailing" secondItem="3N3-ie-7xx" secondAttribute="trailing" constant="8" id="fTE-Bt-k2I"/>
-                                    <constraint firstAttribute="trailing" secondItem="BcD-99-vok" secondAttribute="trailing" constant="8" id="lya-Yx-ERd"/>
-                                    <constraint firstItem="7Mz-ye-xgb" firstAttribute="top" secondItem="aAB-BJ-xp5" secondAttribute="top" constant="8" id="mPT-u1-2wG"/>
-                                    <constraint firstItem="pcl-fe-U7M" firstAttribute="leading" secondItem="aAB-BJ-xp5" secondAttribute="leading" constant="8" id="mXm-jh-JpF"/>
-                                    <constraint firstItem="7Mz-ye-xgb" firstAttribute="height" secondItem="m9e-aa-IdF" secondAttribute="height" id="mrW-Ow-hbJ"/>
-                                    <constraint firstItem="j4l-vm-Ji0" firstAttribute="top" secondItem="m9e-aa-IdF" secondAttribute="bottom" constant="8" symbolic="YES" id="tEx-SU-mC2"/>
-                                    <constraint firstItem="oAv-td-bM3" firstAttribute="leading" secondItem="aAB-BJ-xp5" secondAttribute="leading" constant="8" id="uk6-ON-GY2"/>
-                                    <constraint firstAttribute="bottom" secondItem="0Wi-FB-ym2" secondAttribute="bottom" constant="20" id="xjl-GL-gur"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="aAB-BJ-xp5" firstAttribute="top" secondItem="oYT-JC-6Wa" secondAttribute="bottom" constant="8" symbolic="YES" id="272-31-gPP"/>
-                            <constraint firstItem="EDR-0k-U0c" firstAttribute="top" secondItem="aAB-BJ-xp5" secondAttribute="bottom" constant="16" id="YyS-1k-TLd"/>
-                            <constraint firstItem="aAB-BJ-xp5" firstAttribute="trailing" secondItem="iUn-jW-d0c" secondAttribute="trailingMargin" id="dV3-Pj-QnW"/>
-                            <constraint firstItem="aAB-BJ-xp5" firstAttribute="leading" secondItem="iUn-jW-d0c" secondAttribute="leadingMargin" id="jgt-i0-8fS"/>
-                        </constraints>
                     </view>
                     <nil key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="dateButton" destination="oAv-td-bM3" id="SXi-wS-85r"/>
-                        <outlet property="daysLabel" destination="3N3-ie-7xx" id="Hjs-6f-73H"/>
-                        <outlet property="doneButton" destination="7Mz-ye-xgb" id="Q9d-Kq-5LQ"/>
-                        <outlet property="editButton" destination="0Wi-FB-ym2" id="iV0-Pc-hiV"/>
-                        <outlet property="iconView" destination="j4l-vm-Ji0" id="Eqr-9X-i5k"/>
-                        <outlet property="iconViewHeightConstraint" destination="tqE-xo-MXm" id="826-vt-nbc"/>
-                        <outlet property="nameField" destination="CmR-9k-lfu" id="q2a-Ez-cmk"/>
-                        <outlet property="repeatButton" destination="BcD-99-vok" id="sv3-sB-1EE"/>
-                        <outlet property="shareButton" destination="XeK-wQ-4tb" id="zIg-Nc-1Ox"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="me4-ZS-PcZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="6EB-7o-XUR" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1406" y="782"/>
+            <point key="canvasLocation" x="1367" y="409"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="QbX-to-zGY">

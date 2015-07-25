@@ -29,15 +29,12 @@ class CountdownTableViewController: UITableViewController {
     
     /// Get all the countdowns from the persistence controller and store them in the countdowns
     /// array. This function only does anything if the persistence controller exists.
-    func reloadData()
-    {
+    func reloadData() {
         // Use FetchRequestController to get all the countdowns from the database. If no error
         // occurs, set `self.countdowns` to the returned results, which will trigger the collection
         // view to refresh itself.
-        if let persistenceController = persistenceController
-        {
-            if let fetchedCountdowns = FetchRequestController.getAllObjectsOfType(Countdown.self, fromPersistenceController: persistenceController)
-            {
+        if let persistenceController = persistenceController {
+            if let fetchedCountdowns = FetchRequestController.getAllObjectsOfType(Countdown.self, fromPersistenceController: persistenceController) {
                 var sortedCountdowns = fetchedCountdowns
                 sortedCountdowns.sortInPlace(Countdown.isBefore)
                 self.countdowns = sortedCountdowns
