@@ -42,6 +42,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             navigationController.toolbar.barTintColor = kGlobalTintColour
         }
         
+        // Set the background of the navigation controller to get rid of the dark flashes on segues.
+        navigationController.view.backgroundColor = UIColor.whiteColor()
+        
         // Set the global tint colour.
         window?.tintColor = kGlobalTintColour
         
