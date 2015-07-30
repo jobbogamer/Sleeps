@@ -22,7 +22,13 @@ class CountdownTableCell: UITableViewCell {
             iconView.backgroundColor = countdown.uiColour
             nameLabel.text = countdown.name
             dateLabel.text = countdown.date.localisedString()
-            daysLabel.text = String(countdown.daysFromNow())
+            
+            // Format the number of days nicely.
+            let formatter = NSNumberFormatter()
+            formatter.locale = NSLocale.currentLocale()
+            formatter.numberStyle = .DecimalStyle
+            formatter.maximumFractionDigits = 0
+            daysLabel.text = formatter.stringFromNumber(countdown.daysFromNow())
         }
     }
 
