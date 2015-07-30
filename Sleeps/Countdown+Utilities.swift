@@ -185,6 +185,8 @@ extension Countdown {
     /// Get the number of days between the countdown's `date` and now.
     func daysFromNow() -> Int
     {
+        return 9999
+        
         let diff = self.date.timeIntervalSinceNow
         let days = diff / 86400
         
