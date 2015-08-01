@@ -114,10 +114,10 @@
             </objects>
             <point key="canvasLocation" x="622" y="409"/>
         </scene>
-        <!--Countdown Edit View Controller-->
+        <!--Edit View-->
         <scene sceneID="6he-0S-Ewv">
             <objects>
-                <viewController id="H3A-fh-1qB" customClass="CountdownEditViewController" customModule="Sleeps" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Edit View" id="H3A-fh-1qB" customClass="CountdownEditViewController" customModule="Sleeps" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oYT-JC-6Wa"/>
                         <viewControllerLayoutGuide type="bottom" id="EDR-0k-U0c"/>
@@ -125,8 +125,76 @@
                     <view key="view" contentMode="scaleToFill" id="iUn-jW-d0c">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UyS-hN-bEa" userLabel="Icon Changer">
+                                <rect key="frame" x="20" y="72" width="64" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="kcc-LH-Ce4"/>
+                                    <constraint firstAttribute="width" constant="64" id="kfp-m5-B97"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5qR-lq-Cuh" userLabel="Colour Changer">
+                                <rect key="frame" x="516" y="72" width="64" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="64" id="3Qp-9U-2Hv"/>
+                                    <constraint firstAttribute="height" constant="64" id="SU6-rF-re4"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Talk Like A Pirate Day" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0h5-bh-X97">
+                                <rect key="frame" x="20" y="144" width="560" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ya-XF-wtd" customClass="RoundedCornerButton" customModule="Sleeps" customModuleProvider="target">
+                                <rect key="frame" x="20" y="259" width="560" height="30"/>
+                                <state key="normal" title="Share"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Mv-3M-iKi">
+                                <rect key="frame" x="20" y="182" width="560" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="19th September 2015">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="2kb-Fy-IhT">
+                                <rect key="frame" x="171" y="223" width="259" height="29"/>
+                                <segments>
+                                    <segment title="Never"/>
+                                    <segment title="Weekly"/>
+                                    <segment title="Monthly"/>
+                                    <segment title="Yearly"/>
+                                </segments>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="leadingMargin" secondItem="UyS-hN-bEa" secondAttribute="leading" id="1qm-le-4SR"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="8Mv-3M-iKi" secondAttribute="trailing" id="2ir-DM-gq5"/>
+                            <constraint firstItem="2kb-Fy-IhT" firstAttribute="top" secondItem="8Mv-3M-iKi" secondAttribute="bottom" constant="8" id="6bf-h2-GKW"/>
+                            <constraint firstItem="0ya-XF-wtd" firstAttribute="top" secondItem="2kb-Fy-IhT" secondAttribute="bottom" constant="8" id="9xs-aa-IPi"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="0h5-bh-X97" secondAttribute="trailing" id="Gdy-Vu-9VK"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="0h5-bh-X97" secondAttribute="leading" id="Op9-Z4-vrj"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="8Mv-3M-iKi" secondAttribute="leading" id="PNA-v6-cyl"/>
+                            <constraint firstItem="5qR-lq-Cuh" firstAttribute="top" secondItem="oYT-JC-6Wa" secondAttribute="bottom" constant="8" id="V3Y-vz-Xhg"/>
+                            <constraint firstItem="0h5-bh-X97" firstAttribute="top" secondItem="5qR-lq-Cuh" secondAttribute="bottom" constant="8" id="i4v-zS-a2X"/>
+                            <constraint firstItem="8Mv-3M-iKi" firstAttribute="top" secondItem="0h5-bh-X97" secondAttribute="bottom" constant="8" id="jNH-cP-aNb"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="0ya-XF-wtd" secondAttribute="leading" id="lBN-eR-swn"/>
+                            <constraint firstItem="UyS-hN-bEa" firstAttribute="top" secondItem="oYT-JC-6Wa" secondAttribute="bottom" constant="8" id="o0v-0c-klv"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="0ya-XF-wtd" secondAttribute="trailing" id="oBK-5P-7hg"/>
+                            <constraint firstItem="0h5-bh-X97" firstAttribute="top" secondItem="UyS-hN-bEa" secondAttribute="bottom" constant="8" id="qTh-Mo-oGc"/>
+                            <constraint firstItem="2kb-Fy-IhT" firstAttribute="centerX" secondItem="iUn-jW-d0c" secondAttribute="centerX" id="ug3-FI-GNm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="5qR-lq-Cuh" secondAttribute="trailing" id="zkl-e1-H1x"/>
+                        </constraints>
                     </view>
                     <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="colourView" destination="5qR-lq-Cuh" id="JWl-Ax-DCU"/>
+                        <outlet property="dateButton" destination="8Mv-3M-iKi" id="dy9-HW-Xgg"/>
+                        <outlet property="iconView" destination="UyS-hN-bEa" id="JeP-hF-Unb"/>
+                        <outlet property="nameField" destination="0h5-bh-X97" id="lH6-5W-ssT"/>
+                        <outlet property="repeatChooser" destination="2kb-Fy-IhT" id="Bo3-gi-cFb"/>
+                        <outlet property="shareButton" destination="0ya-XF-wtd" id="nXj-rB-wHa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="me4-ZS-PcZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -165,6 +233,6 @@
         <image name="gear_bbi" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="OL7-xs-adl"/>
+        <segue reference="lwN-hd-0KF"/>
     </inferredMetricsTieBreakers>
 </document>

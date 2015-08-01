@@ -22,8 +22,11 @@ class CountdownEditViewController: UIViewController {
     /// The Done button in the top right.
     @IBOutlet weak var doneButton: UIButton!
     
-    /// The circular icon view at the top.
-    @IBOutlet weak var iconView: CircularView!
+    /// The icon view at the top.
+    @IBOutlet weak var iconView: UIImageView!
+    
+    /// The circulr view at the top for changing the colour.
+    @IBOutlet weak var colourView: UIImageView!
     
     /// The layout constraint which controls the height of iconVIew.
     @IBOutlet weak var iconViewHeightConstraint: NSLayoutConstraint!
@@ -31,20 +34,17 @@ class CountdownEditViewController: UIViewController {
     /// The name text field.
     @IBOutlet weak var nameField: UITextField!
     
-    /// The label which shows the actual count.
-    @IBOutlet weak var daysLabel: UILabel!
-    
     /// The button which displays the date of the countdown.
     @IBOutlet weak var dateButton: UIButton!
     
-    /// The button which displays the repeat interval.
-    @IBOutlet weak var repeatButton: UIButton!
+    /// The segmented button used to select the repeat duration.
+    @IBOutlet weak var repeatChooser: UISegmentedControl!
     
     /// The Edit button in the bottom left.
-    @IBOutlet weak var editButton: CapsuleButton!
+    @IBOutlet weak var editButton: RoundedCornerButton!
     
     /// The Share button in the bottom right.
-    @IBOutlet weak var shareButton: CapsuleButton!
+    @IBOutlet weak var shareButton: RoundedCornerButton!
         
     
     private func updateView()
@@ -52,11 +52,10 @@ class CountdownEditViewController: UIViewController {
         if let countdown = countdown
         {
             // Set up all the fields and buttons in the view.
-            iconView?.backgroundColor = countdown.uiColour
+            colourView?.backgroundColor = countdown.uiColour
             nameField?.text = countdown.name
-            daysLabel?.text = String(countdown.daysFromNow())
             dateButton?.setTitle(countdown.date.localisedString(), forState: .Normal)
-            repeatButton?.setTitle(countdown.repeatIntervalString(), forState: .Normal)
+            repeatChooser?.selectedSegmentIndex = countdown.repeatInterval.integerValue
             
             // TODO: Set the icon.
         }
@@ -75,9 +74,7 @@ class CountdownEditViewController: UIViewController {
             //iconView.setNeedsUpdateConstraints()
         }
         
-        // Give the Edit and Share buttons an outline.
-        editButton.layer.borderColor  = kGlobalTintColour.CGColor
-        editButton.layer.borderWidth  = 1
+        // Give the Share button an outline.
         shareButton.layer.borderColor = kGlobalTintColour.CGColor
         shareButton.layer.borderWidth = 1
     }
