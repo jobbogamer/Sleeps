@@ -23,6 +23,15 @@ extension NSDate {
     }
     
     
+    /// Return a new NSDate set to midnight on the day of the given date.
+    class func midnightOnDate(date: NSDate) -> NSDate
+    {
+        let interval = date.timeIntervalSinceReferenceDate
+        let midnightInterval = interval - (interval % 86400)
+        return NSDate(timeIntervalSinceReferenceDate: midnightInterval)
+    }
+    
+    
     /// Convert the date to a string with the given time style and date style. These default to
     /// `.NoStyle` and `.LongStyle` respectively.
     func localisedString(timeStyle: NSDateFormatterStyle = .NoStyle, dateStyle: NSDateFormatterStyle = .LongStyle) -> String

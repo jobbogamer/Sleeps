@@ -73,7 +73,7 @@ class CountdownTableViewController: UITableViewController {
             
             // Get the countdown object from the table cell and pass it to the edit view.
             let cell = sender as! CountdownTableCell
-            let editViewController = segue.destinationViewController as! CountdownEditViewController
+            let editViewController = segue.destinationViewController as! EditTableViewController
             editViewController.countdown = cell.countdown
         }
     }

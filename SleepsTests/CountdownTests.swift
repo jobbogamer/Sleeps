@@ -70,14 +70,9 @@ class CountdownTests: XCTestCase {
     {
         let countdown = Countdown.createObjectInContext(managedObjectContext)
         
-        // Get today's date and create a new date set to midnight on the same day, month, and year.
-        let interval = NSDate().timeIntervalSinceReferenceDate
-        let midnightInterval = interval - (interval % 86400)
-        let newDate = NSDate(timeIntervalSinceReferenceDate: midnightInterval)
-        
-        // Set the countdown's date to the newly created date, and check that daysFromNow() returns
+        // Set the countdown's date to the midnight today, and check that daysFromNow() returns
         // 0 as expected.
-        countdown.date = newDate
+        countdown.date = NSDate.midnightOnDate(NSDate())
         XCTAssertEqual(countdown.daysFromNow(), 0, "daysFromNow() should return 0")
     }
     
