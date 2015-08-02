@@ -18,10 +18,35 @@ class CountdownTableViewController: UITableViewController {
         
         didSet {
             // Whenever our array of countdowns changes, reload the table view data.
-            tableView?.reloadData()
+            tableView?.reloadSections(NSIndexSet(index: 0), withRowAnimation: .Fade)
         }
         
     }
+    
+    
+    /// Called when the new countdown button is tapped. Creates a new countdown object with
+    /// placeholder values.
+    @IBAction func newTapped(sender: UIBarButtonItem) {
+        if let persistenceController = persistenceController {
+            if let objectContext = persistenceController.managedObjectContext {
+                let newCountdown = Countdown.createObjectInContext(objectContext)
+                newCountdown.icon = 0
+                newCountdown.colour = 0
+                newCountdown.name = "New Countdown"
+                newCountdown.date = NSDate.midnightOnDate(NSDate())
+                newCountdown.setRepeatInterval(.Never)
+                
+                // Add the new countdown to the list, save the object context, and then return.
+                countdowns.insert(newCountdown, atIndex: 0)
+                persistenceController.save()
+                return
+            }
+        }
+        
+        // If we reach this point, the database is catastrophically broken.
+        NSLog("No managed object context available to create new countdown")
+    }
+    
     
     
     
@@ -112,40 +137,5 @@ class CountdownTableViewController: UITableViewController {
 
         return cell
     }
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
 
 }

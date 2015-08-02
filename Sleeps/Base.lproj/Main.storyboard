@@ -104,7 +104,7 @@
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="IEL-i7-ozd"/>
                         <barButtonItem systemItem="add" id="h64-Xa-9yP">
                             <connections>
-                                <segue destination="CM2-CC-Pbt" kind="show" identifier="NewCountdown" id="aGJ-1K-WEw"/>
+                                <action selector="newTapped:" destination="rxI-PE-atn" id="mID-oi-rYW"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="cCs-hf-ieR"/>
@@ -325,7 +325,4 @@
     <resources>
         <image name="gear_bbi" width="22" height="22"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="aGJ-1K-WEw"/>
-    </inferredMetricsTieBreakers>
 </document>
