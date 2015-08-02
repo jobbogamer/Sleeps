@@ -58,8 +58,11 @@ class EditTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // The table view must be given a nil background view otherwise the navigation controller
+        // transition will break and the table view will have a white background.
         tableView.backgroundView = nil
         
+        // Set up the outlets with the details of the countdown that has been passed in.
         updateView()
     }
 
