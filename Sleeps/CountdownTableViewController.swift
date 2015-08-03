@@ -17,9 +17,9 @@ class CountdownTableViewController: UITableViewController {
     var countdowns = [Countdown]() {
         
         didSet {
-            // Whenever our array of countdowns changes, reload the table view data, as long as a
-            // deletion isn't in progress.
-            if !deleting {
+            // Whenever our array of countdowns changes, reload the table view data, as long as an
+            // edit isn't in progress.
+            if !modifying {
                 tableView?.reloadSections(NSIndexSet(index: 0), withRowAnimation: .Automatic)
             }
         }
@@ -27,7 +27,7 @@ class CountdownTableViewController: UITableViewController {
     }
     
     /// Is a countdown currently being deleted?
-    var deleting = false
+    var modifying = false
     
     
     /// Called when the new countdown button is tapped. Creates a new countdown object with
@@ -43,8 +43,11 @@ class CountdownTableViewController: UITableViewController {
                 newCountdown.setRepeatInterval(.Never)
                 
                 // Add the new countdown to the list, save the object context, and then return.
+                modifying = true
                 countdowns.insert(newCountdown, atIndex: 0)
+                tableView.insertRowsAtIndexPaths([NSIndexPath(forRow: 0, inSection: 0)], withRowAnimation: .Automatic)
                 persistenceController.save()
+                modifying = false
                 return
             }
         }
@@ -78,11 +81,11 @@ class CountdownTableViewController: UITableViewController {
     func deleteCountdownAtIndex(index: Int) {
         if let persistenceController = persistenceController {
             if let objectContext = persistenceController.managedObjectContext {
-                deleting = true
+                modifying = true
                 objectContext.deleteObject(countdowns[index])
                 countdowns.removeAtIndex(index)
                 tableView.deleteRowsAtIndexPaths([NSIndexPath(forRow: index, inSection: 0)], withRowAnimation: .Automatic)
-                deleting = false
+                modifying = false
             }
         }
     }
