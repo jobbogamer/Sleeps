@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EditTableViewController: UITableViewController {
+class EditTableViewController: UITableViewController, UITextFieldDelegate {
     
     /// The persistence controller that the countdown comes from.
     var persistenceController: PersistenceController?
@@ -50,6 +50,24 @@ class EditTableViewController: UITableViewController {
     
     /// The segmented button used to control repeats.
     @IBOutlet weak var repeatChooser: UISegmentedControl!
+    
+    
+    
+    // MARK: - Text field
+    
+    func textFieldDidEndEditing(textField: UITextField) {
+        // Set the name of the countdown using the text in the text field, then save.
+        let newName = textField.text!
+        countdown?.name = newName
+        persistenceController?.save()
+    }
+    
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        // Dismiss the keyboard when the return key is pressed.
+        textField.resignFirstResponder()
+        return true
+    }
     
     
     

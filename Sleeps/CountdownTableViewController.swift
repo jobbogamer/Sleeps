@@ -38,7 +38,7 @@ class CountdownTableViewController: UITableViewController {
                 let newCountdown = Countdown.createObjectInContext(objectContext)
                 newCountdown.icon = 0
                 newCountdown.colour = 0
-                newCountdown.name = "New Countdown"
+                newCountdown.name = ""
                 newCountdown.date = NSDate.midnightOnDate(NSDate())
                 newCountdown.setRepeatInterval(.Never)
                 
@@ -128,6 +128,7 @@ class CountdownTableViewController: UITableViewController {
             // the array of countdowns.
             let editViewController = segue.destinationViewController as! EditTableViewController
             editViewController.countdown = countdowns[0]
+            editViewController.persistenceController = persistenceController
         }
         else if segue.identifier == kEditCountdownSegueIdentifier {
             // Deselect the chosen cell so that it doesn't stay selected after the edit view is
@@ -138,6 +139,7 @@ class CountdownTableViewController: UITableViewController {
             let cell = sender as! CountdownTableCell
             let editViewController = segue.destinationViewController as! EditTableViewController
             editViewController.countdown = cell.countdown
+            editViewController.persistenceController = persistenceController
         }
     }
     
