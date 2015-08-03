@@ -85,6 +85,7 @@ class CountdownTableViewController: UITableViewController {
                 objectContext.deleteObject(countdowns[index])
                 countdowns.removeAtIndex(index)
                 tableView.deleteRowsAtIndexPaths([NSIndexPath(forRow: index, inSection: 0)], withRowAnimation: .Automatic)
+                persistenceController.save()
                 modifying = false
             }
         }
