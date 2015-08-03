@@ -45,9 +45,14 @@ class CountdownTableViewController: UITableViewController {
                 // Add the new countdown to the list, save the object context, and then return.
                 modifying = true
                 countdowns.insert(newCountdown, atIndex: 0)
-                tableView.insertRowsAtIndexPaths([NSIndexPath(forRow: 0, inSection: 0)], withRowAnimation: .Automatic)
                 persistenceController.save()
                 modifying = false
+                
+                // Automatically enter the edit view, because there's no point having a countdown
+                // that just says "New Countdown".
+                performSegueWithIdentifier(kNewCountdownSegueIdentifier, sender: self)
+                
+                // Return so that the error condition code is not reached.
                 return
             }
         }
@@ -98,6 +103,12 @@ class CountdownTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        reloadData()
+    }
 
     
     override func didReceiveMemoryWarning() {
@@ -113,8 +124,12 @@ class CountdownTableViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Choose what to do based on the segue being performed.
         if segue.identifier! == kNewCountdownSegueIdentifier {
-            // The New button was tapped.
-        } else if segue.identifier == kEditCountdownSegueIdentifier {
+            // The New button was tapped. Assume that the new countdown was added at the front of
+            // the array of countdowns.
+            let editViewController = segue.destinationViewController as! EditTableViewController
+            editViewController.countdown = countdowns[0]
+        }
+        else if segue.identifier == kEditCountdownSegueIdentifier {
             // Deselect the chosen cell so that it doesn't stay selected after the edit view is
             // dismissed.
             self.tableView.deselectRowAtIndexPath(self.tableView.indexPathForSelectedRow!, animated: false)

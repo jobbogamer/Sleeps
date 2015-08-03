@@ -110,6 +110,9 @@
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="cCs-hf-ieR"/>
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="Sleeps" id="a0K-jj-LaE"/>
+                    <connections>
+                        <segue destination="CM2-CC-Pbt" kind="show" identifier="NewCountdown" id="YI3-dj-jLE"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u1e-c0-nHu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -325,4 +328,7 @@
     <resources>
         <image name="gear_bbi" width="22" height="22"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="YI3-dj-jLE"/>
+    </inferredMetricsTieBreakers>
 </document>
