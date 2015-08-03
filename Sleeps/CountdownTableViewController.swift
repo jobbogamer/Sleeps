@@ -17,11 +17,17 @@ class CountdownTableViewController: UITableViewController {
     var countdowns = [Countdown]() {
         
         didSet {
-            // Whenever our array of countdowns changes, reload the table view data.
-            tableView?.reloadSections(NSIndexSet(index: 0), withRowAnimation: .Fade)
+            // Whenever our array of countdowns changes, reload the table view data, as long as a
+            // deletion isn't in progress.
+            if !deleting {
+                tableView?.reloadSections(NSIndexSet(index: 0), withRowAnimation: .Automatic)
+            }
         }
         
     }
+    
+    /// Is a countdown currently being deleted?
+    var deleting = false
     
     
     /// Called when the new countdown button is tapped. Creates a new countdown object with
@@ -66,7 +72,20 @@ class CountdownTableViewController: UITableViewController {
             }
         }
     }
-
+    
+    
+    /// Delete the countdown at `index` in the array of countdowns.
+    func deleteCountdownAtIndex(index: Int) {
+        if let persistenceController = persistenceController {
+            if let objectContext = persistenceController.managedObjectContext {
+                deleting = true
+                objectContext.deleteObject(countdowns[index])
+                countdowns.removeAtIndex(index)
+                tableView.deleteRowsAtIndexPaths([NSIndexPath(forRow: index, inSection: 0)], withRowAnimation: .Automatic)
+                deleting = false
+            }
+        }
+    }
     
     
     
@@ -136,6 +155,19 @@ class CountdownTableViewController: UITableViewController {
         cell.countdown = countdowns[indexPath.row]
 
         return cell
+    }
+    
+    
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete {
+            // Delete the countdown from the row being deleted.
+            deleteCountdownAtIndex(indexPath.row)
+        }
     }
 
 }
