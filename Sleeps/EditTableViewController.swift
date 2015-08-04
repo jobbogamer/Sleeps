@@ -80,31 +80,6 @@ class EditTableViewController: UITableViewController, UITextFieldDelegate {
         // transition will break and the table view will have a white background.
         tableView.backgroundView = nil
         
-        // Set the colour of the placeholder text in the name text field.
-        nameField.attributedPlaceholder = NSAttributedString(string: "Sleeps 'til...",
-            attributes: [NSForegroundColorAttributeName: kPlaceholderFontColour])
-        
-        // Set the font of the date chooser text.
-        dateChooser.titleLabel?.font = UIFont.systemFontOfSize(18)
-        
-        // Set the text and font colour of the date chooser based on whether the date is using a
-        // placeholder.
-        let dateColour: UIColor
-        let dateString: String
-        if let countdown = countdown {
-            if countdown.date.timeIntervalSinceReferenceDate == 0 {
-                dateColour = kPlaceholderFontColour
-                dateString = "...when?"
-            }
-            else {
-                dateColour = UIColor.blackColor()
-                dateString = countdown.date.localisedString()
-            }
-            
-            dateChooser.setAttributedTitle(NSAttributedString(string: dateString,
-                attributes: [NSForegroundColorAttributeName: dateColour]), forState: .Normal)
-        }
-        
         // Set up the outlets with the details of the countdown that has been passed in.
         updateView()
     }
@@ -112,6 +87,10 @@ class EditTableViewController: UITableViewController, UITextFieldDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
     }
     
     

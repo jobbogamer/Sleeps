@@ -24,26 +24,16 @@ class CountdownTableCell: UITableViewCell {
             // TODO: Set the icon image.
             iconView.backgroundColor = countdown.uiColour
             
-            // Set the name.
+            // Set the name and date.
             nameLabel.text = countdown.name
-            
-            // If a date is set, display the date and number of days. Otherwise, just display a
-            // placeholder.
-            if countdown.date.timeIntervalSinceReferenceDate == 0 {
-                dateLabel.text = "No date set"
-                dateLabel.textColor = UIColor(red: 1, green: 0.4, blue: 0.4, alpha: 1)
-                daysLabel.text = ""
-            }
-            else {
-                dateLabel.text = countdown.date.localisedString()
+            dateLabel.text = countdown.date.localisedString()
                 
-                // Format the number of days nicely.
-                let formatter = NSNumberFormatter()
-                formatter.locale = NSLocale.currentLocale()
-                formatter.numberStyle = .DecimalStyle
-                formatter.maximumFractionDigits = 0
-                daysLabel.text = formatter.stringFromNumber(countdown.daysFromNow())
-            }
+            // Format the number of days nicely.
+            let formatter = NSNumberFormatter()
+            formatter.locale = NSLocale.currentLocale()
+            formatter.numberStyle = .DecimalStyle
+            formatter.maximumFractionDigits = 0
+            daysLabel.text = formatter.stringFromNumber(countdown.daysFromNow())
         }
     }
 
