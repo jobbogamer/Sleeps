@@ -19,16 +19,31 @@ class CountdownTableCell: UITableViewCell {
         didSet {
             // Whenever the countdown for the cell is changed, update the subviews.
             guard let countdown = countdown else { return }
-            iconView.backgroundColor = countdown.uiColour
-            nameLabel.text = countdown.name
-            dateLabel.text = countdown.date.localisedString()
             
-            // Format the number of days nicely.
-            let formatter = NSNumberFormatter()
-            formatter.locale = NSLocale.currentLocale()
-            formatter.numberStyle = .DecimalStyle
-            formatter.maximumFractionDigits = 0
-            daysLabel.text = formatter.stringFromNumber(countdown.daysFromNow())
+            // Set the icon on the left.
+            // TODO: Set the icon image.
+            iconView.backgroundColor = countdown.uiColour
+            
+            // Set the name.
+            nameLabel.text = countdown.name
+            
+            // If a date is set, display the date and number of days. Otherwise, just display a
+            // placeholder.
+            if countdown.date.timeIntervalSinceReferenceDate == 0 {
+                dateLabel.text = "No date set"
+                dateLabel.textColor = UIColor(red: 1, green: 0.4, blue: 0.4, alpha: 1)
+                daysLabel.text = ""
+            }
+            else {
+                dateLabel.text = countdown.date.localisedString()
+                
+                // Format the number of days nicely.
+                let formatter = NSNumberFormatter()
+                formatter.locale = NSLocale.currentLocale()
+                formatter.numberStyle = .DecimalStyle
+                formatter.maximumFractionDigits = 0
+                daysLabel.text = formatter.stringFromNumber(countdown.daysFromNow())
+            }
         }
     }
 
