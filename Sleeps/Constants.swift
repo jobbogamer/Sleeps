@@ -13,6 +13,9 @@ import UIKit
 /// Global tint colour used for buttons, etc.
 let kGlobalTintColour: UIColor = UIColor(hue:260/360, saturation:50/100, brightness:75/100, alpha:1)
 
+/// Font colour for placeholder text.
+let kPlaceholderFontColour: UIColor = UIColor(white: 0.7, alpha: 1)
+
 
 /* Navigation Controller***************************************************************************/
 
