@@ -29,6 +29,12 @@ class CountdownTableViewController: UITableViewController {
     /// Is a countdown currently being deleted?
     var modifying = false
     
+    /// Which countdown was tapped?
+    var selectedCountdown: Int?
+    
+    /// Has a countdown been deleted on the edit screen?
+    var deletedCountdown = false
+    
     
     /// Called when the new countdown button is tapped. Creates a new countdown object with
     /// placeholder values.
@@ -107,7 +113,20 @@ class CountdownTableViewController: UITableViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        reloadData()
+        
+        // If a countdown was "deleted" on the edit view, delete it now.
+        if deletedCountdown {
+            if let selectedCountdown = selectedCountdown {
+                deleteCountdownAtIndex(selectedCountdown)
+            }
+        }
+        // Otherwise, just load the latest data.
+        else {
+            reloadData()
+        }
+        
+        deletedCountdown = false
+        selectedCountdown = nil
     }
 
     
@@ -131,9 +150,8 @@ class CountdownTableViewController: UITableViewController {
             editViewController.persistenceController = persistenceController
         }
         else if segue.identifier == kEditCountdownSegueIdentifier {
-            // Deselect the chosen cell so that it doesn't stay selected after the edit view is
-            // dismissed.
-            self.tableView.deselectRowAtIndexPath(self.tableView.indexPathForSelectedRow!, animated: false)
+            // Note which countdown was tapped.
+            selectedCountdown = tableView.indexPathForSelectedRow?.row
             
             // Get the countdown object from the table cell and pass it to the edit view.
             let cell = sender as! CountdownTableCell

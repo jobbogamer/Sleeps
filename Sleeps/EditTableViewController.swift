@@ -33,6 +33,16 @@ class EditTableViewController: UITableViewController, UITextFieldDelegate {
     }
     
     
+    /// Delete the countdown currently being edited, and return to the list of countdowns.
+    func deleteCountdownFromAlertAction(alertAction: UIAlertAction) {
+        // Get the countdown list and tell it that to delete the countdown.
+        let listView = navigationController?.viewControllers[0] as! CountdownTableViewController
+        listView.deletedCountdown = true
+        
+        // Return to the list of countdowns.
+        navigationController?.popViewControllerAnimated(true)
+    }
+    
     
     // MARK: - Outlets
     
@@ -114,7 +124,17 @@ class EditTableViewController: UITableViewController, UITextFieldDelegate {
     /// Called when the delete button is tapped. Shows a sheet offering two options, delete and
     /// cancel.
     @IBAction func deleteTapped(sender: UIBarButtonItem) {
+        // Create the Delete option.
+        let deleteAction = UIAlertAction(title: "Delete Countdown", style: .Destructive, handler: deleteCountdownFromAlertAction)
         
+        // Create the Cancel option.
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+        
+        // Create the action sheet, add the actions to it, and display it.
+        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
+        alertController.addAction(deleteAction)
+        alertController.addAction(cancelAction)
+        presentViewController(alertController, animated: true, completion: nil)
     }
     
     /// Called when the share button is tapped. Shows the system share sheet for sharing information
