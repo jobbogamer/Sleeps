@@ -71,6 +71,17 @@ class EditTableViewController: UITableViewController, UITextFieldDelegate {
     
     
     
+    // MARK: - Segmented control
+    
+    /// Called when the repeat interval chooser changes value. Update the repeat interval of the
+    /// countdown being edited and save it back to the database.
+    func segmentedControlValueDidChange(segmentedControl: UISegmentedControl) {
+        countdown?.repeatInterval = repeatChooser.selectedSegmentIndex
+        persistenceController?.save()
+    }
+    
+    
+    
     // MARK: - View controller
 
     override func viewDidLoad() {
@@ -79,6 +90,9 @@ class EditTableViewController: UITableViewController, UITextFieldDelegate {
         // The table view must be given a nil background view otherwise the navigation controller
         // transition will break and the table view will have a white background.
         tableView.backgroundView = nil
+        
+        // Register the callback for when the repeat interval chooser changes value.
+        repeatChooser.addTarget(self, action: "segmentedControlValueDidChange:", forControlEvents: .ValueChanged)
         
         // Set up the outlets with the details of the countdown that has been passed in.
         updateView()
