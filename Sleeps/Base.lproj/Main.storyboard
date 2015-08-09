@@ -227,6 +227,9 @@
                                                     <state key="normal" title="...when?">
                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="dateChooserTapped:" destination="CM2-CC-Pbt" eventType="touchUpInside" id="qCc-E0-lak"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -236,12 +239,39 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="216" id="xQb-dM-3xD">
+                                        <rect key="frame" x="0.0" y="368" width="600" height="216"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xQb-dM-3xD" id="odk-Uh-EKW">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="215"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="39l-QT-Zq4">
+                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="216"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="216" id="VZM-ik-HtO"/>
+                                                    </constraints>
+                                                    <date key="date" timeIntervalSinceReferenceDate="460827329.30310202">
+                                                        <!--2015-08-09 15:35:29 +0000-->
+                                                    </date>
+                                                    <connections>
+                                                        <action selector="datePickerValueDidChange:" destination="CM2-CC-Pbt" eventType="valueChanged" id="XOB-tT-VAb"/>
+                                                    </connections>
+                                                </datePicker>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="39l-QT-Zq4" firstAttribute="leading" secondItem="odk-Uh-EKW" secondAttribute="leadingMargin" constant="-8" id="Iwc-gZ-S6N"/>
+                                                <constraint firstItem="39l-QT-Zq4" firstAttribute="top" secondItem="odk-Uh-EKW" secondAttribute="topMargin" constant="-8" id="bCt-E1-Kgo"/>
+                                                <constraint firstItem="39l-QT-Zq4" firstAttribute="centerX" secondItem="odk-Uh-EKW" secondAttribute="centerX" id="zxd-4U-qMz"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle="Repeat" id="oQG-6F-1eQ">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="C31-gE-QZK">
-                                        <rect key="frame" x="0.0" y="411" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="627" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="C31-gE-QZK" id="g7a-60-ydU">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -290,6 +320,8 @@
                     <connections>
                         <outlet property="colourChooser" destination="eJr-g8-Wmz" id="NET-Zj-eVE"/>
                         <outlet property="dateChooser" destination="cml-JA-qU5" id="g7h-of-rRf"/>
+                        <outlet property="datePicker" destination="39l-QT-Zq4" id="hZz-hO-pYJ"/>
+                        <outlet property="datePickerHeightConstraint" destination="VZM-ik-HtO" id="HFw-1y-dvT"/>
                         <outlet property="iconChooser" destination="kLg-pc-MBW" id="2fI-Zb-5Aj"/>
                         <outlet property="nameField" destination="cjU-Dz-mSQ" id="GaG-fd-rVr"/>
                         <outlet property="repeatChooser" destination="FaA-8L-1xw" id="Ye7-Pc-aWi"/>

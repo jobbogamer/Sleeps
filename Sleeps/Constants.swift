@@ -43,6 +43,9 @@ let kDismissCardViewSegueIdentifier: String = "DismissCardView"
 /// The identifier of the segue from the countdown collection view to the Settings screen.
 let kSettingsScreenSegueIdentifier: String = "ShowSettings"
 
+/// The identifier of the segue from the edit screen to the date picker.
+let kDateChooserSegueIdentifier: String = "ChooseDate"
+
 /// The identifier for countdown cells.
 let kCountdownCellIdentifier: String = "CountdownCell"
 
@@ -63,3 +66,9 @@ let kCollectionViewItemBorderWidth: CGFloat = 0
 
 /// Border colour for collection view cells.
 let kCollectionViewItemBorderColour: UIColor = UIColor.lightGrayColor()
+
+
+/* Edit View **************************************************************************************/
+
+/// Height of the date picker.
+let kDatePickerHeight: CGFloat = 216.0

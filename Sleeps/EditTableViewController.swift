@@ -13,6 +13,9 @@ class EditTableViewController: UITableViewController, UITextFieldDelegate {
     /// The persistence controller that the countdown comes from.
     var persistenceController: PersistenceController?
     
+    /// Is the date picker showing?
+    var datePickerVisible = false
+    
     /// The countdown being edited.
     var countdown: Countdown? {
         didSet {
@@ -58,9 +61,32 @@ class EditTableViewController: UITableViewController, UITextFieldDelegate {
     /// The button which displays the date of the countdown and shows the date chooser when tapepd.
     @IBOutlet weak var dateChooser: UIButton!
     
+    /// The actual date picker.
+    @IBOutlet weak var datePicker: UIDatePicker!
+    
+    /// The height of the date picker.
+    @IBOutlet weak var datePickerHeightConstraint: NSLayoutConstraint!
+    
     /// The segmented button used to control repeats.
     @IBOutlet weak var repeatChooser: UISegmentedControl!
     
+    
+    // Table view
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        if indexPath.section == 2 && indexPath.row == 1 {
+            return datePickerVisible ? kDatePickerHeight : 0
+        }
+        else {
+            return super.tableView(tableView, heightForRowAtIndexPath: indexPath)
+        }
+    }
+    
+    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        cell.separatorInset = UIEdgeInsetsZero
+        cell.preservesSuperviewLayoutMargins = false
+        cell.layoutMargins = UIEdgeInsetsZero
+    }
     
     
     // MARK: - Text field
@@ -92,6 +118,37 @@ class EditTableViewController: UITableViewController, UITextFieldDelegate {
     
     
     
+    
+    // MARK: - Date chooser
+    
+    @IBAction func dateChooserTapped(sender: UIButton) {
+        // Toggle whether the date picker is visible. This will determine the height of the cell
+        // containing the date picker - see tableView(_:willDisplayCell:forRowAtIndexPath:)
+        datePickerVisible = !datePickerVisible
+        
+        // This will force the table view to animate any cell height changes.
+        tableView.beginUpdates()
+        tableView.endUpdates()
+        
+        // Scroll so that the date picker is centered on screen. If it has just been collapsed, this
+        // will do nothing as there isn't enough content in the table to make it scrollable.
+        tableView.scrollToRowAtIndexPath(NSIndexPath(forRow: 1, inSection: 2), atScrollPosition: .Middle, animated: true)
+    }
+    
+    @IBAction func datePickerValueDidChange(sender: UIDatePicker) {
+        guard let countdown = countdown else { return }
+        
+        // Update and save the countdown's date.
+        countdown.date = datePicker.date
+        persistenceController?.save()
+        
+        // Update the visible date in the chooser.
+        dateChooser.setTitle(countdown.date.localisedString(), forState: .Normal)
+    }
+    
+    
+    
+    
     // MARK: - View controller
 
     override func viewDidLoad() {
@@ -103,6 +160,12 @@ class EditTableViewController: UITableViewController, UITextFieldDelegate {
         
         // Register the callback for when the repeat interval chooser changes value.
         repeatChooser.addTarget(self, action: "segmentedControlValueDidChange:", forControlEvents: .ValueChanged)
+        
+        // Set the dates in the date picker.
+        if let countdown = countdown {
+            datePicker.date = countdown.date
+            datePicker.minimumDate = NSDate()
+        }
         
         // Set up the outlets with the details of the countdown that has been passed in.
         updateView()
@@ -116,6 +179,7 @@ class EditTableViewController: UITableViewController, UITextFieldDelegate {
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
     }
+    
     
     
     
