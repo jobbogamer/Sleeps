@@ -46,6 +46,9 @@ let kSettingsScreenSegueIdentifier: String = "ShowSettings"
 /// The identifier of the segue from the edit screen to the date picker.
 let kDateChooserSegueIdentifier: String = "ChooseDate"
 
+/// The identifier of the segue from the edit screen to show the colour chooser popover.
+let kColourChooserSegueIdentifier: String = "ChooseColour"
+
 /// The identifier for countdown cells.
 let kCountdownCellIdentifier: String = "CountdownCell"
 

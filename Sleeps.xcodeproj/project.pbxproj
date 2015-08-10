@@ -23,6 +23,7 @@
 		03AC73A61B028C0B00C03377 /* NSDate+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AC73A51B028C0B00C03377 /* NSDate+Utilities.swift */; };
 		03AC73AE1B02999800C03377 /* Countdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AC73AD1B02999800C03377 /* Countdown.swift */; };
 		03AC73B31B02A73600C03377 /* update_build_number.sh in Resources */ = {isa = PBXBuildFile; fileRef = 03AC73B21B02A73600C03377 /* update_build_number.sh */; };
+		03BE6DF51B79117E00B8F0DE /* ColourChooserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BE6DF41B79117E00B8F0DE /* ColourChooserViewController.swift */; };
 		03D50F161B5E61580007B76D /* CountdownTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D50F151B5E61580007B76D /* CountdownTableViewController.swift */; };
 		03D50F181B5E64930007B76D /* CircularImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D50F171B5E64930007B76D /* CircularImageView.swift */; };
 		03D50F1A1B5E67970007B76D /* CountdownTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D50F191B5E67970007B76D /* CountdownTableCell.swift */; };
@@ -67,6 +68,7 @@
 		03AC73A51B028C0B00C03377 /* NSDate+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Utilities.swift"; sourceTree = "<group>"; };
 		03AC73AD1B02999800C03377 /* Countdown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Countdown.swift; sourceTree = "<group>"; };
 		03AC73B21B02A73600C03377 /* update_build_number.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = update_build_number.sh; path = Scripts/update_build_number.sh; sourceTree = "<group>"; };
+		03BE6DF41B79117E00B8F0DE /* ColourChooserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColourChooserViewController.swift; sourceTree = "<group>"; };
 		03D50F151B5E61580007B76D /* CountdownTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountdownTableViewController.swift; sourceTree = "<group>"; };
 		03D50F171B5E64930007B76D /* CircularImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularImageView.swift; sourceTree = "<group>"; };
 		03D50F191B5E67970007B76D /* CountdownTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountdownTableCell.swift; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 		0336F0031AC9D96B001D3138 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				03BE6DF41B79117E00B8F0DE /* ColourChooserViewController.swift */,
 				0322F6A51B0E45E6006D3D8E /* Constants.swift */,
 				0336EFDC1AC9B588001D3138 /* AppDelegate.swift */,
 				03D50F151B5E61580007B76D /* CountdownTableViewController.swift */,
@@ -348,6 +351,7 @@
 				032F20F11AD154A200D7BA6C /* SettingsViewController.swift in Sources */,
 				03AC73AE1B02999800C03377 /* Countdown.swift in Sources */,
 				03F97D311B0AA65A00D4ED09 /* RoundedCornerButton.swift in Sources */,
+				03BE6DF51B79117E00B8F0DE /* ColourChooserViewController.swift in Sources */,
 				0322F6A61B0E45E6006D3D8E /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

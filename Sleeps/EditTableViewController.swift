@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EditTableViewController: UITableViewController, UITextFieldDelegate {
+class EditTableViewController: UITableViewController, UITextFieldDelegate, UIPopoverPresentationControllerDelegate {
     
     /// The persistence controller that the countdown comes from.
     var persistenceController: PersistenceController?
@@ -47,6 +47,8 @@ class EditTableViewController: UITableViewController, UITextFieldDelegate {
     }
     
     
+    
+    
     // MARK: - Outlets
     
     /// The image view in the top left for choosing an icon.
@@ -71,7 +73,9 @@ class EditTableViewController: UITableViewController, UITextFieldDelegate {
     @IBOutlet weak var repeatChooser: UISegmentedControl!
     
     
-    // Table view
+    
+    
+    // MARK: - Table view
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         if indexPath.section == 2 && indexPath.row == 1 {
@@ -87,6 +91,17 @@ class EditTableViewController: UITableViewController, UITextFieldDelegate {
         cell.preservesSuperviewLayoutMargins = false
         cell.layoutMargins = UIEdgeInsetsZero
     }
+    
+    override func tableView(tableView: UITableView, shouldHighlightRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        if indexPath.section == 0 && indexPath.section == 0 {
+            return false
+        }
+        else {
+            return true
+        }
+    }
+    
+    
     
     
     // MARK: - Text field
@@ -149,6 +164,26 @@ class EditTableViewController: UITableViewController, UITextFieldDelegate {
     
     
     
+    // MARK: - Colour chooser
+    
+    /// When the colour chooser circle is tapped, perform the segue to show the popover.
+    func colourChooserTapped() {
+        performSegueWithIdentifier(kColourChooserSegueIdentifier, sender: self)
+    }
+    
+    
+    
+    
+    // MARK: - Popover delegate
+    
+    func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
+        // Always use a popover, never fullscreen.
+        return .None
+    }
+    
+    
+    
+    
     // MARK: - View controller
 
     override func viewDidLoad() {
@@ -167,6 +202,11 @@ class EditTableViewController: UITableViewController, UITextFieldDelegate {
             datePicker.minimumDate = NSDate()
         }
         
+        // Add a gesture recogniser to the colour chooser image view.
+        colourChooser.userInteractionEnabled = true
+        let colourGesture = UITapGestureRecognizer(target: self, action: "colourChooserTapped")
+        colourChooser.addGestureRecognizer(colourGesture)
+        
         // Set up the outlets with the details of the countdown that has been passed in.
         updateView()
     }
@@ -178,6 +218,17 @@ class EditTableViewController: UITableViewController, UITextFieldDelegate {
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
+    }
+    
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == kColourChooserSegueIdentifier {
+            if let colourPopoverController = segue.destinationViewController as? ColourChooserViewController {
+                colourPopoverController.popoverPresentationController?.delegate = self
+                colourPopoverController.preferredContentSize = CGSize(width: 320, height: 320)
+                colourPopoverController.presentingView = self
+            }
+        }
     }
     
     
