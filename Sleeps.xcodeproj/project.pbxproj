@@ -15,6 +15,7 @@
 		0336EFE51AC9B588001D3138 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0336EFE31AC9B588001D3138 /* Main.storyboard */; };
 		0336EFE71AC9B588001D3138 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0336EFE61AC9B588001D3138 /* Images.xcassets */; };
 		0336EFEA1AC9B588001D3138 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0336EFE81AC9B588001D3138 /* LaunchScreen.xib */; };
+		03380BA91B7A24CF000174A5 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03380BA81B7A24CF000174A5 /* R.generated.swift */; };
 		033FDD0B1AE19B990002E16E /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033FDD0A1AE19B990002E16E /* PersistenceController.swift */; };
 		03689B461B15024100343483 /* CapsuleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03689B451B15024100343483 /* CapsuleButton.swift */; };
 		03689B481B15131400343483 /* AutoLayoutCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03689B471B15131400343483 /* AutoLayoutCollectionViewCell.swift */; };
@@ -22,7 +23,6 @@
 		038B44921B6E496A00C24396 /* NSDate+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AC73A51B028C0B00C03377 /* NSDate+Utilities.swift */; };
 		03AC73A61B028C0B00C03377 /* NSDate+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AC73A51B028C0B00C03377 /* NSDate+Utilities.swift */; };
 		03AC73AE1B02999800C03377 /* Countdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AC73AD1B02999800C03377 /* Countdown.swift */; };
-		03AC73B31B02A73600C03377 /* update_build_number.sh in Resources */ = {isa = PBXBuildFile; fileRef = 03AC73B21B02A73600C03377 /* update_build_number.sh */; };
 		03BE6DF51B79117E00B8F0DE /* ColourChooserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BE6DF41B79117E00B8F0DE /* ColourChooserViewController.swift */; };
 		03D50F161B5E61580007B76D /* CountdownTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D50F151B5E61580007B76D /* CountdownTableViewController.swift */; };
 		03D50F181B5E64930007B76D /* CircularImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D50F171B5E64930007B76D /* CircularImageView.swift */; };
@@ -61,6 +61,8 @@
 		0336EFE91AC9B588001D3138 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		0336EFEF1AC9B588001D3138 /* SleepsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SleepsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0336EFF41AC9B588001D3138 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		03380BA61B7A24B2000174A5 /* rswift */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = rswift; path = Scripts/rswift; sourceTree = "<group>"; };
+		03380BA81B7A24CF000174A5 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		033FDD0A1AE19B990002E16E /* PersistenceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		03689B451B15024100343483 /* CapsuleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CapsuleButton.swift; sourceTree = "<group>"; };
 		03689B471B15131400343483 /* AutoLayoutCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoLayoutCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 			children = (
 				0336EFE61AC9B588001D3138 /* Images.xcassets */,
 				0336EFDB1AC9B588001D3138 /* Info.plist */,
+				03380BA81B7A24CF000174A5 /* R.generated.swift */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -206,6 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				03AC73B21B02A73600C03377 /* update_build_number.sh */,
+				03380BA61B7A24B2000174A5 /* rswift */,
 			);
 			name = Scripts;
 			sourceTree = "<group>";
@@ -217,6 +221,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0336EFF91AC9B588001D3138 /* Build configuration list for PBXNativeTarget "Sleeps" */;
 			buildPhases = (
+				03380BA51B7A2357000174A5 /* Generate R.swift */,
 				0336EFD31AC9B587001D3138 /* Sources */,
 				0336EFD41AC9B587001D3138 /* Frameworks */,
 				0336EFD51AC9B587001D3138 /* Resources */,
@@ -294,7 +299,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0336EFE51AC9B588001D3138 /* Main.storyboard in Resources */,
-				03AC73B31B02A73600C03377 /* update_build_number.sh in Resources */,
 				0336EFEA1AC9B588001D3138 /* LaunchScreen.xib in Resources */,
 				0336EFE71AC9B588001D3138 /* Images.xcassets in Resources */,
 			);
@@ -310,6 +314,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		03380BA51B7A2357000174A5 /* Generate R.swift */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Generate R.swift";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SOURCE_ROOT}/Scripts/rswift\" \"$SRCROOT\"";
+		};
 		03AC73B11B02A4AB00C03377 /* Increment Build Number */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -343,6 +361,7 @@
 				0336EFDD1AC9B588001D3138 /* AppDelegate.swift in Sources */,
 				03D50F161B5E61580007B76D /* CountdownTableViewController.swift in Sources */,
 				038B44911B6E3F7F00C24396 /* EditTableViewController.swift in Sources */,
+				03380BA91B7A24CF000174A5 /* R.generated.swift in Sources */,
 				03D64BB41AFC0755001A771C /* Icons.swift in Sources */,
 				03F0C5DA1AFFA51100DC5298 /* FetchRequestController.swift in Sources */,
 				03F0C5DC1AFFA6AD00DC5298 /* Entity.swift in Sources */,

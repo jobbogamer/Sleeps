@@ -17,7 +17,8 @@ class ColourChooserViewController: UIViewController {
     var presentingView: UIViewController!
     
     
-    /// Called when a circular view is tapped.
+    /// Called when a circular view is tapped. Find which colour was tapped, and reach into the edit
+    /// view to set that colour on the countdown, then dismiss the popover.
     func colourViewTapped(sender: UITapGestureRecognizer) {
         for (index, view) in colourViews.enumerate() {
             if view == sender.view {
