@@ -34,6 +34,9 @@ class ColourChooserViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Set the popover background colour to match the background colour of the view inside.
+        popoverPresentationController?.backgroundColor = self.view.backgroundColor
 
         // Add a gesture recogniser to each colour view and set its colour.
         for (index, view) in colourViews.enumerate() {
