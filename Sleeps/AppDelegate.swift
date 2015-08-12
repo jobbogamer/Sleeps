@@ -64,7 +64,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     /// Called when the application has resumed from being inactive.
     func applicationDidBecomeActive(application: UIApplication)
     {
-        
+        if let tableViewController = tableViewController {
+            tableViewController.reloadData()
+        }
     }
 
     
