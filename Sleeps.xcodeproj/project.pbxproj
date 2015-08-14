@@ -18,6 +18,7 @@
 		033FDD0B1AE19B990002E16E /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033FDD0A1AE19B990002E16E /* PersistenceController.swift */; };
 		03689B461B15024100343483 /* CapsuleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03689B451B15024100343483 /* CapsuleButton.swift */; };
 		03689B481B15131400343483 /* AutoLayoutCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03689B471B15131400343483 /* AutoLayoutCollectionViewCell.swift */; };
+		03813C1F1B7E0DB300E4DB50 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03813C1E1B7E0DB300E4DB50 /* R.generated.swift */; };
 		038B44911B6E3F7F00C24396 /* EditTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038B44901B6E3F7F00C24396 /* EditTableViewController.swift */; };
 		038B44921B6E496A00C24396 /* NSDate+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AC73A51B028C0B00C03377 /* NSDate+Utilities.swift */; };
 		03AC73A61B028C0B00C03377 /* NSDate+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AC73A51B028C0B00C03377 /* NSDate+Utilities.swift */; };
@@ -64,6 +65,7 @@
 		033FDD0A1AE19B990002E16E /* PersistenceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		03689B451B15024100343483 /* CapsuleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CapsuleButton.swift; sourceTree = "<group>"; };
 		03689B471B15131400343483 /* AutoLayoutCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoLayoutCollectionViewCell.swift; sourceTree = "<group>"; };
+		03813C1E1B7E0DB300E4DB50 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		038B44901B6E3F7F00C24396 /* EditTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditTableViewController.swift; sourceTree = "<group>"; };
 		03AC73A51B028C0B00C03377 /* NSDate+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Utilities.swift"; sourceTree = "<group>"; };
 		03AC73AD1B02999800C03377 /* Countdown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Countdown.swift; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 		0336EFDA1AC9B588001D3138 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				03813C1E1B7E0DB300E4DB50 /* R.generated.swift */,
 				0336EFE61AC9B588001D3138 /* Images.xcassets */,
 				0336EFDB1AC9B588001D3138 /* Info.plist */,
 			);
@@ -218,6 +221,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0336EFF91AC9B588001D3138 /* Build configuration list for PBXNativeTarget "Sleeps" */;
 			buildPhases = (
+				03813C1D1B7E0B8700E4DB50 /* R.swift */,
 				0336EFD31AC9B587001D3138 /* Sources */,
 				0336EFD41AC9B587001D3138 /* Frameworks */,
 				0336EFD51AC9B587001D3138 /* Resources */,
@@ -310,6 +314,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		03813C1D1B7E0B8700E4DB50 /* R.swift */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = R.swift;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${SOURCE_ROOT}/Scripts/rswift \"${SRCROOT}\"";
+		};
 		03AC73B11B02A4AB00C03377 /* Increment Build Number */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -343,6 +361,7 @@
 				0336EFDD1AC9B588001D3138 /* AppDelegate.swift in Sources */,
 				03D50F161B5E61580007B76D /* CountdownTableViewController.swift in Sources */,
 				038B44911B6E3F7F00C24396 /* EditTableViewController.swift in Sources */,
+				03813C1F1B7E0DB300E4DB50 /* R.generated.swift in Sources */,
 				03D64BB41AFC0755001A771C /* Icons.swift in Sources */,
 				03F0C5DA1AFFA51100DC5298 /* FetchRequestController.swift in Sources */,
 				03F0C5DC1AFFA6AD00DC5298 /* Entity.swift in Sources */,
