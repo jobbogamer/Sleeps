@@ -26,7 +26,7 @@ class CountdownTableCell: UITableViewCell {
             
             // Set the name and date.
             nameLabel.text = countdown.name
-            dateLabel.text = countdown.date!.localisedString()
+            dateLabel.text = countdown.date.localisedString()
                 
             // Format the number of days nicely.
             let formatter = NSNumberFormatter()

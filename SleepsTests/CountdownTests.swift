@@ -117,28 +117,28 @@ class CountdownTests: XCTestCase {
         countdown.date = NSDate.bhat_dateWithYear(2015, month: 7, day: 12)
         countdown.setRepeatInterval(.Yearly)
         countdown.modifyDateForRepeat()
-        dateDiff = countdown.date!.timeIntervalSinceDate(NSDate.bhat_dateWithYear(2016, month: 7, day: 12))
+        dateDiff = countdown.date.timeIntervalSinceDate(NSDate.bhat_dateWithYear(2016, month: 7, day: 12))
         XCTAssertEqual(dateDiff, 0, "Date should have been moved by a year")
         
         // Check that a monthly repeating countdown adds a month to its date.
         countdown.date = NSDate.bhat_dateWithYear(2015, month: 7, day: 12)
         countdown.setRepeatInterval(.Monthly)
         countdown.modifyDateForRepeat()
-        dateDiff = countdown.date!.timeIntervalSinceDate(NSDate.bhat_dateWithYear(2015, month: 8, day: 12))
+        dateDiff = countdown.date.timeIntervalSinceDate(NSDate.bhat_dateWithYear(2015, month: 8, day: 12))
         XCTAssertEqual(dateDiff, 0, "Date should have been moved by a month")
         
         // Check that a weekly repeating countdown adds a week to its date.
         countdown.date = NSDate.bhat_dateWithYear(2015, month: 7, day: 12)
         countdown.setRepeatInterval(.Weekly)
         countdown.modifyDateForRepeat()
-        dateDiff = countdown.date!.timeIntervalSinceDate(NSDate.bhat_dateWithYear(2015, month: 7, day: 19))
+        dateDiff = countdown.date.timeIntervalSinceDate(NSDate.bhat_dateWithYear(2015, month: 7, day: 19))
         XCTAssertEqual(dateDiff, 0, "Date should have been moved by a week")
         
         // Check that non-repeating countdown doesn't modify its date.
         countdown.date = NSDate.bhat_dateWithYear(2015, month: 7, day: 12)
         countdown.setRepeatInterval(.Never)
         countdown.modifyDateForRepeat()
-        dateDiff = countdown.date!.timeIntervalSinceDate(NSDate.bhat_dateWithYear(2015, month: 7, day: 12))
+        dateDiff = countdown.date.timeIntervalSinceDate(NSDate.bhat_dateWithYear(2015, month: 7, day: 12))
         XCTAssertEqual(dateDiff, 0, "Date should not have moved")
     }
     

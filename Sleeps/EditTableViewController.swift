@@ -30,8 +30,8 @@ class EditTableViewController: UITableViewController, UITextFieldDelegate, UIPop
             // TODO: Set the icon chooser.
             colourChooser?.backgroundColor      = countdown.uiColour
             nameField?.text                     = countdown.name
-            dateChooser?.setTitle(countdown.date!.localisedString(), forState: .Normal)
-            repeatChooser?.selectedSegmentIndex = countdown.repeatInterval!.integerValue
+            dateChooser?.setTitle(countdown.date.localisedString(), forState: .Normal)
+            repeatChooser?.selectedSegmentIndex = countdown.repeatInterval.integerValue
         }
     }
     
@@ -107,12 +107,9 @@ class EditTableViewController: UITableViewController, UITextFieldDelegate, UIPop
     // MARK: - Text field
     
     func textFieldDidEndEditing(textField: UITextField) {
-        guard let countdown = countdown else { return }
-        
         // Set the name of the countdown using the text in the text field, then save.
         let newName = textField.text!
-        countdown.name = newName
-        countdown.edited = (countdown.edited!.boolValue || newName.characters.count > 0)
+        countdown?.name = newName
         persistenceController?.save()
     }
     
@@ -161,7 +158,7 @@ class EditTableViewController: UITableViewController, UITextFieldDelegate, UIPop
         persistenceController?.save()
         
         // Update the visible date in the chooser.
-        dateChooser.setTitle(countdown.date!.localisedString(), forState: .Normal)
+        dateChooser.setTitle(countdown.date.localisedString(), forState: .Normal)
     }
     
     
@@ -201,7 +198,7 @@ class EditTableViewController: UITableViewController, UITextFieldDelegate, UIPop
         
         // Set the dates in the date picker.
         if let countdown = countdown {
-            datePicker.date = countdown.date!
+            datePicker.date = countdown.date
             datePicker.minimumDate = NSDate()
         }
         
