@@ -42,3 +42,4 @@ xcuserdata
 
 Carthage/Build
 
+*.generated.swift
