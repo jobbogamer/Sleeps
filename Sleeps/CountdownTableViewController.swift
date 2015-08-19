@@ -46,6 +46,7 @@ class CountdownTableViewController: UITableViewController {
                 newCountdown.colour = 0
                 newCountdown.name = ""
                 newCountdown.date = NSDate.midnightOnDate(NSDate())
+                newCountdown.edited = false
                 newCountdown.setRepeatInterval(.Never)
                 
                 // Add the new countdown to the list, save the object context, and then return.
