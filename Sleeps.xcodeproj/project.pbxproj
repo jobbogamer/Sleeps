@@ -23,6 +23,7 @@
 		038B44921B6E496A00C24396 /* NSDate+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AC73A51B028C0B00C03377 /* NSDate+Utilities.swift */; };
 		03AC73A61B028C0B00C03377 /* NSDate+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AC73A51B028C0B00C03377 /* NSDate+Utilities.swift */; };
 		03AC73AE1B02999800C03377 /* Countdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AC73AD1B02999800C03377 /* Countdown.swift */; };
+		03B103991B8659B8002709BF /* String+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B103981B8659B8002709BF /* String+Utilities.swift */; };
 		03BE6DF51B79117E00B8F0DE /* ColourChooserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BE6DF41B79117E00B8F0DE /* ColourChooserViewController.swift */; };
 		03D50F161B5E61580007B76D /* CountdownTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D50F151B5E61580007B76D /* CountdownTableViewController.swift */; };
 		03D50F181B5E64930007B76D /* CircularImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D50F171B5E64930007B76D /* CircularImageView.swift */; };
@@ -70,6 +71,7 @@
 		03AC73A51B028C0B00C03377 /* NSDate+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Utilities.swift"; sourceTree = "<group>"; };
 		03AC73AD1B02999800C03377 /* Countdown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Countdown.swift; sourceTree = "<group>"; };
 		03AC73B21B02A73600C03377 /* update_build_number.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = update_build_number.sh; path = Scripts/update_build_number.sh; sourceTree = "<group>"; };
+		03B103981B8659B8002709BF /* String+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Utilities.swift"; sourceTree = "<group>"; };
 		03BE6DF41B79117E00B8F0DE /* ColourChooserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColourChooserViewController.swift; sourceTree = "<group>"; };
 		03D50F151B5E61580007B76D /* CountdownTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountdownTableViewController.swift; sourceTree = "<group>"; };
 		03D50F171B5E64930007B76D /* CircularImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularImageView.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 				03F0C5D91AFFA51100DC5298 /* FetchRequestController.swift */,
 				03F0C5DB1AFFA6AD00DC5298 /* Entity.swift */,
 				03AC73A51B028C0B00C03377 /* NSDate+Utilities.swift */,
+				03B103981B8659B8002709BF /* String+Utilities.swift */,
 				0336EFDE1AC9B588001D3138 /* Sleeps.xcdatamodeld */,
 			);
 			name = Model;
@@ -356,6 +359,7 @@
 				03D50F1A1B5E67970007B76D /* CountdownTableCell.swift in Sources */,
 				03D50F181B5E64930007B76D /* CircularImageView.swift in Sources */,
 				03689B481B15131400343483 /* AutoLayoutCollectionViewCell.swift in Sources */,
+				03B103991B8659B8002709BF /* String+Utilities.swift in Sources */,
 				03E273631B0BB0680013BFE5 /* RoundedCornerView.swift in Sources */,
 				03F97D2F1B0A9AE500D4ED09 /* CircularView.swift in Sources */,
 				0336EFDD1AC9B588001D3138 /* AppDelegate.swift in Sources */,

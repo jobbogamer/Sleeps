@@ -16,6 +16,9 @@ class EditTableViewController: UITableViewController, UITextFieldDelegate, UIPop
     /// Is the date picker showing?
     var datePickerVisible = false
     
+    /// Should the countdown be deleted when this view disappears?
+    var deleteOnExit = false
+    
     /// The countdown being edited.
     var countdown: Countdown? {
         didSet {
@@ -111,6 +114,9 @@ class EditTableViewController: UITableViewController, UITextFieldDelegate, UIPop
         let newName = textField.text!
         countdown?.name = newName
         persistenceController?.save()
+        
+        // The countdown has now been edited, so don't delete it on exit unless no name was entered.
+        deleteOnExit = (deleteOnExit && newName.length == 0)
     }
     
     
@@ -218,6 +224,15 @@ class EditTableViewController: UITableViewController, UITextFieldDelegate, UIPop
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
+        
+        // Delete the countdown if required.
+        if deleteOnExit {
+            guard let countdown = countdown,
+                let objectContext = persistenceController?.managedObjectContext
+                else { return }
+            
+            objectContext.deleteObject(countdown)
+        }
     }
     
     

@@ -148,6 +148,9 @@ class CountdownTableViewController: UITableViewController {
             let editViewController = segue.destinationViewController as! EditTableViewController
             editViewController.countdown = countdowns[0]
             editViewController.persistenceController = persistenceController
+            
+            // The countdown should be deleted if the edit screen exits early.
+            editViewController.deleteOnExit = true
         }
         else if segue.identifier == kEditCountdownSegueIdentifier {
             // Note which countdown was tapped.
@@ -158,6 +161,9 @@ class CountdownTableViewController: UITableViewController {
             let editViewController = segue.destinationViewController as! EditTableViewController
             editViewController.countdown = cell.countdown
             editViewController.persistenceController = persistenceController
+            
+            // This is an existing countdown, so don't delete it on exit.
+            editViewController.deleteOnExit = false
         }
     }
     
