@@ -21,6 +21,7 @@
 		03813C1F1B7E0DB300E4DB50 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03813C1E1B7E0DB300E4DB50 /* R.generated.swift */; };
 		038B44911B6E3F7F00C24396 /* EditTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038B44901B6E3F7F00C24396 /* EditTableViewController.swift */; };
 		038B44921B6E496A00C24396 /* NSDate+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AC73A51B028C0B00C03377 /* NSDate+Utilities.swift */; };
+		0394FF001B8F990E003A3F05 /* UIColor+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0394FEFF1B8F990E003A3F05 /* UIColor+Utilities.swift */; };
 		03AC73A61B028C0B00C03377 /* NSDate+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AC73A51B028C0B00C03377 /* NSDate+Utilities.swift */; };
 		03AC73AE1B02999800C03377 /* Countdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AC73AD1B02999800C03377 /* Countdown.swift */; };
 		03B103991B8659B8002709BF /* String+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B103981B8659B8002709BF /* String+Utilities.swift */; };
@@ -68,6 +69,7 @@
 		03689B471B15131400343483 /* AutoLayoutCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoLayoutCollectionViewCell.swift; sourceTree = "<group>"; };
 		03813C1E1B7E0DB300E4DB50 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		038B44901B6E3F7F00C24396 /* EditTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditTableViewController.swift; sourceTree = "<group>"; };
+		0394FEFF1B8F990E003A3F05 /* UIColor+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Utilities.swift"; sourceTree = "<group>"; };
 		03AC73A51B028C0B00C03377 /* NSDate+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Utilities.swift"; sourceTree = "<group>"; };
 		03AC73AD1B02999800C03377 /* Countdown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Countdown.swift; sourceTree = "<group>"; };
 		03AC73B21B02A73600C03377 /* update_build_number.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = update_build_number.sh; path = Scripts/update_build_number.sh; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 		0336F0021AC9D965001D3138 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0394FEFF1B8F990E003A3F05 /* UIColor+Utilities.swift */,
 				0336EFE31AC9B588001D3138 /* Main.storyboard */,
 				0336EFE81AC9B588001D3138 /* LaunchScreen.xib */,
 				03689B471B15131400343483 /* AutoLayoutCollectionViewCell.swift */,
@@ -352,6 +355,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0394FF001B8F990E003A3F05 /* UIColor+Utilities.swift in Sources */,
 				033FDD0B1AE19B990002E16E /* PersistenceController.swift in Sources */,
 				03689B461B15024100343483 /* CapsuleButton.swift in Sources */,
 				0301BAF11AF806040037AA72 /* Countdown+Utilities.swift in Sources */,

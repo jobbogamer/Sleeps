@@ -8,7 +8,8 @@
 
 import UIKit
 
-class EditTableViewController: UITableViewController, UITextFieldDelegate, UIPopoverPresentationControllerDelegate {
+class EditTableViewController: UITableViewController, UITextFieldDelegate,
+                               UIPopoverPresentationControllerDelegate {
     
     /// The persistence controller that the countdown comes from.
     var persistenceController: PersistenceController?
