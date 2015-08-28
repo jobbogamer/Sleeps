@@ -43,7 +43,8 @@ class CountdownTests: XCTestCase {
     
     override func tearDown()
     {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        // Put teardown code here. This method is called after the invocation of each test method in
+        // the class.
         super.tearDown()
     }
     
@@ -62,6 +63,24 @@ class CountdownTests: XCTestCase {
         
         
         XCTAssertEqual(countdown.daysFromNow(), 7, "daysFromNow() should return 7")
+    }
+    
+    
+    /// Check that daysFromNow() returns -1 for an event that was yesterday. This is an important
+    /// test because if an event set to yesterday returns 0, that event will not be deleted.
+    func testThatDaysFromReturnsMinusOneForYesterday()
+    {
+        let countdown = Countdown.createObjectInContext(managedObjectContext)
+        
+        // Create a date 1 day in the past.
+        let interval = NSDate().timeIntervalSinceReferenceDate - 86400
+        let pastDate = NSDate(timeIntervalSinceReferenceDate: interval)
+        
+        // Set the countdown's date to the newly created date.
+        countdown.date = pastDate
+        
+        
+        XCTAssertEqual(countdown.daysFromNow(), -1, "daysFromNow() should return -1")
     }
     
     
@@ -93,14 +112,13 @@ class CountdownTests: XCTestCase {
         var dateComponents: NSDateComponents
         var date: NSDate
         
-        repeat
-        {
+        repeat {
             let now = NSDate()
             nowComponents = calendar!.components(units, fromDate: now)
             date = NSDate(timeIntervalSinceNow: -1)
             dateComponents = calendar!.components(units, fromDate: date)
         }
-            while dateComponents.day != nowComponents.day
+        while dateComponents.day != nowComponents.day
         
         countdown.date = date
         XCTAssertEqual(countdown.daysFromNow(), 0)

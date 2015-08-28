@@ -192,19 +192,24 @@ extension Countdown {
     
     
     /// Get the number of days between the countdown's `date` and now.
-    func daysFromNow() -> Int
-    {
+    func daysFromNow() -> Int {
         let diff = self.date.timeIntervalSinceNow
         let days = diff / 86400
         
         // If today is the target date, i.e. it was midnight last night, then the date will be
         // between zero and negative one days from now.
-        if days > -1 && days < 0
-        {
+        if days > -1 && days < 0 {
             return 0
         }
-        else
-        {
+        else if days < 0 {
+            // If the number of days is negative, adding one will actually return the wrong value.
+            // For a similar reason as below, the difference will never be an exact number of days.
+            // However, if the event is in the past, then the remainder which arises from the time
+            // between the current time and midnight last night will cause the value to be too
+            // large, not too small.
+            return Int(days)
+        }
+        else {
             // Return the number of whole days plus one, because a countdown's date is always set to
             // exactly midnight. Finding the difference between the date and the current date will
             // never be an exact number of days (unless it's 00:00:00), and the remainder will
