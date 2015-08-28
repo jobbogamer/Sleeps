@@ -125,7 +125,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Tell the root view controller to reload its data.
         dispatch_async(dispatch_get_main_queue()) {
-            tableViewController?.reloadData()
+            if let tableViewController = self.tableViewController {
+                tableViewController.reloadData()
+                tableViewController.updatePastCountdowns()
+            }
         }
     }
 }
