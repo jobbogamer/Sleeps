@@ -36,10 +36,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         tableViewController?.persistenceController = self.persistenceController
         
         // Fill the background colour of the navigation bar and toolbar if enabled.
-        if (kNavigationControllerBarFilled)
+        if (kNavigationBarFilled)
         {
-            navigationController.navigationBar.barTintColor = kGlobalTintColour
-            navigationController.toolbar.barTintColor = kGlobalTintColour
+            navigationController.navigationBar.barTintColor = kNavigationControllerBarColour
+        }
+        if (kToolbarFilled)
+        {
+            navigationController.toolbar.barTintColor = kToolbarColour
         }
         
         // Set the background of the navigation controller to get rid of the dark flashes on segues.

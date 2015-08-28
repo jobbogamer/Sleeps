@@ -11,7 +11,7 @@ import UIKit
 /* General ****************************************************************************************/
 
 /// Global tint colour used for buttons, etc.
-let kGlobalTintColour: UIColor = UIColor(hue:260/360, saturation:50/100, brightness:75/100, alpha:1)
+let kGlobalTintColour: UIColor = UIColor(red: 192, green: 95, blue: 193)
 
 /// Font colour for placeholder text.
 let kPlaceholderFontColour: UIColor = UIColor(white: 0.7, alpha: 1)
@@ -19,11 +19,17 @@ let kPlaceholderFontColour: UIColor = UIColor(white: 0.7, alpha: 1)
 
 /* Navigation Controller***************************************************************************/
 
-/// Whether the navigation bar and toolbar should be filled with a background colour.
-let kNavigationControllerBarFilled: Bool = false
+/// Whether the navigation bar should be filled with a background colour.
+let kNavigationBarFilled: Bool = false
 
-/// Background colour to give to the navigation bar and toolbar.
+/// Whether the toolbar should be filled with a background colour.
+let kToolbarFilled: Bool = false
+
+/// Background colour to give to the navigation bar.
 let kNavigationControllerBarColour: UIColor = kGlobalTintColour
+
+/// Background colour to give to the toolbar.
+let kToolbarColour: UIColor = .whiteColor()
 
 /// Tint colour used for bar button items and navigation bar titles.
 let kNavigationControllerTintColour: UIColor = kGlobalTintColour
