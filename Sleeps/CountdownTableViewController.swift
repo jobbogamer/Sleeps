@@ -103,6 +103,50 @@ class CountdownTableViewController: UITableViewController {
     }
     
     
+    /// Update past countdowns by either updating their date if they repeat, or deleting them if
+    /// they don't/
+    func updatePastCountdowns() {
+        var toDelete = [Int]()
+        var update = false
+        
+        modifying = true
+        
+        for (index, countdown) in countdowns.enumerate() {
+            if countdown.daysFromNow() < 0 {
+                if countdown.getRepeatInterval() == .Never {
+                    toDelete.append(index)
+                    update = true
+                }
+                else {
+                    countdown.modifyDateForRepeat()
+                    update = true
+                }
+            }
+        }
+        
+        // Delete any countdowns we found that had a repeat interval of .Never.
+        if let objectContext = persistenceController?.managedObjectContext {
+            for index in toDelete {
+                objectContext.deleteObject(countdowns[index])
+                countdowns.removeAtIndex(index)
+            }
+            
+            if toDelete.count > 0 {
+                let indexPaths = toDelete.map { index in return NSIndexPath(forRow: index, inSection: 0) }
+                tableView.deleteRowsAtIndexPaths(indexPaths, withRowAnimation: .Automatic)
+            }
+            
+            if update {
+                persistenceController?.save()
+            }
+        }
+        
+        reloadData()
+        
+        modifying = false
+    }
+    
+    
     
     // MARK: - View controller
     
@@ -123,6 +167,7 @@ class CountdownTableViewController: UITableViewController {
         // Otherwise, just load the latest data.
         else {
             reloadData()
+            updatePastCountdowns()
         }
         
         deletedCountdown = false

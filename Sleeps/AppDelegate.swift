@@ -69,6 +69,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     {
         if let tableViewController = tableViewController {
             tableViewController.reloadData()
+            tableViewController.updatePastCountdowns()
         }
     }
 
