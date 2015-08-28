@@ -27,13 +27,20 @@ class CountdownTableCell: UITableViewCell {
             // Set the name and date.
             nameLabel.text = countdown.name
             dateLabel.text = countdown.date.localisedString()
-                
-            // Format the number of days nicely.
-            let formatter = NSNumberFormatter()
-            formatter.locale = NSLocale.currentLocale()
-            formatter.numberStyle = .DecimalStyle
-            formatter.maximumFractionDigits = 0
-            daysLabel.text = formatter.stringFromNumber(countdown.daysFromNow())
+            
+            // If the countdown is in the past, do not show anything in the days label, to avoid
+            // accidentally showing a negative number.
+            if countdown.daysFromNow() < 0 {
+                daysLabel.text = ""
+            }
+            else {
+                // Format the number of days nicely with a thousands separator if necessary.
+                let formatter = NSNumberFormatter()
+                formatter.locale = NSLocale.currentLocale()
+                formatter.numberStyle = .DecimalStyle
+                formatter.maximumFractionDigits = 0
+                daysLabel.text = formatter.stringFromNumber(countdown.daysFromNow())
+            }
         }
     }
 
