@@ -97,12 +97,7 @@ class EditTableViewController: UITableViewController, UITextFieldDelegate,
     }
     
     override func tableView(tableView: UITableView, shouldHighlightRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        if indexPath.section == 0 && indexPath.section == 0 {
-            return false
-        }
-        else {
-            return true
-        }
+        return false
     }
     
     
