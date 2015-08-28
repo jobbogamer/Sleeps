@@ -96,35 +96,6 @@ class CountdownTests: XCTestCase {
     }
     
     
-    /// Check that daysFromNow() returns the expected zero if the countdown's date is today and the
-    /// time component is in the past.
-    func testThatDaysFromNowReturnsZeroForTodayInPast()
-    {
-        let countdown = Countdown.createObjectInContext(managedObjectContext)
-        
-        // Set the date to be one second ago. If that puts the date over the boundary, keep trying
-        // until both dates occur on the same day.
-        
-        let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
-        let units: NSCalendarUnit = [.Day]
-        
-        var nowComponents: NSDateComponents
-        var dateComponents: NSDateComponents
-        var date: NSDate
-        
-        repeat {
-            let now = NSDate()
-            nowComponents = calendar!.components(units, fromDate: now)
-            date = NSDate(timeIntervalSinceNow: -1)
-            dateComponents = calendar!.components(units, fromDate: date)
-        }
-        while dateComponents.day != nowComponents.day
-        
-        countdown.date = date
-        XCTAssertEqual(countdown.daysFromNow(), 0)
-    }
-    
-    
     /// Check that if a countdown is set to repeat, then calling modifyDateForRepeat() works.
     func testThatRepeatingCountdownsRepeatCorrectly()
     {
