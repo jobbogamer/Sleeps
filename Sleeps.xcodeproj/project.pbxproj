@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0301BAF11AF806040037AA72 /* Countdown+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0301BAF01AF806040037AA72 /* Countdown+Utilities.swift */; };
+		030DA2591B93A930003A5F3B /* IconChooserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030DA2581B93A930003A5F3B /* IconChooserViewController.swift */; };
+		030DA25B1B93AE83003A5F3B /* IconPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030DA25A1B93AE83003A5F3B /* IconPageViewController.swift */; };
 		0322F6A61B0E45E6006D3D8E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0322F6A51B0E45E6006D3D8E /* Constants.swift */; };
 		032F20F11AD154A200D7BA6C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032F20F01AD154A200D7BA6C /* SettingsViewController.swift */; };
 		0336EFDD1AC9B588001D3138 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0336EFDC1AC9B588001D3138 /* AppDelegate.swift */; };
@@ -52,6 +54,8 @@
 
 /* Begin PBXFileReference section */
 		0301BAF01AF806040037AA72 /* Countdown+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Countdown+Utilities.swift"; sourceTree = "<group>"; };
+		030DA2581B93A930003A5F3B /* IconChooserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconChooserViewController.swift; sourceTree = "<group>"; };
+		030DA25A1B93AE83003A5F3B /* IconPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconPageViewController.swift; sourceTree = "<group>"; };
 		0322F6A51B0E45E6006D3D8E /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		032F20F01AD154A200D7BA6C /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		0336EFD71AC9B587001D3138 /* Sleeps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sleeps.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -202,6 +206,8 @@
 			isa = PBXGroup;
 			children = (
 				03BE6DF41B79117E00B8F0DE /* ColourChooserViewController.swift */,
+				030DA2581B93A930003A5F3B /* IconChooserViewController.swift */,
+				030DA25A1B93AE83003A5F3B /* IconPageViewController.swift */,
 				0322F6A51B0E45E6006D3D8E /* Constants.swift */,
 				0336EFDC1AC9B588001D3138 /* AppDelegate.swift */,
 				03D50F151B5E61580007B76D /* CountdownTableViewController.swift */,
@@ -369,11 +375,13 @@
 				0336EFDD1AC9B588001D3138 /* AppDelegate.swift in Sources */,
 				03D50F161B5E61580007B76D /* CountdownTableViewController.swift in Sources */,
 				038B44911B6E3F7F00C24396 /* EditTableViewController.swift in Sources */,
+				030DA25B1B93AE83003A5F3B /* IconPageViewController.swift in Sources */,
 				03813C1F1B7E0DB300E4DB50 /* R.generated.swift in Sources */,
 				03D64BB41AFC0755001A771C /* Icons.swift in Sources */,
 				03F0C5DA1AFFA51100DC5298 /* FetchRequestController.swift in Sources */,
 				03F0C5DC1AFFA6AD00DC5298 /* Entity.swift in Sources */,
 				0336EFE01AC9B588001D3138 /* Sleeps.xcdatamodeld in Sources */,
+				030DA2591B93A930003A5F3B /* IconChooserViewController.swift in Sources */,
 				03E273651B0BB5520013BFE5 /* UIEdgeInsets+Helpers.swift in Sources */,
 				032F20F11AD154A200D7BA6C /* SettingsViewController.swift in Sources */,
 				03AC73AE1B02999800C03377 /* Countdown.swift in Sources */,
