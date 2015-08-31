@@ -166,11 +166,16 @@ class EditTableViewController: UITableViewController, UITextFieldDelegate,
     
     
     
-    // MARK: - Colour chooser
+    // MARK: - Icon and colour choosers
+    
+    /// When the colour chooser circle is tapped, perform the segue to show the popover.
+    func iconChooserTapped() {
+        performSegueWithIdentifier(R.segue.chooseIcon, sender: self)
+    }
     
     /// When the colour chooser circle is tapped, perform the segue to show the popover.
     func colourChooserTapped() {
-        performSegueWithIdentifier(kColourChooserSegueIdentifier, sender: self)
+        performSegueWithIdentifier(R.segue.chooseColour, sender: self)
     }
     
     
@@ -204,6 +209,11 @@ class EditTableViewController: UITableViewController, UITextFieldDelegate,
             datePicker.minimumDate = NSDate()
         }
         
+        // Add a gesture recogniser to the icon chooser image view.
+        iconChooser.userInteractionEnabled = true
+        let iconGesture = UITapGestureRecognizer(target: self, action: "iconChooserTapped")
+        iconChooser.addGestureRecognizer(iconGesture)
+        
         // Add a gesture recogniser to the colour chooser image view.
         colourChooser.userInteractionEnabled = true
         let colourGesture = UITapGestureRecognizer(target: self, action: "colourChooserTapped")
@@ -233,11 +243,18 @@ class EditTableViewController: UITableViewController, UITextFieldDelegate,
     
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == kColourChooserSegueIdentifier {
+        if segue.identifier == R.segue.chooseColour {
             if let colourPopoverController = segue.destinationViewController as? ColourChooserViewController {
                 colourPopoverController.popoverPresentationController?.delegate = self
                 colourPopoverController.preferredContentSize = CGSize(width: 320, height: 320)
                 colourPopoverController.presentingView = self
+            }
+        }
+        else if segue.identifier == R.segue.chooseIcon {
+            if let iconPopoverController = segue.destinationViewController as? IconChooserViewController {
+                iconPopoverController.popoverPresentationController?.delegate = self
+                iconPopoverController.preferredContentSize = CGSize(width: 320, height: 320)
+                iconPopoverController.presentingView = self
             }
         }
     }
