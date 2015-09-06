@@ -61,9 +61,6 @@ class IconChooserViewController: UIViewController, UIPageViewControllerDataSourc
         R.image.handbag,        
     ]
     
-    /// The current page being displayed.
-    var currentPage: Int = 0
-    
     /// The total number of pages. There are 9 icons to a page, so the number of pages is the number
     /// of icons divided by 9.
     var pageCount: Int {
@@ -89,6 +86,7 @@ class IconChooserViewController: UIViewController, UIPageViewControllerDataSourc
         let visibleIcons = icons[firstIndex...finalIndex]
         
         pageContentView.icons = Array(visibleIcons)
+        pageContentView.pageIndex = index
         return pageContentView
     }
     
@@ -140,19 +138,31 @@ class IconChooserViewController: UIViewController, UIPageViewControllerDataSourc
     // MARK: - UIPageViewControllerDataSource
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
+        // Get the current page number by accessing it from the view controller.
+        guard let currentViewController = viewController as? IconPageViewController else { return nil }
+        let currentPage = currentViewController.pageIndex
+        
+        // There's no page before page 0.
         if currentPage == 0 {
             return nil
         }
         
-        return viewControllerAtIndex(--currentPage)
+        // Get the view controller for the index before the current one.
+        return viewControllerAtIndex(currentPage - 1)
     }
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
+        // Get the current page number by accessing it from the view controller.
+        guard let currentViewController = viewController as? IconPageViewController else { return nil }
+        let currentPage = currentViewController.pageIndex
+        
+        // There's no page after the last page.
         if currentPage == pageCount - 1 {
             return nil
         }
         
-        return viewControllerAtIndex(++currentPage)
+        // Get the view controller for the index after the current one.
+        return viewControllerAtIndex(currentPage + 1)
     }
     
     func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {

@@ -13,6 +13,9 @@ class IconPageViewController: UIViewController {
     /// The 9 visible views which each contain an icon.
     @IBOutlet var iconViews: [CircularImageView]!
     
+    /// Which page in the page controller is this?
+    var pageIndex = 0
+    
     /// The icons to display in the iconViews.
     var icons: [UIImage?]! {
         didSet {
