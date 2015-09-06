@@ -13,58 +13,10 @@ class IconChooserViewController: UIViewController, UIPageViewControllerDataSourc
     /// The view controller which presented the popover.
     var presentingView: UIViewController!
     
-    /// The icons to display in the chooser.
-    let icons = [
-        // Page 1, row 1
-        R.image.calendar,
-        R.image.clock,
-        R.image.star,
-        
-        // Page 1, row 2
-        R.image.heart,
-        R.image.present,
-        R.image.christmastree,
-        
-        // Page 1, row 3
-        R.image.shoppingbag,
-        R.image.sun,
-        R.image.suitcase,
-        
-        // Page 2, row 1
-        R.image.briefcase,
-        R.image.university,
-        R.image.house,
-        
-        // Page 2, row 2
-        R.image.music,
-        R.image.film,
-        R.image.tv,
-        
-        // Page 2, row 3
-        R.image.controller,
-        R.image.cinema,
-        R.image.ticket,
-        
-        // Page 3, row 1
-        R.image.iphone,
-        R.image.ipad,
-        R.image.laptop,
-        
-        // Page 3, row 2
-        R.image.desktop,
-        R.image.headphones,
-        R.image.coffee,
-        
-        // Page 3, row 3
-        R.image.presentation,
-        R.image.envelope,
-        R.image.handbag,        
-    ]
-    
     /// The total number of pages. There are 9 icons to a page, so the number of pages is the number
     /// of icons divided by 9.
     var pageCount: Int {
-        let count = icons.count
+        let count = Countdown.icons.count
         if count % 9 == 0 {
             return count / 9
         }
@@ -83,7 +35,7 @@ class IconChooserViewController: UIViewController, UIPageViewControllerDataSourc
         
         let firstIndex = index * 9
         let finalIndex = firstIndex + 8
-        let visibleIcons = icons[firstIndex...finalIndex]
+        let visibleIcons = Countdown.icons[firstIndex...finalIndex]
         
         pageContentView.icons = Array(visibleIcons)
         pageContentView.pageIndex = index
