@@ -100,6 +100,9 @@ class IconChooserViewController: UIViewController, UIPageViewControllerDataSourc
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Set the popover background colour to match the background colour of the view inside.
+        popoverPresentationController?.backgroundColor = self.view.backgroundColor
 
         // Create the page view controller.
         guard let pageViewController = R.storyboard.main.iconPageViewController else { return }
@@ -111,13 +114,19 @@ class IconChooserViewController: UIViewController, UIPageViewControllerDataSourc
         pageViewController.setViewControllers(viewControllers, direction: .Forward, animated: false, completion: nil)
         
         // Set the size of the controller.
-        pageViewController.view.frame = CGRectMake(0, 0, 320, 290)
+        pageViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)
+        
+        // Set the colours of the page controller dots.
+        let pageControl = UIPageControl.appearance()
+        pageControl.pageIndicatorTintColor = kGlobalTintColour.colorWithAlphaComponent(0.3)
+        pageControl.currentPageIndicatorTintColor = kGlobalTintColour
         
         // Display the page view controller.
         addChildViewController(pageViewController)
         view.addSubview(pageViewController.view)
         pageViewController.didMoveToParentViewController(self)
     }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

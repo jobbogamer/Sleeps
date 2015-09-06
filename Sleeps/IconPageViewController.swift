@@ -32,7 +32,9 @@ class IconPageViewController: UIViewController {
         
         for (index, view) in iconViews.enumerate() {
             if index < icons.count {
-                view.image = icons[index]
+                // Display a tinted version of the image.
+                view.image = icons[index]?.imageWithRenderingMode(.AlwaysTemplate)
+                view.tintColor = kGlobalTintColour
             }
         }
     }
@@ -44,8 +46,9 @@ class IconPageViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        // Load the icons in when the view loads.
+        updateIconViews()
     }
 
     override func didReceiveMemoryWarning() {
