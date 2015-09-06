@@ -43,27 +43,22 @@ extension Countdown {
     
     
     /// Create a new `Countdown` object in the given `NSManagedObjectContext`.
-    class func createObjectInContext(context: NSManagedObjectContext) -> Countdown
-    {
+    class func createObjectInContext(context: NSManagedObjectContext) -> Countdown {
         return NSEntityDescription.insertNewObjectForEntityForName(self.entityName, inManagedObjectContext: context) as! Countdown
     }
     
     
     /// Determine whether `lhs` occurs before `rhs`.
-    class func isBefore(lhs: Countdown, rhs: Countdown) -> Bool
-    {
+    class func isBefore(lhs: Countdown, rhs: Countdown) -> Bool {
         let dateComparison = lhs.date.compare(rhs.date)
         
-        if dateComparison == .OrderedAscending
-        {
+        if dateComparison == .OrderedAscending {
             return true
         }
-        else if dateComparison == .OrderedDescending
-        {
+        else if dateComparison == .OrderedDescending {
             return false
         }
-        else
-        {
+        else {
             return lhs.name < rhs.name
         }
     }
@@ -72,8 +67,7 @@ extension Countdown {
     /// Return the `UIColor` object represented by the countdown's `colour` property.
     class func colourFromIndex(index: Int) -> UIColor
     {
-        switch (index)
-        {
+        switch (index) {
         case 0:
             // Red
             return UIColor(red: 255, green:  68, blue:  90)
@@ -117,8 +111,7 @@ extension Countdown {
     
     
     /// Create and save the default countdowns added on first launch.
-    class func createDefaultCountdownsUsingPersistenceController(persistenceController: PersistenceController)
-    {
+    class func createDefaultCountdownsUsingPersistenceController(persistenceController: PersistenceController) {
         // Get the current date to work out what year to set for each countdown.
         let now = NSDate()
         let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
@@ -133,26 +126,22 @@ extension Countdown {
         let starWarsYear: Int
         let pirateYear: Int
         
-        if dateComponents.month > 9 || (dateComponents.month == 9 && dateComponents.day >= 19)
-        {
+        if dateComponents.month > 9 || (dateComponents.month == 9 && dateComponents.day >= 19) {
             piYear = nextYear
             starWarsYear = nextYear
             pirateYear = nextYear
         }
-        else if dateComponents.month > 5 || (dateComponents.month == 5 && dateComponents.day >= 4)
-        {
+        else if dateComponents.month > 5 || (dateComponents.month == 5 && dateComponents.day >= 4) {
             piYear = nextYear
             starWarsYear = nextYear
             pirateYear = thisYear
         }
-        else if dateComponents.month > 3 || (dateComponents.month == 3 && dateComponents.day >= 14)
-        {
+        else if dateComponents.month > 3 || (dateComponents.month == 3 && dateComponents.day >= 14) {
             piYear = nextYear
             starWarsYear = thisYear
             pirateYear = thisYear
         }
-        else
-        {
+        else {
             piYear = thisYear
             starWarsYear = thisYear
             pirateYear = thisYear
@@ -222,46 +211,23 @@ extension Countdown {
     
     
     /// Get the countdown's repeat interval as an enum value rather than a raw Int16.
-    func getRepeatInterval() -> RepeatInterval
-    {
+    func getRepeatInterval() -> RepeatInterval {
         return RepeatInterval(rawValue: self.repeatInterval.shortValue)!
     }
     
     
     /// Set the countdown's repeat interval using an enum value rather than a raw Int16.
-    func setRepeatInterval(interval: RepeatInterval)
-    {
+    func setRepeatInterval(interval: RepeatInterval) {
         self.repeatInterval = NSNumber(short: interval.rawValue)
     }
     
     
-    func repeatIntervalString() -> String
-    {
-        switch (self.getRepeatInterval())
-        {
-        case .Yearly:
-            return "Repeats Yearly"
-            
-        case .Monthly:
-            return "Repeats Monthly"
-            
-        case .Weekly:
-            return "Repeats Weekly"
-            
-        case .Never:
-            return "Never Repeats"
-        }
-    }
-    
-    
-    func modifyDateForRepeat()
-    {
+    func modifyDateForRepeat() {
         let calendar = NSCalendar.currentCalendar()
         let options = NSCalendarOptions()
         let dateComponents = NSDateComponents()
         
-        switch self.getRepeatInterval()
-        {
+        switch self.getRepeatInterval() {
         case .Yearly:
             dateComponents.year = 1
             
