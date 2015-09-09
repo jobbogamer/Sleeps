@@ -25,8 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: - Activation
     
     /// Called when the application first launches.
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool
-    {
+    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {        
         // Create a persistence controller, giving it our callback function.
         self.persistenceController = PersistenceController(callback: persistenceControllerDidInitialise)
         
@@ -36,12 +35,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         tableViewController?.persistenceController = self.persistenceController
         
         // Fill the background colour of the navigation bar and toolbar if enabled.
-        if (kNavigationBarFilled)
-        {
+        if (kNavigationBarFilled) {
             navigationController.navigationBar.barTintColor = kNavigationControllerBarColour
         }
-        if (kToolbarFilled)
-        {
+        if (kToolbarFilled) {
             navigationController.toolbar.barTintColor = kToolbarColour
         }
         
@@ -59,18 +56,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     /// Called when the application is about to return from the background.
-    func applicationWillEnterForeground(application: UIApplication)
-    {
-        
-    }
-    
-    /// Called when the application has resumed from being inactive.
-    func applicationDidBecomeActive(application: UIApplication)
-    {
+    func applicationWillEnterForeground(application: UIApplication) {
         if let tableViewController = tableViewController {
             tableViewController.reloadData()
             tableViewController.updatePastCountdowns()
         }
+    }
+    
+    /// Called when the application has resumed from being inactive.
+    func applicationDidBecomeActive(application: UIApplication) {
+        
     }
 
     
@@ -82,21 +77,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     /// SMS message) or when the user quits the application and it begins the transition to the
     /// background state.
     /// This function pauses ongoing tasks and saves any object model changes to disk.
-    func applicationWillResignActive(application: UIApplication)
-    {
+    func applicationWillResignActive(application: UIApplication) {
         persistenceController?.save()
     }
 
     /// Saves object model changes to disk and stores application state information in order to
     /// restore the application to its current state in case it gets terminated later.
-    func applicationDidEnterBackground(application: UIApplication)
-    {
+    func applicationDidEnterBackground(application: UIApplication) {
         persistenceController?.save()
     }
     
     /// Called when the application is about to terminate. Saves any changes to the object model.
-    func applicationWillTerminate(application: UIApplication)
-    {
+    func applicationWillTerminate(application: UIApplication) {
         persistenceController?.save()
     }
 
@@ -106,10 +98,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     /// Callback which is called when the persistence controller finishes intialising the Core Data
     /// stack.
-    func persistenceControllerDidInitialise(success: Bool)
-    {
-        if !success
-        {
+    func persistenceControllerDidInitialise(success: Bool) {
+        if !success {
             print("Persistence controller failed to initialise. What now...?")
             return
         }
@@ -117,8 +107,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If this is the first launch of the app, add the default countdowns.
         let defaults = NSUserDefaults.standardUserDefaults()
         let key = "previouslyLaunched"
-        if !defaults.boolForKey(key)
-        {
+        if !defaults.boolForKey(key) {
             Countdown.createDefaultCountdownsUsingPersistenceController(self.persistenceController!)
             defaults.setBool(true, forKey: key)
         }
