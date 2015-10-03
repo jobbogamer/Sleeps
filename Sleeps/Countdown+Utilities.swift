@@ -225,6 +225,13 @@ extension Countdown {
     }
     
     
+    /// Get a UIImage for an icon in a format that will act as a line drawing and adapt to a
+    /// UIImageView tintColor.
+    class func getDisplayableIconImage(index: Int) -> UIImage? {
+        return Countdown.icons[index]?.imageWithRenderingMode(.AlwaysTemplate)
+    }
+    
+    
     // MARK: - Instance methods
     
     

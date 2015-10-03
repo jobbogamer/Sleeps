@@ -31,7 +31,7 @@ class EditTableViewController: UITableViewController, UITextFieldDelegate,
     /// Set all the values in the view with the ones from the countdown passed in.
     func updateView() {
         if let countdown = countdown {
-            iconChooser?.image                  = Countdown.icons[countdown.icon.integerValue]?.imageWithRenderingMode(.AlwaysTemplate)
+            iconChooser?.image                  = Countdown.getDisplayableIconImage(countdown.icon.integerValue)
             colourChooser?.backgroundColor      = countdown.uiColour
             nameField?.text                     = countdown.name
             dateChooser?.setTitle(countdown.date.localisedString(), forState: .Normal)

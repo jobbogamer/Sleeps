@@ -36,7 +36,7 @@ class IconPageViewController: UIViewController {
         for (index, view) in iconViews.enumerate() {
             if index < icons.count {
                 // Display a tinted version of the image.
-                view.image = icons[index]?.imageWithRenderingMode(.AlwaysTemplate)
+                view.image = Countdown.getDisplayableIconImage(index)
                 view.tintColor = kGlobalTintColour
             }
         }

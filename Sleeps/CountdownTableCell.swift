@@ -21,7 +21,7 @@ class CountdownTableCell: UITableViewCell {
             guard let countdown = countdown else { return }
             
             // Set the icon on the left.
-            iconView.image = Countdown.icons[countdown.icon.integerValue]?.imageWithRenderingMode(.AlwaysTemplate)
+            iconView.image = Countdown.getDisplayableIconImage(countdown.icon.integerValue)
             iconView.tintColor = .whiteColor()
             iconView.backgroundColor = countdown.uiColour
             
