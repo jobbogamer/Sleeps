@@ -31,7 +31,7 @@ class EditTableViewController: UITableViewController, UITextFieldDelegate,
     /// Set all the values in the view with the ones from the countdown passed in.
     func updateView() {
         if let countdown = countdown {
-            // TODO: Set the icon chooser.
+            iconChooser?.image                  = Countdown.icons[countdown.icon.integerValue]?.imageWithRenderingMode(.AlwaysTemplate)
             colourChooser?.backgroundColor      = countdown.uiColour
             nameField?.text                     = countdown.name
             dateChooser?.setTitle(countdown.date.localisedString(), forState: .Normal)
@@ -56,7 +56,7 @@ class EditTableViewController: UITableViewController, UITextFieldDelegate,
     // MARK: - Outlets
     
     /// The image view in the top left for choosing an icon.
-    @IBOutlet weak var iconChooser: UIImageView!
+    @IBOutlet weak var iconChooser: CircularImageView!
     
     /// The image view in the top right for choosing a background colour.
     @IBOutlet weak var colourChooser: CircularImageView!
@@ -201,6 +201,9 @@ class EditTableViewController: UITableViewController, UITextFieldDelegate,
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Set the tint colour for the icon chooser so that the icon uses that colour.
+        iconChooser.tintColor = kGlobalTintColour
         
         // The table view must be given a nil background view otherwise the navigation controller
         // transition will break and the table view will have a white background.
