@@ -129,6 +129,9 @@ class EditTableViewController: UITableViewController, UITextFieldDelegate,
     /// Called when the repeat interval chooser changes value. Update the repeat interval of the
     /// countdown being edited and save it back to the database.
     func segmentedControlValueDidChange(segmentedControl: UISegmentedControl) {
+        // Hide the keyboard and take focus away from the name field.
+        nameField.resignFirstResponder()
+        
         countdown?.repeatInterval = repeatChooser.selectedSegmentIndex
         persistenceController?.save()
     }
@@ -139,6 +142,9 @@ class EditTableViewController: UITableViewController, UITextFieldDelegate,
     // MARK: - Date chooser
     
     @IBAction func dateChooserTapped(sender: UIButton) {
+        // Hide the keyboard and take focus away from the name field.
+        nameField.resignFirstResponder()
+        
         // Toggle whether the date picker is visible. This will determine the height of the cell
         // containing the date picker - see tableView(_:willDisplayCell:forRowAtIndexPath:)
         datePickerVisible = !datePickerVisible
@@ -243,6 +249,9 @@ class EditTableViewController: UITableViewController, UITextFieldDelegate,
     
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // Hide the keyboard and take focus away from the name field.
+        nameField.resignFirstResponder()
+        
         if segue.identifier == R.segue.chooseColour {
             if let colourPopoverController = segue.destinationViewController as? ColourChooserViewController {
                 colourPopoverController.popoverPresentationController?.delegate = self
