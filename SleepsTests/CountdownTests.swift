@@ -21,28 +21,23 @@ class CountdownTests: XCTestCase {
         
         // Create an in-memory Core Data stack which can be used to test interaction with the
         // database, without having to actually store anything on disk.
-        if let model = NSManagedObjectModel.mergedModelFromBundles([NSBundle.mainBundle()])
-        {
+        if let model = NSManagedObjectModel.mergedModelFromBundles([NSBundle.mainBundle()]) {
             let storeCoordinator = NSPersistentStoreCoordinator(managedObjectModel: model)
-            do
-            {
+            do {
                 try storeCoordinator.addPersistentStoreWithType(NSInMemoryStoreType, configuration: nil, URL: nil, options: nil)
                 managedObjectContext = NSManagedObjectContext(concurrencyType: .MainQueueConcurrencyType)
                 managedObjectContext.persistentStoreCoordinator = storeCoordinator
             }
-            catch
-            {
+            catch {
                 XCTFail("Failed to initialise a mock Core Data stack")
             }
         }
-        else
-        {
+        else {
             XCTFail("Failed to initialise an object model")
         }
     }
     
-    override func tearDown()
-    {
+    override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in
         // the class.
         super.tearDown()
@@ -50,8 +45,7 @@ class CountdownTests: XCTestCase {
     
     
     /// Check that the daysFromNow() function returns the expected value.
-    func testThatDaysFromNowWorks()
-    {
+    func testThatDaysFromNowWorks() {
         let countdown = Countdown.createObjectInContext(managedObjectContext)
         
         // Create a date 7 days in the future.
@@ -68,8 +62,7 @@ class CountdownTests: XCTestCase {
     
     /// Check that daysFromNow() returns -1 for an event that was yesterday. This is an important
     /// test because if an event set to yesterday returns 0, that event will not be deleted.
-    func testThatDaysFromReturnsMinusOneForYesterday()
-    {
+    func testThatDaysFromReturnsMinusOneForYesterday() {
         let countdown = Countdown.createObjectInContext(managedObjectContext)
         
         // Create a date 1 day in the past.
@@ -85,8 +78,7 @@ class CountdownTests: XCTestCase {
     
     
     /// Check that daysFromNow() returns the expected zero if the countdown's date is today.
-    func testThatDaysFromNowReturnsZeroForToday()
-    {
+    func testThatDaysFromNowReturnsZeroForToday() {
         let countdown = Countdown.createObjectInContext(managedObjectContext)
         
         // Set the countdown's date to the midnight today, and check that daysFromNow() returns
@@ -97,8 +89,7 @@ class CountdownTests: XCTestCase {
     
     
     /// Check that if a countdown is set to repeat, then calling modifyDateForRepeat() works.
-    func testThatRepeatingCountdownsRepeatCorrectly()
-    {
+    func testThatRepeatingCountdownsRepeatCorrectly() {
         let countdown = Countdown.createObjectInContext(managedObjectContext)
         var dateDiff: NSTimeInterval
         
@@ -129,6 +120,28 @@ class CountdownTests: XCTestCase {
         countdown.modifyDateForRepeat()
         dateDiff = countdown.date.timeIntervalSinceDate(NSDate.bhat_dateWithYear(2015, month: 7, day: 12))
         XCTAssertEqual(dateDiff, 0, "Date should not have moved")
+    }
+    
+    
+    /// Check that if a monthly countdown's repeat is triggered multiple times, it still keeps the
+    /// same day of the month each time, even though the months have verying lengths.
+    func testThatMonthlyRepeatsCopeWithVaryingMonthLengths() {
+        let countdown = Countdown.createObjectInContext(managedObjectContext)
+        
+        // We will start on 18th January 2016 and repeat 12 times. Using 2016 means a leap day is
+        // included.
+        countdown.date = NSDate.bhat_dateWithYear(2016, month: 1, day: 18)
+        countdown.setRepeatInterval(.Monthly)
+        
+        // Trigger the repeat 12 times.
+        for _ in 1...12 {
+            countdown.modifyDateForRepeat()
+        }
+        
+        // Check that the date has been set to 18th January 2017, exactly 12 months after the
+        // original date.
+        let diff = countdown.date.timeIntervalSinceDate(NSDate.bhat_dateWithYear(2017, month: 1, day: 18))
+        XCTAssertEqual(diff, 0, "Date should have moved by exactly 12 months")
     }
     
 }
