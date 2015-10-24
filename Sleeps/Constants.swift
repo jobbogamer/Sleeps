@@ -76,6 +76,9 @@ let kCollectionViewItemBorderWidth: CGFloat = 0
 /// Border colour for collection view cells.
 let kCollectionViewItemBorderColour: UIColor = UIColor.lightGrayColor()
 
+/// Stroke colour for icons.
+let kIconStrokeColour: UIColor = UIColor.whiteColor()
+
 
 /* Edit View **************************************************************************************/
 

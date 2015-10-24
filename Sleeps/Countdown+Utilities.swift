@@ -118,23 +118,23 @@ extension Countdown {
         switch (index) {
         case 0:
             // Red
-            return UIColor(red: 255, green:  68, blue:  90)
+            return UIColor(red: 255, green:  73, blue:  95)
             
         case 1:
             // Orange
             return UIColor(red: 255, green: 126, blue:  75)
             
         case 2:
-            // Yellow
-            return UIColor(red: 244, green: 241, blue:  96)
+            // Lime green
+            return UIColor(red: 122, green: 221, blue:  71)
             
         case 3:
-            // Green
-            return UIColor(red: 103, green: 229, blue: 101)
+            // Dark green
+            return UIColor(red:  25, green: 134, blue:  53)
             
         case 4:
             // Light blue
-            return UIColor(red: 110, green: 222, blue: 203)
+            return UIColor(red:  90, green: 202, blue: 183)
             
         case 5:
             // Dark blue
@@ -150,7 +150,7 @@ extension Countdown {
             
         case 8:
             // Grey
-            return UIColor(red: 200, green: 200, blue: 200)
+            return UIColor(red: 170, green: 170, blue: 170)
             
         default:
             return colourFromIndex(Int(arc4random_uniform(9)))

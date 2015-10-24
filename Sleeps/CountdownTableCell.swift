@@ -23,8 +23,8 @@ class CountdownTableCell: UITableViewCell {
             // Set the icon on the left.
             let iconSize = CGSizeMake(iconView.frame.width - 16, iconView.frame.height - 16)
             iconView.image = Countdown.icons[countdown.icon.integerValue]?.scaleToSize(iconSize).imageWithRenderingMode(.AlwaysTemplate)
-            iconView.tintColor = .whiteColor()
             iconView.backgroundColor = countdown.uiColour
+            iconView.tintColor = kIconStrokeColour
             
             // Set the name and date.
             nameLabel.text = countdown.name
