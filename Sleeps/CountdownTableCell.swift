@@ -20,9 +20,14 @@ class CountdownTableCell: UITableViewCell {
             // Whenever the countdown for the cell is changed, update the subviews.
             guard let countdown = countdown else { return }
             
-            // Set the icon on the left.
-            let iconSize = CGSizeMake(iconView.frame.width - 16, iconView.frame.height - 16)
-            iconView.image = Countdown.icons[countdown.icon.integerValue]?.scaleToSize(iconSize).imageWithRenderingMode(.AlwaysTemplate)
+            // Find the correct size for the icon, so that it fits in the circle and keeps the
+            // correct aspect ratio.
+            let icon = Countdown.icons[countdown.icon.integerValue]
+            let targetSize = CGSizeMake(iconView.frame.width - 16, iconView.frame.height - 16)
+            let actualSize = calculateCorrectIconSize(icon, targetSize: targetSize)
+            
+            // Put the icon into the view, scaling it to the size that was just calculated.
+            iconView.image = icon?.scaleToSize(actualSize).imageWithRenderingMode(.AlwaysTemplate)
             iconView.backgroundColor = countdown.uiColour
             iconView.tintColor = kIconStrokeColour
             
@@ -43,6 +48,33 @@ class CountdownTableCell: UITableViewCell {
                 formatter.maximumFractionDigits = 0
                 daysLabel.text = formatter.stringFromNumber(countdown.daysFromNow())
             }
+        }
+    }
+    
+    func calculateCorrectIconSize(icon: UIImage?, targetSize: CGSize) -> CGSize {
+        // If there's no icon, it doesn't matter what size is used.
+        guard let icon = icon else { return targetSize }
+        
+        let width = icon.size.width
+        let height = icon.size.height
+        let ratio = width / height
+        
+        if width > height {
+            // If the image is wider than it is tall, the new width should be set to the target
+            // width, and the height should be scaled appropriately.
+            let newWidth = targetSize.width
+            let newHeight = newWidth / ratio
+            return CGSizeMake(newWidth, newHeight)
+        }
+        else if height > width {
+            // This is the inverse case to the case above.
+            let newHeight = targetSize.height
+            let newWidth = newHeight * ratio
+            return CGSizeMake(newWidth, newHeight)
+        }
+        else {
+            // If the image already has 1:1 aspect ratio, it can simply be scaled.
+            return targetSize
         }
     }
 
