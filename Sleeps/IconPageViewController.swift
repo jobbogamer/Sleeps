@@ -13,6 +13,9 @@ class IconPageViewController: UIViewController {
     /// The 9 visible views which each contain an icon.
     @IBOutlet var iconViews: [CircularImageView]!
     
+    /// The view controller which presented the popover.
+    var presentingView: UIViewController!
+    
     /// Which page in the page controller is this?
     var pageIndex = 0
     
@@ -43,12 +46,34 @@ class IconPageViewController: UIViewController {
     }
     
     
+    /// Callback for when an icon is tapped.
+    func iconViewTapped(sender: UITapGestureRecognizer) {
+        for (index, view) in iconViews.enumerate() {
+            if view == sender.view {
+                if let editView = presentingView as? EditTableViewController {
+                    editView.countdown?.icon = index + (9 * pageIndex)
+                    editView.persistenceController?.save()
+                    editView.iconChooser.image = Countdown.getDisplayableIconImage(index + (9 * pageIndex))
+                    dismissViewControllerAnimated(true, completion: nil)
+                }
+            }
+        }
+    }
+    
+    
     
     
     // MARK: - View Controller
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Add a gesture recogniser to each icon view.
+        for view in iconViews {
+            let gesture = UITapGestureRecognizer(target: self, action: "iconViewTapped:")
+            view.userInteractionEnabled = true
+            view.addGestureRecognizer(gesture)
+        }
         
         // Load the icons in when the view loads.
         updateIconViews()

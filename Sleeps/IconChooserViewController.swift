@@ -37,6 +37,7 @@ class IconChooserViewController: UIViewController, UIPageViewControllerDataSourc
         let finalIndex = firstIndex + 8
         let visibleIcons = Countdown.icons[firstIndex...finalIndex]
         
+        pageContentView.presentingView = presentingView
         pageContentView.icons = Array(visibleIcons)
         pageContentView.pageIndex = index
         return pageContentView
