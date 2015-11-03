@@ -18,6 +18,7 @@
 		0336EFE71AC9B588001D3138 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0336EFE61AC9B588001D3138 /* Images.xcassets */; };
 		0336EFEA1AC9B588001D3138 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0336EFE81AC9B588001D3138 /* LaunchScreen.xib */; };
 		033FDD0B1AE19B990002E16E /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033FDD0A1AE19B990002E16E /* PersistenceController.swift */; };
+		0344501A1BE97E720090FECB /* Eureka.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 034450191BE97E720090FECB /* Eureka.framework */; };
 		03689B461B15024100343483 /* CapsuleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03689B451B15024100343483 /* CapsuleButton.swift */; };
 		03689B481B15131400343483 /* AutoLayoutCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03689B471B15131400343483 /* AutoLayoutCollectionViewCell.swift */; };
 		03813C1F1B7E0DB300E4DB50 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03813C1E1B7E0DB300E4DB50 /* R.generated.swift */; };
@@ -70,6 +71,7 @@
 		0336EFF41AC9B588001D3138 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03380BA61B7A24B2000174A5 /* rswift */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = rswift; path = Scripts/rswift; sourceTree = "<group>"; };
 		033FDD0A1AE19B990002E16E /* PersistenceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
+		034450191BE97E720090FECB /* Eureka.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Eureka.framework; path = Carthage/Build/iOS/Eureka.framework; sourceTree = "<group>"; };
 		03689B451B15024100343483 /* CapsuleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CapsuleButton.swift; sourceTree = "<group>"; };
 		03689B471B15131400343483 /* AutoLayoutCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoLayoutCollectionViewCell.swift; sourceTree = "<group>"; };
 		03813C1E1B7E0DB300E4DB50 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
@@ -99,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0344501A1BE97E720090FECB /* Eureka.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,6 +118,7 @@
 		0336EFCE1AC9B587001D3138 = {
 			isa = PBXGroup;
 			children = (
+				034450191BE97E720090FECB /* Eureka.framework */,
 				0336EFD91AC9B587001D3138 /* Sleeps */,
 				0336EFF21AC9B588001D3138 /* SleepsTests */,
 				0336EFD81AC9B587001D3138 /* Products */,
@@ -241,6 +245,7 @@
 				0336EFD41AC9B587001D3138 /* Frameworks */,
 				0336EFD51AC9B587001D3138 /* Resources */,
 				03AC73B11B02A4AB00C03377 /* Increment Build Number */,
+				0344501B1BE97E880090FECB /* Copy Carthage Frameworks */,
 			);
 			buildRules = (
 			);
@@ -329,6 +334,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0344501B1BE97E880090FECB /* Copy Carthage Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Eureka.framework",
+			);
+			name = "Copy Carthage Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
 		03813C1D1B7E0B8700E4DB50 /* R.swift */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -523,6 +543,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Sleeps/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -538,6 +562,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Sleeps/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
