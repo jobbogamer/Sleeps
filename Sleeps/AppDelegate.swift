@@ -65,7 +65,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     /// Called when the application has resumed from being inactive.
     func applicationDidBecomeActive(application: UIApplication) {
-        
+        if let tableViewController = tableViewController {
+            tableViewController.refreshViewAtMidnight()
+        }
     }
 
     
@@ -79,6 +81,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     /// This function pauses ongoing tasks and saves any object model changes to disk.
     func applicationWillResignActive(application: UIApplication) {
         persistenceController?.save()
+        
+        // Cancel the timer which is set to fire at midnight, because if the app is not open, there
+        // is no point refreshing the data.
+        if let tableViewController = tableViewController {
+            tableViewController.cancelTimer()
+        }
     }
 
     /// Saves object model changes to disk and stores application state information in order to
@@ -90,6 +98,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     /// Called when the application is about to terminate. Saves any changes to the object model.
     func applicationWillTerminate(application: UIApplication) {
         persistenceController?.save()
+        
+        // Cancel the timer which is set to fire at midnight, because if the app is not open, there
+        // is no point refreshing the data.
+        if let tableViewController = tableViewController {
+            tableViewController.cancelTimer()
+        }
     }
 
     

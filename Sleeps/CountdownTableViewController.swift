@@ -35,6 +35,9 @@ class CountdownTableViewController: UITableViewController {
     /// Has a countdown been deleted on the edit screen?
     var deletedCountdown = false
     
+    /// Timer used to refresh data at midnight.
+    var timer: NSTimer?
+    
     
     /// Called when the new countdown button is tapped. Creates a new countdown object with
     /// placeholder values.
@@ -69,12 +72,31 @@ class CountdownTableViewController: UITableViewController {
     
     
     
+    /// Set a timer to fire at midnight to refresh the data.
+    func refreshViewAtMidnight() {
+        // The date used here is actually 00:00:01, because NSTimer has a resolution of 50-100ms.
+        // If exactly 00:00:00 is used, there's a chance it will be called at 23:59:59, and the data
+        // won't change.
+        let fireDate = NSDate.startOfDayTomorrow().dateByAddingTimeInterval(1)
+        timer = NSTimer(fireDate: fireDate, interval: 0, target: self, selector: "reloadData", userInfo: nil, repeats: false)
+        NSRunLoop.mainRunLoop().addTimer(timer!, forMode: NSRunLoopCommonModes)
+    }
+    
+    
+    
+    /// Cancel the timer set for midnight.
+    func cancelTimer() {
+        timer?.invalidate()
+    }
+    
+    
     
     // MARK: - Database
     
     /// Get all the countdowns from the persistence controller and store them in the countdowns
     /// array. This function only does anything if the persistence controller exists.
     func reloadData() {
+        print("Reloaded! \(NSDate())")
         // Use FetchRequestController to get all the countdowns from the database. If no error
         // occurs, set `self.countdowns` to the returned results, which will trigger the collection
         // view to refresh itself.
@@ -104,7 +126,7 @@ class CountdownTableViewController: UITableViewController {
     
     
     /// Update past countdowns by either updating their date if they repeat, or deleting them if
-    /// they don't/
+    /// they don't.
     func updatePastCountdowns() {
         var toDelete = [Int]()
         var update = false
