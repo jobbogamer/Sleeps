@@ -71,7 +71,7 @@
 		0336EFF41AC9B588001D3138 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03380BA61B7A24B2000174A5 /* rswift */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = rswift; path = Scripts/rswift; sourceTree = "<group>"; };
 		033FDD0A1AE19B990002E16E /* PersistenceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
-		034450191BE97E720090FECB /* Eureka.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Eureka.framework; path = Carthage/Build/iOS/Eureka.framework; sourceTree = "<group>"; };
+		034450191BE97E720090FECB /* Eureka.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Eureka.framework; path = ../Carthage/Build/iOS/Eureka.framework; sourceTree = "<group>"; };
 		03689B451B15024100343483 /* CapsuleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CapsuleButton.swift; sourceTree = "<group>"; };
 		03689B471B15131400343483 /* AutoLayoutCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoLayoutCollectionViewCell.swift; sourceTree = "<group>"; };
 		03813C1E1B7E0DB300E4DB50 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
@@ -118,7 +118,6 @@
 		0336EFCE1AC9B587001D3138 = {
 			isa = PBXGroup;
 			children = (
-				034450191BE97E720090FECB /* Eureka.framework */,
 				0336EFD91AC9B587001D3138 /* Sleeps */,
 				0336EFF21AC9B588001D3138 /* SleepsTests */,
 				0336EFD81AC9B587001D3138 /* Products */,
@@ -170,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				0336EFF41AC9B588001D3138 /* Info.plist */,
+				034450191BE97E720090FECB /* Eureka.framework */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
